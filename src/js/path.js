@@ -12,10 +12,10 @@ requirejs.config({
     screenfull: "./js/screenfull",
     vue: "./js/vue.min",
     jquery: "./js/jquery-3.6.0.min",
-    name: "./js/name.min",
-    set_fonts: "./js/set-fonts.min",
+    name: "./js/name",
+    set_fonts: "./js/set-fonts",
     music: "./js/music",
   },
 
 });
-requirejs(["mdui", "screenfull", "jquery", "vue", "name", "set_fonts", "music"], function (dependency) { });
+requirejs(["jquery", "screenfull", "music", "vue", "name", "set_fonts", "mdui"], function (dependency) { });
