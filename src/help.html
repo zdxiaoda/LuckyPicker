@@ -1,0 +1,114 @@
+<html lang="zh_CN">
+
+<head>
+  <meta charset="utf-8">
+  <title>帮助 - 随机点名系统 - BY ZD XIAODA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
+  <meta name="description" itemprop="description" content="这是一个随机点名系统，在多种场景下均可使用。" />
+  <link rel="stylesheet" href="./css/mdui.min.css" />
+  <script async src="./js/mdui.min.js"></script>
+  <link rel="icon" href="./Class-Circle.svg">
+  <!--图标来自阿里巴巴矢量图标库-->
+  <meta property="og:description" content='这是一个随机点名系统，在多种场景下均可使用。'>
+  <script async src="./js/screenfull.js"></script>
+  <link rel="stylesheet" href="./css/all.css" />
+</head>
+
+<body>
+  <!--应用栏-->
+  <div class="mdui-appbar">
+    <div class="mdui-toolbar mdui-color-light-green-800">
+      <a mdui-drawer="{target: '#left-drawer'}" class="mdui-btn mdui-btn-icon">
+        <i class="mdui-icon material-icons">menu</i>
+      </a>
+      <a class="mdui-typo-headline">随机点名系统</a>
+      <a class="mdui-typo-title">帮助</a>
+      <div class="mdui-toolbar-spacer"></div>
+      <a mdui-tooltip="{content: '刷新'}" class="mdui-btn mdui-btn-icon" onclick="javascript:location.reload();">
+        <i class="mdui-icon material-icons">autorenew</i>
+      </a>
+      <a mdui-tooltip="{content: '进入全屏'}" onclick="enterFullScreen(document.documentElement)" href="javascript:;"
+        class="mdui-btn mdui-btn-icon">
+        <i class="mdui-icon material-icons">fullscreen</i>
+      </a>
+      <a mdui-tooltip="{content: '退出全屏'}" onclick="exitFullScreen(document.documentElement)" href="javascript:;"
+        class="mdui-btn mdui-btn-icon">
+        <i class="mdui-icon material-icons">fullscreen_exit</i>
+      </a>
+      <a mdui-tooltip="{content: '关闭'}" onclick="window.close();" class="mdui-btn mdui-btn-icon">
+        <i class="mdui-icon material-icons">close</i>
+      </a>
+    </div>
+  </div>
+  <!--主页按钮-->
+  <a href="./index.html" class="mdui-color-blue-800 mdui-fab mdui-fab-fixed mdui-ripple"
+    mdui-tooltip="{content: '回到主页'}">
+    <i class="mdui-icon material-icons">home</i>
+  </a>
+  <!--抽屉式导航栏-->
+  <div class="mdui-drawer mdui-drawer-close" id="left-drawer">
+    <img class="mdui-container" src="./icons/drawer.png">
+    <ul class="mdui-list">
+      <li class="mdui-subheader">Learning makes me happy.</li>
+      <li class="mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons">home</i>
+        <a href="./index.html" class="mdui-list-item-content">主页</a>
+      </li>
+      <li class="mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons">error</i>
+        <a href="./about.html" class="mdui-list-item-content">关于</a>
+      </li>
+      <li class="mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons">help</i>
+        <a href="./help.html" class="mdui-list-item-content">帮助</a>
+      </li>
+    </ul>
+  </div>
+  <div class="mdui-container mdui-typo">
+    <h2>功能介绍：</h2>
+    <hr>
+    <p>部署到服务器/安装软件之后，打开页面，页面会自适应屏幕大小，渲染出如上图所示的界面。</p>
+    <img src="/help/tool.png">
+    <p>右上角为顶栏<br>点击<i class="mdui-icon material-icons">autorenew</i>会刷新页面</p>
+    <p>点击<i class="mdui-icon material-icons">fullscreen</i>会全屏页面</p>
+    <p>点击<i class="mdui-icon material-icons">fullscreen_exit</i>会退出全屏</p>
+    <p>点击<i class="mdui-icon material-icons">close</i>会关闭网页</p>
+    <hr>
+    <img src="/help/start.png">
+    <p>右下角的按钮为开始/停止按钮，当点击<i class="mdui-icon material-icons">loop</i>后，姓名一栏会开始快速滚动，再次点击后停止。</p>
+    <hr>
+    <img src="/help/name.png">
+    <p>姓名栏，用于显示被点名的姓名。</p>
+    <hr>
+    <h2>帮助：</h2>
+    <p>此帮助分为Web版和Windows版本！</p>
+    <hr>
+    <h3>WEB版帮助：</h3>
+    <p>Web需要部署到服务器使用！！！</p>
+    <img src="/help/index.png">
+    <p>此为正常的目录结构，只需要将文件全部上传至服务器，再通过对应的域名/IP打开即可使用。</p>
+    <p>修改名单需要更改目录里的list.txt文件</p>
+    <img src="/help/txt.png">
+    <p>（一行一个）</p>
+    <hr>
+    <h3>Windows版帮助：</h3>
+    <p>首先跟随安装程序完成安装，随后程序会自动打开list.txt文件提示修改名单。</p>
+    <img src="/help/txt.png">
+    <p>（一行一个）</p>
+    <p>如果在此期间没有修改，或者之后需要修改名单。需要在Windows文件资源管理器内转到 C:\Program Files (x86)\ZD XIAODA STUDIO\Random roll call 中的list.txt文件进行修改。
+    </p>
+    <img src="/help/windows-txt.png">
+    <h2>感谢您的使用！</h2>
+
+  </div>
+  <!--水印-->
+  <div id="watermark">
+    <p>此工具由ZD小达（张思源）制作</p>
+    <p>此工具由ZD小达（张思源）制作</p>
+    <p>此工具由ZD小达（张思源）制作</p>
+    <p>此工具由ZD小达（张思源）制作</p>
+    <p>此工具由ZD小达（张思源）制作</p>
+  </div>
+</body>
+
+</html>

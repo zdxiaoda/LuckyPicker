@@ -1,0 +1,108 @@
+<html lang="zh_CN">
+
+<head>
+  <script src="js/require.js"></script>
+  <script src="js/path.min.js"></script>
+  <meta charset="utf-8">
+  <title>主页 - 随机点名系统 - BY ZD XIAODA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
+  <meta name="description" itemprop="description" content="这是一个随机点名系统，在多种场景下均可使用。" />
+  <link rel="stylesheet" href="./css/mdui.min.css" />
+  <link rel="stylesheet" href="./css/text.css" />
+  <link rel="stylesheet" href="./css/all.css" />
+  <link rel="icon" href="./Class-Circle.svg">
+  <meta property="og:description" content='这是一个随机点名系统，在多种场景下均可使用。'>
+</head>
+
+<body>
+
+  <!--点名控件-->
+  <!--名字-->
+  <main id="begin_name">
+    <!--应用栏-->
+    <div class="mdui-appbar">
+      <div class="mdui-toolbar mdui-color-light-green-800">
+        <a mdui-drawer="{target: '#left_drawer'}" class="mdui-btn mdui-btn-icon">
+          <i class="mdui-icon material-icons">menu</i>
+        </a>
+        <a class="mdui-typo-headline">随机点名系统</a>
+        <a class="mdui-typo-title">主页</a>
+        <div class="mdui-toolbar-spacer"></div>
+
+        <a mdui-tooltip="{content: '刷新'}" class="mdui-btn mdui-btn-icon" onclick="javascript:location.reload();">
+          <i class="mdui-icon material-icons">autorenew</i>
+        </a>
+
+        <a mdui-tooltip="{content: '进入全屏'}" onclick="enterFullScreen(document.documentElement)" href="javascript:;"
+          class="mdui-btn mdui-btn-icon">
+          <i class="mdui-icon material-icons">fullscreen</i>
+        </a>
+        <a mdui-tooltip="{content: '退出全屏'}" onclick="exitFullScreen(document.documentElement)" href="javascript:;"
+          class="mdui-btn mdui-btn-icon">
+          <i class="mdui-icon material-icons">fullscreen_exit</i>
+        </a>
+        <button id="edittxt" mdui-tooltip="{content: '编辑名单'}" @click="edittxt()" class="mdui-btn mdui-btn-icon"><i
+            id="edit-icon" class="mdui-icon material-icons">edit</i></button>
+        <a mdui-tooltip="{content: '关闭'}" onclick="window.close();" class="mdui-btn mdui-btn-icon">
+          <i class="mdui-icon material-icons">close</i>
+        </a>
+      </div>
+    </div>
+    <!--BGM-->
+    <audio id="MUYU" src="muyu.mp3" autoplay loop></audio>
+    <!--开始按钮-->
+    <button @click="toggleAsk();music()" class="mdui-color-blue-800 mdui-fab mdui-fab-fixed mdui-ripple"
+      mdui-tooltip="{content: '开始/停止点名'}">
+      <i class="mdui-icon material-icons">repeat</i>
+    </button>
+    <!--END 按钮-->
+    <br> <br> <br> <br> <br>
+    <div class="mdui-container" id="case">
+      <p id="name" v-text="currentName">加载中。。。</p>
+    </div>
+    <!--彩色字 -->
+    <div id="colorful">
+
+      <p id="colorful-text">幸运名单</p>
+
+    </div>
+    <br>
+    <br>
+    <!--字体大小选择-->
+    <div id="set-fonts">
+
+      <i id="text_fields" mdui-tooltip="{content: '调整字体'}" class="mdui-icon material-icons">text_fields</i>
+      <button id="add-fonts" mdui-tooltip="{content: '增大字体'}" class="mdui-btn mdui-btn-icon"><i
+          class="mdui-icon material-icons">add</i></button>
+      <button id="remove-fonts" mdui-tooltip="{content: '减小字体'}" class="mdui-btn mdui-btn-icon"><i
+          class="mdui-icon material-icons">remove</i></button>
+      <button id="speaker" mdui-tooltip="{content: '朗读姓名'}" @click="speaker()" class="mdui-btn mdui-btn-icon"><i
+          id="speaker-icon" class="mdui-icon material-icons">speaker</i></button>
+    </div>
+    <!--大·点名按钮-->
+    <div id="BIG-BUTTON">
+      <button @click="toggleAsk();music()" class="mdui-color-blue-800 mdui-btn">开始/停止点名</button>
+    </div>
+  </main>
+  <!--抽屉式导航栏-->
+  <div class="mdui-drawer mdui-drawer-close" id="left_drawer">
+    <img class="mdui-container" src="./icons/drawer.png">
+    <ul class="mdui-list">
+      <li class="mdui-subheader">Learning makes me happy.</li>
+      <li class="mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons">home</i>
+        <a href="./index.html" class="mdui-list-item-content">主页</a>
+      </li>
+      <li class="mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons">error</i>
+        <a href="./about.html" class="mdui-list-item-content">关于</a>
+      </li>
+      <li class="mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons">help</i>
+        <a href="./help.html" class="mdui-list-item-content">帮助</a>
+      </li>
+    </ul>
+  </div>
+</body>
+
+</html>

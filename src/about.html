@@ -1,0 +1,101 @@
+<html lang="zh_CN">
+
+<head>
+  <meta charset="utf-8">
+  <title>关于 - 随机点名系统 - BY ZD XIAODA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
+  <meta name="description" itemprop="description" content="这是一个随机点名系统，在多种场景下均可使用。" />
+  <link rel="stylesheet" href="./css/mdui.min.css" />
+  <script async src="./js/mdui.min.js"></script>
+  <script async src="./js/screenfull.js"></script>
+  <link rel="icon" href="./Class-Circle.svg">
+  <!--图标来自阿里巴巴矢量图标库-->
+  <meta property="og:description" content='这是一个随机点名系统，在多种场景下均可使用。'>
+  <script async src="./js/screenfull.js"></script>
+  <link rel="stylesheet" href="./css/all.css" />
+</head>
+
+<body>
+  <!--应用栏-->
+  <div class="mdui-appbar">
+    <div class="mdui-toolbar mdui-color-light-green-800">
+      <a mdui-drawer="{target: '#left-drawer'}" class="mdui-btn mdui-btn-icon">
+        <i class="mdui-icon material-icons">menu</i>
+      </a>
+      <a class="mdui-typo-headline">随机点名系统</a>
+      <a class="mdui-typo-title">关于</a>
+      <div class="mdui-toolbar-spacer"></div>
+      <a mdui-tooltip="{content: '刷新'}" class="mdui-btn mdui-btn-icon" onclick="javascript:location.reload();">
+        <i class="mdui-icon material-icons">autorenew</i>
+      </a>
+      <a mdui-tooltip="{content: '进入全屏'}" onclick="enterFullScreen(document.documentElement)" href="javascript:;"
+        class="mdui-btn mdui-btn-icon">
+        <i class="mdui-icon material-icons">fullscreen</i>
+      </a>
+      <a mdui-tooltip="{content: '退出全屏'}" onclick="exitFullScreen(document.documentElement)" href="javascript:;"
+        class="mdui-btn mdui-btn-icon">
+        <i class="mdui-icon material-icons">fullscreen_exit</i>
+      </a>
+      <a mdui-tooltip="{content: '关闭'}" onclick="window.close();" class="mdui-btn mdui-btn-icon">
+        <i class="mdui-icon material-icons">close</i>
+      </a>
+    </div>
+  </div>
+  <!--主页按钮-->
+  <a href="./index.html" class="mdui-color-blue-800 mdui-fab mdui-fab-fixed mdui-ripple"
+    mdui-tooltip="{content: '回到主页'}">
+    <i class="mdui-icon material-icons">home</i>
+  </a>
+  <!--抽屉式导航栏-->
+  <div class="mdui-drawer mdui-drawer-close" id="left-drawer">
+    <img class="mdui-container" src="./icons/drawer.png">
+    <ul class="mdui-list">
+      <li class="mdui-subheader">Learning makes me happy.</li>
+      <li class="mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons">home</i>
+        <a href="./index.html" class="mdui-list-item-content">主页</a>
+      </li>
+      <li class="mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons">error</i>
+        <a href="./about.html" class="mdui-list-item-content">关于</a>
+      </li>
+      <li class="mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons">help</i>
+        <a href="./help.html" class="mdui-list-item-content">帮助</a>
+      </li>
+    </ul>
+  </div>
+  <div class="mdui-container mdui-typo">
+    <h2>关于此工具：</h2>
+    <p>此工具由ZD XIAODA（张思源）制作，底层采用HTML+CSS3+JS编写，Windows端采用NW.JS打包。真诚的感谢所有使用到的开源项目。</p>
+    <h2>使用场景：</h2>
+    <p>公司年会抽奖，老师上课点名，派对活跃气氛。。。</p>
+    <h2>版本区别：</h2>
+    <P>Web版需要部署在服务器使用，名单只能服务器管理员修改，适合同一个名单但是多设备使用的用户。（Web版支持Firefox，Microsoft Edge，Google Chrome，Safari等所有主流浏览器）</P>
+    <p>Windows需要Windows 7及以上的版本才能使用，适合同一个设备同一个名单的用户。（如班级点名）</p>
+    <h2>使用到的项目：</h2>
+    <p><a href="https://github.com/zdhxiong/mdui"><kbd>mdui：一个基于 Material Design 的前端框架。</kbd></a></p>
+    <p><a href="https://github.com/requirejs/requirejs/"><kbd>requirejs：A file and module loader for
+          JavaScript</kbd></a></p>
+    <p><a href="https://github.com/nwjs/nw.js"><kbd>nw.js：Call all Node.js modules directly from DOM/WebWorker and
+          enable a new way of writing applications with all Web technologies.</kbd></a></p>
+    <p><a href="https://sourceforge.net/projects/nsis/"><kbd>NSIS：一个开放源代码脚本驱动的封装安装档用工具。</kbd></a></p>
+    <p><a href="https://www.npmjs.com/package/iconv-lite"><kbd>iconv-lite：Pure JS character encoding conversion</kbd></a></p>
+    <p>非常感谢！</p>
+    <h2>其它使用到的资源：</h2>
+    <p>思源黑体 Source Han Sans</p>
+    <p>Material Icons</p>
+    <p>敲击木鱼音频 许可:CC0 作者:Carlo 来源:耳聆网 https://www.ear0.com/sound/19572</p>
+    <p>所有资源均无版权问题！</p>
+  </div>
+  <!--水印-->
+  <div id="watermark">
+    <p>此工具由ZD小达（张思源）制作</p>
+    <p>此工具由ZD小达（张思源）制作</p>
+    <p>此工具由ZD小达（张思源）制作</p>
+    <p>此工具由ZD小达（张思源）制作</p>
+    <p>此工具由ZD小达（张思源）制作</p>
+  </div>
+</body>
+
+</html>
