@@ -8,13 +8,13 @@ requirejs.config({
   },
 
   paths: {
-    mdui: "./js/mdui.min",
     screenfull: "./js/screenfull",
     vue: "./js/vue.min",
     jquery: "./js/jquery-3.6.0.min",
     name: "./js/name",
     music: "./js/music",
+    mdui:'./js/mdui.min',
   },
 
 });
-requirejs(["jquery", "music", "vue", "name", "screenfull", "mdui"], function (dependency) { });
+requirejs(["music", "screenfull", "name", "jquery", "vue",'mdui'], function (dependency) { });
