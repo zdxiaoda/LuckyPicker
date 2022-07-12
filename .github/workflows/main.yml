@@ -16,5 +16,5 @@ jobs:
     - name: Upload file # 将构建产物进行上传
       uses: actions/upload-artifact@v2
       with:
-        name: packs # 上传后的名字
+        name: 随机点名系统——快速构建 # 上传后的名字
         path: packs # 将 packs 目录进行上传
