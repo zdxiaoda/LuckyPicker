@@ -8,6 +8,7 @@ body {
 
 }
 
-#watermark {
-    color: white;
+#start {
+    position: absolute;
+    top: 75%;
 }

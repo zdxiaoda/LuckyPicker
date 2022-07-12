@@ -13,8 +13,8 @@ requirejs.config({
     jquery: "./js/jquery-3.6.0.min",
     name: "./js/name",
     music: "./js/music",
-    mdui:'./js/mdui.min',
+    mdui: './js/mdui.min',
   },
 
 });
-requirejs(["music", "screenfull", "name", "jquery", "vue",'mdui'], function (dependency) { });
+requirejs(["music", "screenfull", "name", "jquery", "mdui", 'vue'], function (dependency) { });

@@ -14,13 +14,10 @@
   <link rel="stylesheet" href="./css/all.css" />
 </head>
 
-<body>
+<body class="mdui-bottom-nav-fixed">
   <!--应用栏-->
   <div class="mdui-appbar">
     <div class="mdui-toolbar mdui-color-light-green-800">
-      <a mdui-drawer="{target: '#left-drawer'}" class="mdui-btn mdui-btn-icon">
-        <i class="mdui-icon material-icons">menu</i>
-      </a>
       <a class="mdui-typo-headline">随机点名系统</a>
       <a class="mdui-typo-title">帮助</a>
       <div class="mdui-toolbar-spacer"></div>
@@ -41,28 +38,24 @@
     </div>
   </div>
   <!--主页按钮-->
-  <a href="./index.html" class="mdui-color-blue-800 mdui-fab mdui-fab-fixed mdui-ripple"
+  <a id="start" href="./index.html" class="mdui-color-blue-800 mdui-fab mdui-fab-fixed mdui-ripple"
     mdui-tooltip="{content: '回到主页'}">
     <i class="mdui-icon material-icons">home</i>
   </a>
-  <!--抽屉式导航栏-->
-  <div class="mdui-drawer mdui-drawer-close" id="left-drawer">
-    <img class="mdui-container" src="./icons/drawer.png">
-    <ul class="mdui-list">
-      <li class="mdui-subheader">Learning makes me happy.</li>
-      <li class="mdui-list-item mdui-ripple">
-        <i class="mdui-list-item-icon mdui-icon material-icons">home</i>
-        <a href="./index.html" class="mdui-list-item-content">主页</a>
-      </li>
-      <li class="mdui-list-item mdui-ripple">
-        <i class="mdui-list-item-icon mdui-icon material-icons">error</i>
-        <a href="./about.html" class="mdui-list-item-content">关于</a>
-      </li>
-      <li class="mdui-list-item mdui-ripple">
-        <i class="mdui-list-item-icon mdui-icon material-icons">help</i>
-        <a href="./help.html" class="mdui-list-item-content">帮助</a>
-      </li>
-    </ul>
+  <!--底部导航栏-->
+  <div class="mdui-bottom-nav mdui-color-white">
+    <a href="./index.html" class="mdui-ripple">
+      <i class="mdui-icon material-icons">home</i>
+      <label>主页</label>
+    </a>
+    <a href="./help.html" class="mdui-ripple mdui-bottom-nav-active">
+      <i class="mdui-icon material-icons">help</i>
+      <label>帮助</label>
+    </a>
+    <a href="./about.html" class="mdui-ripple">
+      <i class="mdui-icon material-icons">error</i>
+      <label>关于</label>
+    </a>
   </div>
   <div class="mdui-container mdui-typo">
     <h2>功能介绍：</h2>
@@ -101,14 +94,7 @@
     <h2>感谢您的使用！</h2>
 
   </div>
-  <!--水印-->
-  <div id="watermark">
-    <p>此工具由ZD小达（张思源）制作</p>
-    <p>此工具由ZD小达（张思源）制作</p>
-    <p>此工具由ZD小达（张思源）制作</p>
-    <p>此工具由ZD小达（张思源）制作</p>
-    <p>此工具由ZD小达（张思源）制作</p>
-  </div>
+  
 </body>
 
 </html>

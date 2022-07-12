@@ -15,13 +15,10 @@
   <link rel="stylesheet" href="./css/all.css" />
 </head>
 
-<body>
+<body class="mdui-bottom-nav-fixed">
   <!--应用栏-->
   <div class="mdui-appbar">
     <div class="mdui-toolbar mdui-color-light-green-800">
-      <a mdui-drawer="{target: '#left-drawer'}" class="mdui-btn mdui-btn-icon">
-        <i class="mdui-icon material-icons">menu</i>
-      </a>
       <a class="mdui-typo-headline">随机点名系统</a>
       <a class="mdui-typo-title">关于</a>
       <div class="mdui-toolbar-spacer"></div>
@@ -42,60 +39,119 @@
     </div>
   </div>
   <!--主页按钮-->
-  <a href="./index.html" class="mdui-color-blue-800 mdui-fab mdui-fab-fixed mdui-ripple"
+  <a id="start" href="./index.html" class="mdui-color-blue-800 mdui-fab mdui-fab-fixed mdui-ripple"
     mdui-tooltip="{content: '回到主页'}">
     <i class="mdui-icon material-icons">home</i>
   </a>
-  <!--抽屉式导航栏-->
-  <div class="mdui-drawer mdui-drawer-close" id="left-drawer">
-    <img class="mdui-container" src="./icons/drawer.png">
-    <ul class="mdui-list">
-      <li class="mdui-subheader">Learning makes me happy.</li>
-      <li class="mdui-list-item mdui-ripple">
-        <i class="mdui-list-item-icon mdui-icon material-icons">home</i>
-        <a href="./index.html" class="mdui-list-item-content">主页</a>
-      </li>
-      <li class="mdui-list-item mdui-ripple">
-        <i class="mdui-list-item-icon mdui-icon material-icons">error</i>
-        <a href="./about.html" class="mdui-list-item-content">关于</a>
-      </li>
-      <li class="mdui-list-item mdui-ripple">
-        <i class="mdui-list-item-icon mdui-icon material-icons">help</i>
-        <a href="./help.html" class="mdui-list-item-content">帮助</a>
-      </li>
-    </ul>
+  <!--底部导航栏-->
+  <div class="mdui-bottom-nav mdui-color-white">
+    <a href="./index.html" class="mdui-ripple">
+      <i class="mdui-icon material-icons">home</i>
+      <label>主页</label>
+    </a>
+    <a href="./help.html" class="mdui-ripple">
+      <i class="mdui-icon material-icons">help</i>
+      <label>帮助</label>
+    </a>
+    <a href="./about.html" class="mdui-ripple mdui-bottom-nav-active">
+      <i class="mdui-icon material-icons">error</i>
+      <label>关于</label>
+    </a>
   </div>
   <div class="mdui-container mdui-typo">
     <h2>关于此工具：</h2>
-    <p>此工具由ZD XIAODA（张思源）制作，底层采用HTML+CSS3+JS编写，Windows端采用NW.JS打包。真诚的感谢所有使用到的开源项目。</p>
+    <p>此工具由ZD XIAODA制作，底层采用HTML+CSS3+JS编写，使用到了NODE.JS API，Windows端采用electron打包。真诚的感谢所有使用到的开源项目。</p>
     <h2>使用场景：</h2>
     <p>公司年会抽奖，老师上课点名，派对活跃气氛。。。</p>
-    <h2>版本区别：</h2>
-    <P>Web版需要部署在服务器使用，名单只能服务器管理员修改，适合同一个名单但是多设备使用的用户。（Web版支持Firefox，Microsoft Edge，Google Chrome，Safari等所有主流浏览器）</P>
-    <p>Windows需要Windows 7及以上的版本才能使用，适合同一个设备同一个名单的用户。（如班级点名）</p>
     <h2>使用到的项目：</h2>
-    <p><a href="https://github.com/zdhxiong/mdui"><kbd>mdui：一个基于 Material Design 的前端框架。</kbd></a></p>
-    <p><a href="https://github.com/requirejs/requirejs/"><kbd>requirejs：A file and module loader for
-          JavaScript</kbd></a></p>
-    <p><a href="https://github.com/nwjs/nw.js"><kbd>nw.js：Call all Node.js modules directly from DOM/WebWorker and
-          enable a new way of writing applications with all Web technologies.</kbd></a></p>
-    <p><a href="https://sourceforge.net/projects/nsis/"><kbd>NSIS：一个开放源代码脚本驱动的封装安装档用工具。</kbd></a></p>
-    <p><a href="https://www.npmjs.com/package/iconv-lite"><kbd>iconv-lite：Pure JS character encoding conversion</kbd></a></p>
+    <!--可扩展面板-->
+    <div class="mdui-panel" mdui-panel>
+      <div class="mdui-panel-item">
+        <div class="mdui-panel-item-header">
+          <div class="mdui-panel-item-title">MDUI</div>
+          <i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+        </div>
+        <div class="mdui-panel-item-body">
+          <p>MDUI 是一个基于 Material Design 的前端框架。</p>
+          <div class="mdui-panel-item-actions">
+            <button onclick="mdui_License()" class="mdui-btn mdui-ripple">查看许可证</button>
+            <button onclick="mdui_git()" class="mdui-btn mdui-ripple">打开仓库页面</button>
+          </div>
+        </div>
+      </div>
+      <div class="mdui-panel-item">
+        <div class="mdui-panel-item-header">
+          <div class="mdui-panel-item-title">requirejs</div>
+          <i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+        </div>
+        <div class="mdui-panel-item-body">
+          <p>A file and module loader for JavaScript</p>
+          <div class="mdui-panel-item-actions">
+            <button onclick="requirejs_License()" class="mdui-btn mdui-ripple">查看许可证</button>
+            <button onclick="requirejs_git()" class="mdui-btn mdui-ripple">打开仓库页面</button>
+          </div>
+        </div>
+      </div>
+      <div class="mdui-panel-item">
+        <div class="mdui-panel-item-header">
+          <div class="mdui-panel-item-title">vue</div>
+          <i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+        </div>
+        <div class="mdui-panel-item-body">
+          <p>Vue.js is a progressive, incrementally-adoptable JavaScript framework for building UI on the web.</p>
+          <div class="mdui-panel-item-actions">
+            <button onclick="vue_License()" class="mdui-btn mdui-ripple">查看许可证</button>
+            <button onclick="vue_git()" class="mdui-btn mdui-ripple">打开仓库页面</button>
+          </div>
+        </div>
+      </div>
+      <div class="mdui-panel-item">
+        <div class="mdui-panel-item-header">
+          <div class="mdui-panel-item-title">jQuery</div>
+          <i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+        </div>
+        <div class="mdui-panel-item-body">
+          <p>jQuery JavaScript Library</p>
+          <div class="mdui-panel-item-actions">
+            <button onclick="jQuery_License()" class="mdui-btn mdui-ripple">查看许可证</button>
+            <button onclick="jQuery_git()" class="mdui-btn mdui-ripple">打开仓库页面</button>
+          </div>
+        </div>
+      </div>
+      <div class="mdui-panel-item">
+        <div class="mdui-panel-item-header">
+          <div class="mdui-panel-item-title">electron</div>
+          <i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+        </div>
+        <div class="mdui-panel-item-body">
+          <p>Build cross-platform desktop apps with JavaScript, HTML, and CSS</p>
+          <div class="mdui-panel-item-actions">
+            <button onclick="electron_License()" class="mdui-btn mdui-ripple">查看许可证</button>
+            <button onclick="electron_git()" class="mdui-btn mdui-ripple">打开仓库页面</button>
+          </div>
+        </div>
+      </div>
+      <div class="mdui-panel-item">
+        <div class="mdui-panel-item-header">
+          <div class="mdui-panel-item-title">electron-forge</div>
+          <i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+        </div>
+        <div class="mdui-panel-item-body">
+          <p>A complete tool for creating, publishing, and installing modern Electron applications</p>
+          <div class="mdui-panel-item-actions">
+            <button onclick="electron_forge_License()" class="mdui-btn mdui-ripple">查看许可证</button>
+            <button onclick="electron_forge_git()" class="mdui-btn mdui-ripple">打开仓库页面</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <p>非常感谢！</p>
     <h2>其它使用到的资源：</h2>
     <p>思源黑体 Source Han Sans</p>
     <p>Material Icons</p>
     <p>敲击木鱼音频 许可:CC0 作者:Carlo 来源:耳聆网 https://www.ear0.com/sound/19572</p>
-    <p>所有资源均无版权问题！</p>
   </div>
-  <!--水印-->
-  <div id="watermark">
-    <p>此工具由ZD小达（张思源）制作</p>
-    <p>此工具由ZD小达（张思源）制作</p>
-    <p>此工具由ZD小达（张思源）制作</p>
-    <p>此工具由ZD小达（张思源）制作</p>
-    <p>此工具由ZD小达（张思源）制作</p>
-  </div>
-</body>
 
+</body>
+<script async src="./js/about.js"></script>
 </html>
