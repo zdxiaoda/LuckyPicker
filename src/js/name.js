@@ -79,7 +79,6 @@ function start() {
 					fontWeight: 600,
 				},
 				watch: {
-
 					nameStr: function () {
 						var g = $.trim(this.nameStr),
 							f = [],
@@ -96,7 +95,6 @@ function start() {
 					}
 				},
 				methods: {
-
 					toggleAsk: function () {
 						var b = this;
 						if (this.scrollStatus) {
@@ -127,8 +125,6 @@ function start() {
 							}
 						}, b.speed)
 					},
-
-
 					showDemo: function () {
 						var b = this;
 						this.nameStr = txt.toString();
@@ -139,17 +135,14 @@ function start() {
 						}, 100)
 					}
 				},
-
-
 				mounted: function () {
 					var b = this;
 					this.showDemo();
 					$(document).keydown(function (d) {
 					});
 
-				}
+				},
 			})
 		});
-
 	});
 }

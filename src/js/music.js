@@ -18,6 +18,3 @@ function speaker() {
     const iconv = require('iconv-lite');
     exec(`powershell.exe Add-Type -AssemblyName System.speech; $speak = New-Object System.Speech.Synthesis.SpeechSynthesizer; $speak.Rate = 2; $speak.Speak([Console]::In.ReadLine()); exit`).stdin.end(iconv.encode(document.getElementById('name').innerHTML, 'gbk'));
 }
-//控制台输出当前用户目录
-
-console.log(require('os').homedir());

@@ -35,3 +35,6 @@ function electron_forge_git() {
 function electron_forge_License() {
     shell.openExternal('https://github.com/electron-userland/electron-forge/blob/master/LICENSE')
 }
+function zdxiaoda() {
+    shell.openExternal('https://zhangda.xyz/')
+}
