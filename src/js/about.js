@@ -38,3 +38,6 @@ function electron_forge_License() {
 function zdxiaoda() {
     shell.openExternal('https://zhangda.xyz/')
 }
+function random(){
+    shell.openExternal('https://github.com/zdxd/random-roll-call-system')
+}
