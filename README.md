@@ -40,6 +40,24 @@ Windows 7 及以上的系统均可使用~
 
 ------
 
+### 使用方法：
+
+直接下载已经打包好的发行版~
+
+https://github.com/zdxd/random-roll-call-system/releases
+
+或者自己打包~
+
+`git clone https://github.com/zdxd/random-roll-call-system.git`
+
+`cd random-roll-call-system `
+
+`npm install`
+
+`npm run make`
+
+------
+
 ### 使用场景：
 
 公司年会抽奖，老师上课点名，派对活跃气氛。。。之类的？

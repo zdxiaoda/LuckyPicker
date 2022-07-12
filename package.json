@@ -16,12 +16,15 @@
   "license": "MIT",
   "config": {
     "forge": {
-      "packagerConfig": {},
+      "packagerConfig": {
+        "name": "随机点名系统",
+        "icon": "./src/Class-Circle.ico"
+      },
       "makers": [
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
-            "name": "app"
+            "name": "随机点名系统"
           }
         },
         {
