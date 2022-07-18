@@ -32,8 +32,9 @@
           "name": "@electron-forge/maker-squirrel",
           "config": {
             "name": "随机点名系统",
-            "icon": "./src/Class-Circle.ico",
-            "setupIcon": "./src/Class-Circle.ico",
+            "icon": "./src/Class-Circle",
+            "certificateFile": "./certs/zd-xiaoda-studio.pfx",
+            "certificatePassword": "T%r*j%D&UXgFL@#V@$t!r6",
             "asar": true,
             "appCopyright": "zd小达",
             "win32metadata": {
