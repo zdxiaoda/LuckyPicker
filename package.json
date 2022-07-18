@@ -1,7 +1,7 @@
 {
   "name": "random-roll-call-system",
   "productName": "random-roll-call-system",
-  "version": "6.0.0",
+  "version": "5.99",
   "description": "一个随机点名系统~",
   "main": "src/index.js",
   "scripts": {
@@ -12,20 +12,33 @@
     "lint": "echo \"No linting configured\""
   },
   "keywords": [],
-  "author": "16386",
+  "author": "zd小达",
   "license": "MIT",
   "config": {
     "forge": {
       "packagerConfig": {
         "name": "随机点名系统",
-        "icon": "./src/Class-Circle.ico"
+        "appVersion": "5.99",
+        "appCopyright": "zd小达",
+        "icon": "/src/Class-Circle.ico",
+        "win32metadata": {
+          "ProductName": "随机点名系统",
+          "CompanyName": "zd小达",
+          "FileDescription": "一个随机点名系统~"
+        }
       },
       "makers": [
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
             "name": "随机点名系统",
-            "icon": "./src/Class-Circle.ico"
+        "appVersion": "5.99",
+        "appCopyright": "zd小达",
+        "icon": "/src/Class-Circle.ico",
+        "win32metadata": {
+          "ProductName": "随机点名系统",
+          "CompanyName": "zd小达",
+          "FileDescription": "一个随机点名系统~"
           }
         },
         {
