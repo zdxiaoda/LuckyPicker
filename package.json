@@ -18,14 +18,9 @@
     "forge": {
       "packagerConfig": {
         "name": "随机点名系统",
-<<<<<<< HEAD
         "icon": "./src/Class-Circle",
         "appCopyright": "zd小达",
         "asar": true,
-=======
-        "icon": "./src/Class-Circle.ico",
-        "appCopyright": "zd小达",
->>>>>>> 6c00ef8cba39afb732eec7bff8faa68005e083a1
         "win32metadata": {
           "ProductName": "随机点名系统",
           "CompanyName": "zd小达",
@@ -37,12 +32,8 @@
           "name": "@electron-forge/maker-squirrel",
           "config": {
             "name": "随机点名系统",
-<<<<<<< HEAD
             "icon": "./src/Class-Circle",
             "asar": true,
-=======
-            "icon": "./src/Class-Circle.ico",
->>>>>>> 6c00ef8cba39afb732eec7bff8faa68005e083a1
             "appCopyright": "zd小达",
             "win32metadata": {
               "ProductName": "随机点名系统",
