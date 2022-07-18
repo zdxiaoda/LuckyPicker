@@ -29,12 +29,6 @@
           }
         },
         {
-  name: '@electron-forge/maker-appx',
-  config: {
-    publisher: 'zdxiaoda'
-  }
-},
-        {
           "name": "@electron-forge/maker-zip",
           "platforms": [
             "darwin"
