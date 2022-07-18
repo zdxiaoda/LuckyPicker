@@ -17,4 +17,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: 随机点名系统——快速构建 # 上传后的名字
-        path: out/make/ # 将 packs 目录进行上传
+        path: out/make/squirrel.windows/x64/*.exe # 将 exe 文件进行上传
