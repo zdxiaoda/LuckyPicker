@@ -1,7 +1,7 @@
 {
   "name": "random-roll-call-system",
   "productName": "random-roll-call-system",
-  "version": "5.99",
+  "version": "5.9.9",
   "description": "一个随机点名系统~",
   "main": "src/index.js",
   "scripts": {
@@ -12,7 +12,7 @@
     "lint": "echo \"No linting configured\""
   },
   "keywords": [],
-  "author": "16386",
+  "author": "zd小达",
   "license": "MIT",
   "config": {
     "forge": {
