@@ -45,6 +45,17 @@
           }
         },
         {
+          "name": "@electron-forge/maker-appx",
+          "config": {
+            "name": "随机点名系统",
+            "icon": "./src/Class-Circle",
+            "publisher": "CN=zd小达",
+            "asar": true,
+            "devCert": "./certs/zd-xiaoda-studio.pfx",
+            "certPass": "T%r*j%D&UXgFL@#V@$t!r6"
+          }
+        },
+        {
           "name": "@electron-forge/maker-zip",
           "platforms": [
             "darwin"
