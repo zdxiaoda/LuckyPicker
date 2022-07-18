@@ -24,9 +24,16 @@
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
-            "name": "随机点名系统"
+            "name": "随机点名系统",
+            "icon": "./src/Class-Circle.ico"
           }
         },
+        {
+  name: '@electron-forge/maker-appx',
+  config: {
+    publisher: 'zdxiaoda'
+  }
+},
         {
           "name": "@electron-forge/maker-zip",
           "platforms": [
