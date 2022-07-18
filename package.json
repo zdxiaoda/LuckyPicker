@@ -12,14 +12,15 @@
     "lint": "echo \"No linting configured\""
   },
   "keywords": [],
-  "author": "zd小达",
+  "author": "16386",
   "license": "MIT",
   "config": {
     "forge": {
       "packagerConfig": {
         "name": "随机点名系统",
-        "icon": "./src/Class-Circle.ico",
+        "icon": "./src/Class-Circle",
         "appCopyright": "zd小达",
+        "asar": true,
         "win32metadata": {
           "ProductName": "随机点名系统",
           "CompanyName": "zd小达",
@@ -31,7 +32,8 @@
           "name": "@electron-forge/maker-squirrel",
           "config": {
             "name": "随机点名系统",
-            "icon": "./src/Class-Circle.ico",
+            "icon": "./src/Class-Circle",
+            "asar": true,
             "appCopyright": "zd小达",
             "win32metadata": {
               "ProductName": "随机点名系统",
@@ -61,7 +63,9 @@
     "asar": "^3.1.0",
     "electron-squirrel-startup": "^1.0.0",
     "jquery": "^3.6.0",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "iconv-lite" : "^0.6.3",
+    "child_process" : "^1.0.2"
   },
   "devDependencies": {
     "@electron-forge/cli": "^6.0.0-beta.64",
@@ -69,6 +73,8 @@
     "@electron-forge/maker-rpm": "^6.0.0-beta.64",
     "@electron-forge/maker-squirrel": "^6.0.0-beta.64",
     "@electron-forge/maker-zip": "^6.0.0-beta.64",
-    "electron": "19.0.8"
+    "electron": "19.0.8",
+    "iconv-lite" : "^0.6.3",
+    "child_process" : "^1.0.2"
   }
 }
