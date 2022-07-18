@@ -12,15 +12,14 @@
     "lint": "echo \"No linting configured\""
   },
   "keywords": [],
-  "author": "zd小达",
+  "author": "16386",
   "license": "MIT",
   "config": {
     "forge": {
       "packagerConfig": {
         "name": "随机点名系统",
-        "appVersion": "5.99",
+        "icon": "./src/Class-Circle.ico",
         "appCopyright": "zd小达",
-        "icon": "/src/Class-Circle.ico",
         "win32metadata": {
           "ProductName": "随机点名系统",
           "CompanyName": "zd小达",
@@ -32,13 +31,13 @@
           "name": "@electron-forge/maker-squirrel",
           "config": {
             "name": "随机点名系统",
-        "appVersion": "5.99",
-        "appCopyright": "zd小达",
-        "icon": "/src/Class-Circle.ico",
-        "win32metadata": {
-          "ProductName": "随机点名系统",
-          "CompanyName": "zd小达",
-          "FileDescription": "一个随机点名系统~"
+            "icon": "./src/Class-Circle.ico",
+            "appCopyright": "zd小达",
+            "win32metadata": {
+              "ProductName": "随机点名系统",
+              "CompanyName": "zd小达",
+              "FileDescription": "一个随机点名系统~"
+            }
           }
         },
         {
