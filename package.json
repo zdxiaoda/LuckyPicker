@@ -51,7 +51,7 @@
         {
           "name": "@electron-forge/maker-deb",
           "config": {
-            "name": "随机点名系统",
+            "name": "random-roll-call-system",
             "icon": "./src/Class-Circle",
             "asar": true,
             "maintainer": "zd小达",
