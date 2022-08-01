@@ -1,6 +1,15 @@
-/**判断文件夹是否存在 */
+//判断为Windows还是Linux
+if (navigator.appVersion.indexOf("Win") != -1) {
+	console.log("Windows");
+	var listaddress = '/AppData/Local/random-roll-call-system';
+}
+if (navigator.appVersion.indexOf("Linux") != -1) {
+	console.log("Linux");
+	var listaddress = '/random-roll-call-system';
+}
+/**Windows 判断文件夹是否存在 */
 console.log('判断文件夹是否存在')
-var folder = require('os').homedir() + '/AppData/Local/random-roll-call-system';
+var folder = require('os').homedir() + listaddress;
 var fs = require('fs');
 fs.access(folder, fs.constants.F_OK, (err) => {
 	console.log(`${folder} ${err ? '不存在' : '存在'}`);
@@ -8,7 +17,7 @@ fs.access(folder, fs.constants.F_OK, (err) => {
 		console.log("开始生成")
 		//创建文件夹
 		var fs = require('fs')
-		fs.mkdirSync(require('os').homedir() + '/AppData/Local/random-roll-call-system');
+		fs.mkdirSync(require('os').homedir() + listaddress);
 
 	} else {
 		console.log("判断结束")
@@ -17,7 +26,7 @@ fs.access(folder, fs.constants.F_OK, (err) => {
 });
 /**判断并自动生成list.txt */
 console.log('判断list是否存在')
-var file = require('os').homedir() + '/AppData/Local/random-roll-call-system/list.txt';
+var file = require('os').homedir() + listaddress + '/list.txt';
 var fs = require('fs');
 fs.access(file, fs.constants.F_OK, (err) => {
 	console.log(`${file} ${err ? '不存在' : '存在'}`);
@@ -27,7 +36,7 @@ fs.access(file, fs.constants.F_OK, (err) => {
 		//创建文件
 		function createList() {
 			const content = decodeURIComponent("%E8%AF%B7%E4%BF%AE%E6%94%B9%E9%BB%98%E8%AE%A4%E5%90%8D%E5%8D%95%0A%E5%88%98%E4%B8%80%0A%E9%99%88%E4%BA%8C%0A%E5%BC%A0%E4%B8%89%0A%E6%9D%8E%E5%9B%9B%0A%E7%8E%8B%E4%BA%94%0A%E8%B5%B5%E5%85%AD%0A%E5%AD%99%E4%B8%83%0A%E5%91%A8%E5%85%AB%0A%E5%90%B4%E4%B9%9D%0A%E9%83%91%E5%8D%81");
-			fs.writeFile(require('os').homedir() + '/AppData/Local/random-roll-call-system/list.txt', content, err => {
+			fs.writeFile(require('os').homedir() + listaddress + '/list.txt', content, err => {
 				if (err) {
 					console.error(err)
 					return
@@ -48,7 +57,7 @@ fs.access(file, fs.constants.F_OK, (err) => {
 function start() {
 	/**读取TXT */
 	// 读取上一级目录文件
-	var path = (require('os').homedir() + '/AppData/Local/random-roll-call-system/list.txt');
+	var path = (require('os').homedir() + listaddress + '/list.txt');
 
 	// 使用Node.js的API读取文件
 	var fs = require('fs');
