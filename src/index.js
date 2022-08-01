@@ -13,7 +13,7 @@ const createWindow = () => {
     frame: false,
     width: 1120,
     height: 630,
-    icon: ('./src/Class-Circle.png'),
+    icon: path.join(__dirname, './icons/Class-Circle.png'), 
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
       nodeIntegration: true,

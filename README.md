@@ -6,7 +6,7 @@
 
 ### 关于此工具：
 
-此工具由 **[zd小达](https://zhangda.xyz/)** 制作~底层采用HTML+CSS3+JS编写，使用到了NODE.JS API，Windows端采用electron打包。真诚的感谢所有使用到的开源项目🧎**🧎**🧎。
+此工具由 **[zd小达](https://zhangda.xyz/)** 制作~底层采用HTML+CSS3+JS编写，使用到了NODE.JS API，采用electron打包，支持Windows和Linux系统。真诚的感谢所有使用到的开源项目🧎**🧎**🧎。
 
 ------
 
