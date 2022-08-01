@@ -52,7 +52,7 @@
           "name": "@electron-forge/maker-deb",
           "config": {
             "name": "random-roll-call-system",
-            "icon": "./src/Class-Circle",
+            "icon": "./src/Class-Circle.png",
             "asar": true,
             "maintainer": "zd小达",
             "homepage": "https://zhangda.xyz"
