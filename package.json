@@ -33,8 +33,6 @@
           "config": {
             "name": "随机点名系统",
             "icon": "./src/Class-Circle",
-            "certificateFile": "./certs/zd-xiaoda-studio.pfx",
-            "certificatePassword": "T%r*j%D&UXgFL@#V@$t!r6",
             "asar": true,
             "appCopyright": "zd小达",
             "win32metadata": {
