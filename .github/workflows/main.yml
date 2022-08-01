@@ -1,5 +1,4 @@
-
-name: Build Pack
+name: Windows 打包
 on:
   push:
     branches:
@@ -9,13 +8,12 @@ jobs:
     runs-on: windows-latest # 在 windows 系统中运行
     steps:
     - uses: actions/checkout@v2 # 下载仓库代码到工作流机器中
-    - name: Install and Pack # 安装依赖并且进行构建
+    - name: 安装依赖并且进行构建 # 安装依赖并且进行构建
       run: |
         npm install
         npm run make
-    - name: Upload  file # 将构建产物进行上传
+    - name: 将构建产物进行上传  file # 将构建产物进行上传
       uses: actions/upload-artifact@v2
       with:
-        name: 随机点名系统——快速构建 # 上传后的名字
-        path: out/make/* # 将 exe 文件进行上传
-   
+        name: 随机点名系统_快速构建_Windows_X64 # 上传后的名字
+        path: out/make/squirrel.windows/x64/*.exe # 将 exe 文件进行上传
