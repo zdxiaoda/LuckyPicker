@@ -5,7 +5,7 @@ if (navigator.appVersion.indexOf("Win") != -1) {
 }
 if (navigator.appVersion.indexOf("Linux") != -1) {
 	console.log("Linux");
-	var listaddress = '/random-roll-call-system';
+	var listaddress = '/.random-roll-call-system';
 }
 /**Windows 判断文件夹是否存在 */
 console.log('判断文件夹是否存在')

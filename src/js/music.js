@@ -14,7 +14,7 @@ if (navigator.appVersion.indexOf("Win") != -1) {
 }
 if (navigator.appVersion.indexOf("Linux") != -1) {
 	console.log("Linux");
-	var listaddress = '/random-roll-call-system';
+	var listaddress = '/.random-roll-call-system';
 }
 function edittxt() {
     const { shell } = require('electron')
@@ -31,20 +31,10 @@ function speaker() {
     }
     if (navigator.appVersion.indexOf("Linux") != -1) {
         console.log("判断为Linux，不可以文字转语音");
-        mdui.dialog({
-            title: '提示',
-            content: 'Linux用户暂时不支持该功能',
-            buttons: [
-              {
-                text: '取消'
-              },
-              {
-                text: '确认',
-                onClick: function(inst){
-                  mdui.alert('点击确认按钮的回调');
-                }
-              }
-            ]
-          });
+          new Notification("非常抱歉！", {
+            body: "Linux系统暂时不支持该功能！",
+          }).onclick = () => {
+            console.log("理解万岁");
+          };
     }
 }
