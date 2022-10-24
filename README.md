@@ -44,11 +44,11 @@ Windows 7 及以上的系统均可使用~
 
 直接下载已经打包好的发行版~
 
-https://github.com/zdxd/random-roll-call-system/releases
+https://github.com/zdxiaoda/random-roll-call-system/releases
 
 或者自己打包~
 
-`git clone https://github.com/zdxd/random-roll-call-system.git`
+`git clone https://github.com/zdxiaoda/random-roll-call-system.git`
 
 `cd random-roll-call-system `
 
