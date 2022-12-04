@@ -16,4 +16,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: 随机点名系统_快速构建_Windows_X64 # 上传后的名字
-        path: out/make/* # 将 文件进行上传
+        path: out/* # 将 文件进行上传
