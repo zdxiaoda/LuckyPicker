@@ -61,11 +61,6 @@
         {
           "name": "@electron-forge/maker-rpm",
           "config": {
-            "name": "random-roll-call-system",
-            "icon": "src/icons/Class-Circle.png",
-            "asar": true,
-            "maintainer": "zd小达",
-            "homepage": "https://zhangda.xyz"
           }
         }
       ]
