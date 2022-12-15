@@ -5,7 +5,7 @@ on:
       - master # master 分支 push 时触发工作流
 jobs:
   pack: # 打包任务
-    runs-on: ubuntu-latest # 在 Ubuntu 系统中运行
+    runs-on: ubuntu-22.04 # 在 Ubuntu 系统中运行
     steps:
     - uses: actions/checkout@v2 # 下载仓库代码到工作流机器中
     - name: 安装依赖并且进行构建 # 安装依赖并且进行构建
