@@ -17,6 +17,7 @@
   "config": {
     "forge": {
       "packagerConfig": {
+        "executableName" : "随机点名系统",
         "name": "随机点名系统",
         "icon": "src/icons/Class-Circle",
         "appCopyright": "zd小达",
