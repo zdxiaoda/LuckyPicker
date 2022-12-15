@@ -22,7 +22,7 @@
         "appCopyright": "zd小达",
         "asar": true,
         "win32metadata": {
-          "ProductName": "随机点名系统",
+          "ProductName": "random-roll-call-system",
           "CompanyName": "zd小达",
           "FileDescription": "一个随机点名系统~"
         }
@@ -36,7 +36,7 @@
             "asar": true,
             "appCopyright": "zd小达",
             "win32metadata": {
-              "ProductName": "随机点名系统",
+              "ProductName": "random-roll-call-system",
               "CompanyName": "zd小达",
               "icon": "./src/icons/Class-Circle",
               "FileDescription": "一个随机点名系统~"
