@@ -1,5 +1,5 @@
 {
-  "name": "随机点名系统",
+  "name": "random-roll-call-system",
   "version": "v6.0.0-20221215",
   "icon": "./src/icons/Class-Circle",
   "description": "一个随机点名系统~",
