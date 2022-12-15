@@ -1,6 +1,5 @@
 const { BrowserWindow, Menu, app, shell, dialog } = require('electron');
 const path = require('path');
-
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 // eslint-disable-next-line global-require
 if (require('electron-squirrel-startup')) {
@@ -13,7 +12,7 @@ const createWindow = () => {
     frame: false,
     width: 1120,
     height: 630,
-    icon: path.join(__dirname, './icons/Class-Circle.png'), 
+    icon: path.join(__dirname, './icons/Class-Circle.png'),
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
       nodeIntegration: true,
@@ -21,7 +20,7 @@ const createWindow = () => {
       enableRemoteModule: true
     },
   });
-  
+
   // and load the index.html of the app.
   mainWindow.loadFile(path.join(__dirname, 'index.html'));
 
