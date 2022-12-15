@@ -20,7 +20,7 @@
 
 使用 MDUI 框架，再怎么写也不会丑到哪里去~
 
-![一个界面展示图片](https://raw.githubusercontent.com/zdxd/random-roll-call-system/master/src/help/homepage.png)
+![一个界面展示图片](https://raw.githubusercontent.com/zdxiaoda/random-roll-call-system/master/src/help/homepage.png)
 
 #### 不随便拉屎😎
 
