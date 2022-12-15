@@ -38,6 +38,7 @@
             "win32metadata": {
               "ProductName": "随机点名系统",
               "CompanyName": "zd小达",
+              "icon": "./src/icons/Class-Circle",
               "FileDescription": "一个随机点名系统~"
             }
           }
