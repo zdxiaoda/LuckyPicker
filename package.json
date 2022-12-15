@@ -1,6 +1,6 @@
 {
   "name": "随机点名系统",
-  "version": "6.0",
+  "version": "v6.0.0-20221215",
   "icon": "./src/icons/Class-Circle",
   "description": "一个随机点名系统~",
   "main": "src/index.js",
