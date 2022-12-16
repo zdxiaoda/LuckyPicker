@@ -22,7 +22,7 @@ request.onload = function () {/*XHR对象获取到返回信息后执行*/
             console.log('已是最新版本');
         }
     }
-    else{
+    else {
         console.log('连接服务器失败');
     }
 }

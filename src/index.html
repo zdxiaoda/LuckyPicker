@@ -51,20 +51,18 @@
     <!--BGM-->
     <audio id="MUYU" src="muyu.mp3" autoplay loop></audio>
     <!--开始按钮-->
-    <button id="start" @click="toggleAsk();music()" class="mdui-color-blue-800 mdui-fab mdui-fab-fixed mdui-ripple"
+    <button id="start" @click="switch_call_status();music()" class="mdui-color-blue-800 mdui-fab mdui-fab-fixed mdui-ripple"
       mdui-tooltip="{content: '开始/停止点名'}">
       <i class="mdui-icon material-icons">repeat</i>
     </button>
     <!--END 按钮-->
     <br> <br> <br> <br> <br>
     <div class="mdui-container" id="case">
-      <p id="name" v-text="currentName">加载中。。。</p>
+      <p id="name" v-text="the_show_name">加载中。。。</p>
     </div>
     <!--彩色字 -->
     <div id="colorful">
-
       <p id="colorful-text">幸运名单</p>
-
     </div>
     <br>
     <br>
@@ -75,7 +73,7 @@
     </div>
     <!--大·点名按钮-->
     <div id="BIG-BUTTON">
-      <button @click="toggleAsk();music()" class="mdui-color-blue-800 mdui-btn">开始/停止点名</button>
+      <button @click="switch_call_status();music()" class="mdui-color-blue-800 mdui-btn">开始/停止点名</button>
     </div>
   </main>
   <!--底部导航栏-->
