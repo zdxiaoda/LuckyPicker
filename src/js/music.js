@@ -9,12 +9,12 @@ function music() {
 //打开名单
 //判断为Windows还是Linux
 if (navigator.appVersion.indexOf("Win") != -1) {
-	console.log("Windows");
-	var listaddress = '/AppData/Local/random-roll-call-system';
+    console.log("Windows");
+    var listaddress = '/AppData/Local/random-roll-call-system';
 }
 if (navigator.appVersion.indexOf("Linux") != -1) {
-	console.log("Linux");
-	var listaddress = '/.random-roll-call-system';
+    console.log("Linux");
+    var listaddress = '/.random-roll-call-system';
 }
 function edittxt() {
     const { shell } = require('electron')
@@ -31,10 +31,21 @@ function speaker() {
     }
     if (navigator.appVersion.indexOf("Linux") != -1) {
         console.log("判断为Linux，不可以文字转语音");
-          new Notification("非常抱歉！", {
+        new Notification("非常抱歉！", {
             body: "Linux系统暂时不支持该功能！",
-          }).onclick = () => {
+        }).onclick = () => {
             console.log("理解万岁");
-          };
+        };
     }
+}
+//通过子窗口打开帮助/关于
+// 打开帮助.
+function open_help() {
+    // 在主进程中.
+    window.open('./help.html', '_blank', 'top=500,left=200,frame=false')
+}
+// 打开关于.
+function open_about() {
+    // 在主进程中.
+    window.open('./about.html', '_blank', 'top=500,left=200,frame=false')
 }

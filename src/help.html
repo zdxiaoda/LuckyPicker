@@ -16,46 +16,15 @@
 
 <body class="mdui-bottom-nav-fixed">
   <!--应用栏-->
-  <div class="mdui-appbar">
+  <div class="mdui-appbar" style="-webkit-app-region: drag">
     <div class="mdui-toolbar mdui-color-light-green-800">
       <a class="mdui-typo-headline">随机点名系统</a>
       <a class="mdui-typo-title">帮助</a>
       <div class="mdui-toolbar-spacer"></div>
-      <a mdui-tooltip="{content: '刷新'}" class="mdui-btn mdui-btn-icon" onclick="javascript:location.reload();">
-        <i class="mdui-icon material-icons">autorenew</i>
-      </a>
-      <a mdui-tooltip="{content: '进入全屏'}" onclick="enterFullScreen(document.documentElement)" href="javascript:;"
-        class="mdui-btn mdui-btn-icon">
-        <i class="mdui-icon material-icons">fullscreen</i>
-      </a>
-      <a mdui-tooltip="{content: '退出全屏'}" onclick="exitFullScreen(document.documentElement)" href="javascript:;"
-        class="mdui-btn mdui-btn-icon">
-        <i class="mdui-icon material-icons">fullscreen_exit</i>
-      </a>
-      <a mdui-tooltip="{content: '关闭'}" onclick="window.close();" class="mdui-btn mdui-btn-icon">
+      <a mdui-tooltip="{content: '关闭'}" style="-webkit-app-region: no-drag" onclick="window.close();" class="mdui-btn mdui-btn-icon">
         <i class="mdui-icon material-icons">close</i>
       </a>
     </div>
-  </div>
-  <!--主页按钮-->
-  <a id="start" href="./index.html" class="mdui-color-blue-800 mdui-fab mdui-fab-fixed mdui-ripple"
-    mdui-tooltip="{content: '回到主页'}">
-    <i class="mdui-icon material-icons">home</i>
-  </a>
-  <!--底部导航栏-->
-  <div class="mdui-bottom-nav mdui-color-white">
-    <a href="./index.html" class="mdui-ripple">
-      <i class="mdui-icon material-icons">home</i>
-      <label>主页</label>
-    </a>
-    <a href="./help.html" class="mdui-ripple mdui-bottom-nav-active">
-      <i class="mdui-icon material-icons">help</i>
-      <label>帮助</label>
-    </a>
-    <a href="./about.html" class="mdui-ripple">
-      <i class="mdui-icon material-icons">error</i>
-      <label>关于</label>
-    </a>
   </div>
   <div class="mdui-container mdui-typo">
     <h2>功能介绍：</h2>

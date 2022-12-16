@@ -1,43 +1,42 @@
-const { shell } = require('electron')
 function mdui_git() {
-    shell.openExternal('https://github.com/zdhxiong/mdui')
+    window.open('https://github.com/zdhxiong/mdui')
 }
 function mdui_License() {
-    shell.openExternal('https://github.com/zdhxiong/mdui/blob/v1/LICENSE')
+    window.open('https://github.com/zdhxiong/mdui/blob/v1/LICENSE')
 }
 function requirejs_git() {
-    shell.openExternal('https://github.com/requirejs/requirejs/')
+    window.open('https://github.com/requirejs/requirejs/')
 }
 function requirejs_License() {
-    shell.openExternal('https://github.com/requirejs/requirejs/blob/master/LICENSE')
+    window.open('https://github.com/requirejs/requirejs/blob/master/LICENSE')
 }
 function vue_git() {
-    shell.openExternal('https://github.com/vuejs/vue')
+    window.open('https://github.com/vuejs/vue')
 }
 function vue_License() {
-    shell.openExternal('https://github.com/vuejs/vue/blob/main/LICENSE')
+    window.open('https://github.com/vuejs/vue/blob/main/LICENSE')
 }
 function jQuery_git() {
-    shell.openExternal('https://github.com/jquery/jquery')
+    window.open('https://github.com/jquery/jquery')
 }
 function jQuery_License() {
-    shell.openExternal('https://github.com/jquery/jquery/blob/main/LICENSE.txt')
+    window.open('https://github.com/jquery/jquery/blob/main/LICENSE.txt')
 }
 function electron_git() {
-    shell.openExternal('https://github.com/electron/electron')
+    window.open('https://github.com/electron/electron')
 }
 function electron_License() {
-    shell.openExternal('https://github.com/electron/electron/blob/main/LICENSE')
+    window.open('https://github.com/electron/electron/blob/main/LICENSE')
 }
 function electron_forge_git() {
-    shell.openExternal('https://github.com/electron-userland/electron-forge')
+    window.open('https://github.com/electron-userland/electron-forge')
 }
 function electron_forge_License() {
-    shell.openExternal('https://github.com/electron-userland/electron-forge/blob/master/LICENSE')
+    window.open('https://github.com/electron-userland/electron-forge/blob/master/LICENSE')
 }
 function zdxiaoda() {
-    shell.openExternal('https://zhangda.xyz/')
+    window.open('https://zhangda.xyz/', '_blank', 'top=500,left=200,frame=on')
 }
 function random(){
-    shell.openExternal('https://github.com/zdxd/random-roll-call-system')
+    window.open('https://github.com/zdxiaoda/random-roll-call-system')
 }
