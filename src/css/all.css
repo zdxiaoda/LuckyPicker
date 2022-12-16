@@ -7,3 +7,7 @@
     position: absolute;
     top: 75%;
 }
+/*隐藏滚动条**/
+body::-webkit-scrollbar {
+    display: none;
+}
