@@ -1,6 +1,6 @@
 {
   "name": "random-roll-call-system",
-  "version": "5.9.9",
+  "version": "6.0.0",
   "icon": "./src/icons/Class-Circle",
   "description": "一个随机点名系统~",
   "main": "src/index.js",
