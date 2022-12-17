@@ -23,20 +23,11 @@ function edittxt() {
 
 }
 function speaker() {
-    const { exec } = require('child_process');
-    const iconv = require('iconv-lite');
-    if (navigator.appVersion.indexOf("Win") != -1) {
-        console.log("判断为Windows，可以文字转语音");
-        exec(`powershell.exe Add-Type -AssemblyName System.speech; $speak = New-Object System.Speech.Synthesis.SpeechSynthesizer; $speak.Rate = 2; $speak.Speak([Console]::In.ReadLine()); exit`).stdin.end(iconv.encode(document.getElementById('name').innerHTML, 'gbk'));
+    function speak(sentence) {
+        const utterance = new SpeechSynthesisUtterance(sentence)
+        window.speechSynthesis.speak(utterance)
     }
-    if (navigator.appVersion.indexOf("Linux") != -1) {
-        console.log("判断为Linux，不可以文字转语音");
-        new Notification("非常抱歉！", {
-            body: "Linux系统暂时不支持该功能！",
-        }).onclick = () => {
-            console.log("理解万岁");
-        };
-    }
+    speak(document.getElementById('name').innerHTML, 'utf-8')
 }
 //通过子窗口打开帮助/关于
 // 打开帮助.
