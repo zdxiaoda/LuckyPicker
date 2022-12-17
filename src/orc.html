@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+    <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+</head>
+
+<body>
+    <script>
+        //打开名单
+        //判断为Windows还是Linux
+        if (navigator.appVersion.indexOf("Win") != -1) {
+            console.log("Windows");
+            var listaddress = '/AppData/Roaming/random-roll-call-system';
+        }
+        if (navigator.appVersion.indexOf("Linux") != -1) {
+            console.log("Linux");
+            var listaddress = '/.random-roll-call-system';
+        }
+        const { shell } = require('electron')
+        shell.openPath(require('os').homedir() + listaddress + '/list.txt')
+        console.log('准备打开名单！')
+
+
+        const { createWorker } = require('tesseract.js');
+        const path = require('path');
+
+        const worker = createWorker({
+            cachePath: path.join(__dirname, 'lang-data'),
+            logger: m => console.log(m),
+        });
+
+        (async () => {
+            await worker.load();
+            await worker.loadLanguage('eng');
+            await worker.initialize('eng');
+            const { data: { text } } = await worker.recognize(path.join(__dirname, 'images', 'testocr.png'));
+            console.log(text);
+            await worker.terminate();
+        })();
+    </script>
+</body>
+
+</html>

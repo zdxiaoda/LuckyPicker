@@ -40,6 +40,8 @@
           onclick="exitFullScreen(document.documentElement)" href="javascript:;" class="mdui-btn mdui-btn-icon">
           <i class="mdui-icon material-icons">fullscreen_exit</i>
         </a>
+        <button style="-webkit-app-region: no-drag" id="start-orc" mdui-tooltip="{content: 'ORC识别名单'}" @click="start_orc()"
+          class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">photo_camera</i></button>
         <button style="-webkit-app-region: no-drag" id="edittxt" mdui-tooltip="{content: '编辑名单'}" @click="edittxt()"
           class="mdui-btn mdui-btn-icon"><i id="edit-icon" class="mdui-icon material-icons">edit</i></button>
         <a style="-webkit-app-region: no-drag" mdui-tooltip="{content: '关闭'}" onclick="window.close();"

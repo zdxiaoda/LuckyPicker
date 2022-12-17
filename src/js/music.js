@@ -38,5 +38,9 @@ function open_help() {
 // 打开关于.
 function open_about() {
     // 在主进程中.
-    window.open('./about.html', '_blank', 'top=500,left=200,frame=false')
+    window.open('./about.html', '_blank', 'top=500,left=200,frame=false,nodeIntegration=true,contextIsolation=false,enableRemoteModule=true')
+}
+function start_orc() {
+    // 在主进程中.
+    window.open('./orc.html', '_blank', 'top=500,left=200,frame=false,nodeIntegration=true,contextIsolation=false,enableRemoteModule=true')
 }

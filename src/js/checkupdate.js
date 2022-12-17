@@ -17,7 +17,7 @@ request.onload = function () {/*XHR对象获取到返回信息后执行*/
         //比较版本号
         if (local_version.version < cloud_version.latest_version) {
             console.log('有新版本，即将弹出窗口。。。');
-            window.open('./showupdate.html', '_blank', 'width=521,height=325,frame=false')
+            window.open('./showupdate.html', '_blank', 'width=521,height=325,frame=false,nodeIntegration=true,contextIsolation=false,enableRemoteModule=true')
         } else {
             console.log('已是最新版本');
         }
