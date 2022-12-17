@@ -10,7 +10,7 @@ function music() {
 //判断为Windows还是Linux
 if (navigator.appVersion.indexOf("Win") != -1) {
     console.log("Windows");
-    var listaddress = '/AppData/Local/random-roll-call-system';
+    var listaddress = '/AppData/Roaming/random-roll-call-system';
 }
 if (navigator.appVersion.indexOf("Linux") != -1) {
     console.log("Linux");
