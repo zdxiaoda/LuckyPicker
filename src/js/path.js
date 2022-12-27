@@ -10,7 +10,7 @@ requirejs.config({
   paths: {
     screenfull: "./js/screenfull",
     vue: "./js/vue.min",
-    jquery: "./js/jquery-3.6.0.min",
+    jquery: "./js/jquery-3.6.3.min",
     name: "./js/name",
     music: "./js/music",
     mdui: "./js/mdui.min",
