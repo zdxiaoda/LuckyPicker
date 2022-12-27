@@ -2,9 +2,9 @@ requirejs.config({
   config: {
     text: {
       useXhr: function (c, d, b, a) {
-        return true
-      }
-    }
+        return true;
+      },
+    },
   },
 
   paths: {
@@ -13,9 +13,11 @@ requirejs.config({
     jquery: "./js/jquery-3.6.0.min",
     name: "./js/name",
     music: "./js/music",
-    mdui: './js/mdui.min',
-    update : './js/checkupdate',
+    mdui: "./js/mdui.min",
+    update: "./js/checkupdate",
   },
-
 });
-requirejs(["update","music", "screenfull", "name", "jquery", "mdui", 'vue'], function (dependency) { });
+requirejs(
+  ["update", "music", "screenfull", "name", "jquery", "mdui", "vue"],
+  function (dependency) {}
+);

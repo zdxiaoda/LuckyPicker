@@ -1,65 +1,79 @@
 #case {
-    border: 5px solid #8d8d8d;
-    padding: 5px;
-    background: #f0eded;
-    width: auto;
-    border-radius: 30px;
-    position: relative;
-    top: 10%;
+  border: 5px solid #8d8d8d;
+  padding: 5px;
+  background: #f0eded;
+  width: auto;
+  border-radius: 30px;
+  position: relative;
+  top: 10%;
 }
 
 #name {
-    font-family: "LXGWWenKaiLite";
-    font-size: 150px;
-    margin: auto;
-    text-align: center;
+  font-family: "LXGWWenKaiLite";
+  font-size: 150px;
+  margin: auto;
+  text-align: center;
 }
 
-
 #colorful {
-    font-size: 30px;
-    text-align: center;
-    position: absolute;
-    left: 50%;
-    top: 14%;
-    transform: translate(-50%, -50%);
+  font-size: 30px;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 14%;
+  transform: translate(-50%, -50%);
 }
 
 @keyframes move {
-    0% {
-        background-position: 0 0;
-    }
+  0% {
+    background-position: 0 0;
+  }
 
-    100% {
-        background-position: -300px 0;
-    }
+  100% {
+    background-position: -300px 0;
+  }
 }
 
 #colorful-text {
-    background-image: linear-gradient(to right, red, orange, yellow, green, yellow, orange, red, orange, yellow, green, yellow, orange, red);
-    background-clip: text;
-    -webkit-background-clip: text;
-    animation: move 5s infinite;
-    color: transparent;
-    width: 300px;
+  background-image: linear-gradient(
+    to right,
+    red,
+    orange,
+    yellow,
+    green,
+    yellow,
+    orange,
+    red,
+    orange,
+    yellow,
+    green,
+    yellow,
+    orange,
+    red
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: move 5s infinite;
+  color: transparent;
+  width: 300px;
 }
 
 #set-fonts {
-    text-align: center;
-    position: relative;
-    left: 50%;
-    top: 5%;
-    transform: translate(-50%, -50%);
+  text-align: center;
+  position: relative;
+  left: 50%;
+  top: 5%;
+  transform: translate(-50%, -50%);
 }
 
 #BIG-BUTTON {
-    text-align: center;
+  text-align: center;
 }
 
 #text_fields {
-    font-size: 35px;
+  font-size: 35px;
 }
 
 #speaker-icon {
-    font-size: 35px;
+  font-size: 35px;
 }

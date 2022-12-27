@@ -1,126 +1,195 @@
 <html lang="zh_CN">
+  <head>
+    <meta charset="utf-8" />
+    <title>关于 - 随机点名系统 - BY ZD XIAODA</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no" />
+    <meta
+      name="description"
+      itemprop="description"
+      content="这是一个随机点名系统，在多种场景下均可使用。" />
+    <link rel="stylesheet" href="./css/mdui.min.css" />
+    <script async src="./js/mdui.min.js"></script>
+    <link rel="icon" href="./icons/Class-Circle.svg" />
+    <!--图标来自阿里巴巴矢量图标库-->
+    <meta
+      property="og:description"
+      content="这是一个随机点名系统，在多种场景下均可使用。" />
+    <link rel="stylesheet" href="./css/all.css" />
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <title>关于 - 随机点名系统 - BY ZD XIAODA</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
-  <meta name="description" itemprop="description" content="这是一个随机点名系统，在多种场景下均可使用。" />
-  <link rel="stylesheet" href="./css/mdui.min.css" />
-  <script async src="./js/mdui.min.js"></script>
-  <link rel="icon" href="./icons/Class-Circle.svg">
-  <!--图标来自阿里巴巴矢量图标库-->
-  <meta property="og:description" content='这是一个随机点名系统，在多种场景下均可使用。'>
-  <link rel="stylesheet" href="./css/all.css" />
-</head>
-
-<body class="mdui-bottom-nav-fixed">
-  <!--应用栏-->
-  <div class="mdui-appbar" style="-webkit-app-region: drag">
-    <div class="mdui-toolbar mdui-color-light-green-800">
-      <a class="mdui-typo-headline">随机点名系统</a>
-      <a class="mdui-typo-title">关于</a>
-      <div class="mdui-toolbar-spacer"></div>
-      <a mdui-tooltip="{content: '关闭'}" style="-webkit-app-region: no-drag" onclick="window.close();" class="mdui-btn mdui-btn-icon">
-        <i class="mdui-icon material-icons">close</i>
-      </a>
-    </div>
-  </div>
-  <div class="mdui-container mdui-typo">
-    <h2>关于此工具：</h2>
-    <p>此工具由 zd小达 制作~底层采用HTML+CSS3+JS编写，使用到了NODE.JS API，Windows端采用electron打包。真诚的感谢所有使用到的开源项目。🧎🧎🧎</p>
-    <button onclick="zdxiaoda()" class="mdui-btn mdui-btn-raised">去 zd小达 的网站瞅瞅看(～￣▽￣)～</button>
-    <button onclick="random()" class="mdui-btn mdui-btn-raised">去 随机点名系统 的GitHub仓库给个Star（￣︶￣）↗　</button>
-    <h2>使用场景：</h2>
-    <p>公司年会抽奖，老师上课点名，派对活跃气氛。。。之类的？</p>
-    <h2>使用到的项目：</h2>
-    <!--可扩展面板-->
-    <div class="mdui-panel" mdui-panel>
-      <div class="mdui-panel-item">
-        <div class="mdui-panel-item-header">
-          <div class="mdui-panel-item-title">MDUI</div>
-          <i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
-        </div>
-        <div class="mdui-panel-item-body">
-          <p>MDUI 是一个基于 Material Design 的前端框架。</p>
-          <div class="mdui-panel-item-actions">
-            <button onclick="mdui_License()" class="mdui-btn mdui-ripple">查看许可证</button>
-            <button onclick="mdui_git()" class="mdui-btn mdui-ripple">打开仓库页面</button>
-          </div>
-        </div>
-      </div>
-      <div class="mdui-panel-item">
-        <div class="mdui-panel-item-header">
-          <div class="mdui-panel-item-title">requirejs</div>
-          <i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
-        </div>
-        <div class="mdui-panel-item-body">
-          <p>A file and module loader for JavaScript</p>
-          <div class="mdui-panel-item-actions">
-            <button onclick="requirejs_License()" class="mdui-btn mdui-ripple">查看许可证</button>
-            <button onclick="requirejs_git()" class="mdui-btn mdui-ripple">打开仓库页面</button>
-          </div>
-        </div>
-      </div>
-      <div class="mdui-panel-item">
-        <div class="mdui-panel-item-header">
-          <div class="mdui-panel-item-title">vue</div>
-          <i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
-        </div>
-        <div class="mdui-panel-item-body">
-          <p>Vue.js is a progressive, incrementally-adoptable JavaScript framework for building UI on the web.</p>
-          <div class="mdui-panel-item-actions">
-            <button onclick="vue_License()" class="mdui-btn mdui-ripple">查看许可证</button>
-            <button onclick="vue_git()" class="mdui-btn mdui-ripple">打开仓库页面</button>
-          </div>
-        </div>
-      </div>
-      <div class="mdui-panel-item">
-        <div class="mdui-panel-item-header">
-          <div class="mdui-panel-item-title">jQuery</div>
-          <i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
-        </div>
-        <div class="mdui-panel-item-body">
-          <p>jQuery JavaScript Library</p>
-          <div class="mdui-panel-item-actions">
-            <button onclick="jQuery_License()" class="mdui-btn mdui-ripple">查看许可证</button>
-            <button onclick="jQuery_git()" class="mdui-btn mdui-ripple">打开仓库页面</button>
-          </div>
-        </div>
-      </div>
-      <div class="mdui-panel-item">
-        <div class="mdui-panel-item-header">
-          <div class="mdui-panel-item-title">electron</div>
-          <i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
-        </div>
-        <div class="mdui-panel-item-body">
-          <p>Build cross-platform desktop apps with JavaScript, HTML, and CSS</p>
-          <div class="mdui-panel-item-actions">
-            <button onclick="electron_License()" class="mdui-btn mdui-ripple">查看许可证</button>
-            <button onclick="electron_git()" class="mdui-btn mdui-ripple">打开仓库页面</button>
-          </div>
-        </div>
-      </div>
-      <div class="mdui-panel-item">
-        <div class="mdui-panel-item-header">
-          <div class="mdui-panel-item-title">electron-forge</div>
-          <i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
-        </div>
-        <div class="mdui-panel-item-body">
-          <p>A complete tool for creating, publishing, and installing modern Electron applications</p>
-          <div class="mdui-panel-item-actions">
-            <button onclick="electron_forge_License()" class="mdui-btn mdui-ripple">查看许可证</button>
-            <button onclick="electron_forge_git()" class="mdui-btn mdui-ripple">打开仓库页面</button>
-          </div>
-        </div>
+  <body class="mdui-bottom-nav-fixed">
+    <!--应用栏-->
+    <div class="mdui-appbar" style="-webkit-app-region: drag">
+      <div class="mdui-toolbar mdui-color-light-green-800">
+        <a class="mdui-typo-headline">随机点名系统</a>
+        <a class="mdui-typo-title">关于</a>
+        <div class="mdui-toolbar-spacer"></div>
+        <a
+          mdui-tooltip="{content: '关闭'}"
+          style="-webkit-app-region: no-drag"
+          onclick="window.close();"
+          class="mdui-btn mdui-btn-icon">
+          <i class="mdui-icon material-icons">close</i>
+        </a>
       </div>
     </div>
-    <p>非常感谢！</p>
-    <h2>其它使用到的资源：</h2>
-    <p>思源黑体 Source Han Sans</p>
-    <p>Material Icons</p>
-    <p>敲击木鱼音频 许可:CC0 作者:Carlo 来源:耳聆网 https://www.ear0.com/sound/19572</p>
-  </div>
-
-</body>
-<script async src="./js/about.js"></script>
+    <div class="mdui-container mdui-typo">
+      <h2>关于此工具：</h2>
+      <p>
+        此工具由 zd小达 制作~底层采用HTML+CSS3+JS编写，使用到了NODE.JS
+        API，Windows端采用electron打包。真诚的感谢所有使用到的开源项目。🧎🧎🧎
+      </p>
+      <button onclick="zdxiaoda()" class="mdui-btn mdui-btn-raised">
+        去 zd小达 的网站瞅瞅看(～￣▽￣)～
+      </button>
+      <button onclick="random()" class="mdui-btn mdui-btn-raised">
+        去 随机点名系统 的GitHub仓库给个Star（￣︶￣）↗　
+      </button>
+      <h2>使用场景：</h2>
+      <p>公司年会抽奖，老师上课点名，派对活跃气氛。。。之类的？</p>
+      <h2>使用到的项目：</h2>
+      <!--可扩展面板-->
+      <div class="mdui-panel" mdui-panel>
+        <div class="mdui-panel-item">
+          <div class="mdui-panel-item-header">
+            <div class="mdui-panel-item-title">MDUI</div>
+            <i class="mdui-panel-item-arrow mdui-icon material-icons"
+              >keyboard_arrow_down</i
+            >
+          </div>
+          <div class="mdui-panel-item-body">
+            <p>MDUI 是一个基于 Material Design 的前端框架。</p>
+            <div class="mdui-panel-item-actions">
+              <button onclick="mdui_License()" class="mdui-btn mdui-ripple">
+                查看许可证
+              </button>
+              <button onclick="mdui_git()" class="mdui-btn mdui-ripple">
+                打开仓库页面
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="mdui-panel-item">
+          <div class="mdui-panel-item-header">
+            <div class="mdui-panel-item-title">requirejs</div>
+            <i class="mdui-panel-item-arrow mdui-icon material-icons"
+              >keyboard_arrow_down</i
+            >
+          </div>
+          <div class="mdui-panel-item-body">
+            <p>A file and module loader for JavaScript</p>
+            <div class="mdui-panel-item-actions">
+              <button
+                onclick="requirejs_License()"
+                class="mdui-btn mdui-ripple">
+                查看许可证
+              </button>
+              <button onclick="requirejs_git()" class="mdui-btn mdui-ripple">
+                打开仓库页面
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="mdui-panel-item">
+          <div class="mdui-panel-item-header">
+            <div class="mdui-panel-item-title">vue</div>
+            <i class="mdui-panel-item-arrow mdui-icon material-icons"
+              >keyboard_arrow_down</i
+            >
+          </div>
+          <div class="mdui-panel-item-body">
+            <p>
+              Vue.js is a progressive, incrementally-adoptable JavaScript
+              framework for building UI on the web.
+            </p>
+            <div class="mdui-panel-item-actions">
+              <button onclick="vue_License()" class="mdui-btn mdui-ripple">
+                查看许可证
+              </button>
+              <button onclick="vue_git()" class="mdui-btn mdui-ripple">
+                打开仓库页面
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="mdui-panel-item">
+          <div class="mdui-panel-item-header">
+            <div class="mdui-panel-item-title">jQuery</div>
+            <i class="mdui-panel-item-arrow mdui-icon material-icons"
+              >keyboard_arrow_down</i
+            >
+          </div>
+          <div class="mdui-panel-item-body">
+            <p>jQuery JavaScript Library</p>
+            <div class="mdui-panel-item-actions">
+              <button onclick="jQuery_License()" class="mdui-btn mdui-ripple">
+                查看许可证
+              </button>
+              <button onclick="jQuery_git()" class="mdui-btn mdui-ripple">
+                打开仓库页面
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="mdui-panel-item">
+          <div class="mdui-panel-item-header">
+            <div class="mdui-panel-item-title">electron</div>
+            <i class="mdui-panel-item-arrow mdui-icon material-icons"
+              >keyboard_arrow_down</i
+            >
+          </div>
+          <div class="mdui-panel-item-body">
+            <p>
+              Build cross-platform desktop apps with JavaScript, HTML, and CSS
+            </p>
+            <div class="mdui-panel-item-actions">
+              <button onclick="electron_License()" class="mdui-btn mdui-ripple">
+                查看许可证
+              </button>
+              <button onclick="electron_git()" class="mdui-btn mdui-ripple">
+                打开仓库页面
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="mdui-panel-item">
+          <div class="mdui-panel-item-header">
+            <div class="mdui-panel-item-title">electron-forge</div>
+            <i class="mdui-panel-item-arrow mdui-icon material-icons"
+              >keyboard_arrow_down</i
+            >
+          </div>
+          <div class="mdui-panel-item-body">
+            <p>
+              A complete tool for creating, publishing, and installing modern
+              Electron applications
+            </p>
+            <div class="mdui-panel-item-actions">
+              <button
+                onclick="electron_forge_License()"
+                class="mdui-btn mdui-ripple">
+                查看许可证
+              </button>
+              <button
+                onclick="electron_forge_git()"
+                class="mdui-btn mdui-ripple">
+                打开仓库页面
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p>非常感谢！</p>
+      <h2>其它使用到的资源：</h2>
+      <p>思源黑体 Source Han Sans</p>
+      <p>Material Icons</p>
+      <p>
+        敲击木鱼音频 许可:CC0 作者:Carlo 来源:耳聆网
+        https://www.ear0.com/sound/19572
+      </p>
+    </div>
+  </body>
+  <script async src="./js/about.js"></script>
 </html>

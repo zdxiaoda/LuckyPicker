@@ -1,18 +1,24 @@
 <html lang="zh_CN">
-
-<head>
-    <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
     <title>ORC - 随机点名系统 - BY ZD XIAODA</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
-    <meta name="description" itemprop="description" content="这是一个随机点名系统，在多种场景下均可使用。" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no" />
+    <meta
+      name="description"
+      itemprop="description"
+      content="这是一个随机点名系统，在多种场景下均可使用。" />
     <link rel="stylesheet" href="./css/mdui.min.css" />
     <script async src="./js/mdui.min.js"></script>
-    <link rel="icon" href="./icons/Class-Circle.svg">
+    <link rel="icon" href="./icons/Class-Circle.svg" />
     <!--图标来自阿里巴巴矢量图标库-->
-    <meta property="og:description" content='这是一个随机点名系统，在多种场景下均可使用。'>
+    <meta
+      property="og:description"
+      content="这是一个随机点名系统，在多种场景下均可使用。" />
     <link rel="stylesheet" href="./css/all.css" />
-<style>
-    .put_pic {
+    <style>
+      .put_pic {
         width: 100%;
         height: 50%;
         border: 1px dashed #ccc;
@@ -21,34 +27,36 @@
         line-height: 200px;
         font-size: 20px;
         color: #ccc;
-    }
-</style>
-</head>
+      }
+    </style>
+  </head>
 
-<body class="mdui-bottom-nav-fixed">
+  <body class="mdui-bottom-nav-fixed">
     <!--应用栏-->
     <div class="mdui-appbar" style="-webkit-app-region: drag">
-        <div class="mdui-toolbar mdui-color-light-green-800">
-            <a class="mdui-typo-headline">随机点名系统</a>
-            <a class="mdui-typo-title">ORC</a>
-            <div class="mdui-toolbar-spacer"></div>
-            <a mdui-tooltip="{content: '关闭'}" style="-webkit-app-region: no-drag" onclick="window.close();"
-                class="mdui-btn mdui-btn-icon">
-                <i class="mdui-icon material-icons">close</i>
-            </a>
-        </div>
+      <div class="mdui-toolbar mdui-color-light-green-800">
+        <a class="mdui-typo-headline">随机点名系统</a>
+        <a class="mdui-typo-title">ORC</a>
+        <div class="mdui-toolbar-spacer"></div>
+        <a
+          mdui-tooltip="{content: '关闭'}"
+          style="-webkit-app-region: no-drag"
+          onclick="window.close();"
+          class="mdui-btn mdui-btn-icon">
+          <i class="mdui-icon material-icons">close</i>
+        </a>
+      </div>
     </div>
     <div class="mdui-container mdui-typo">
-        <h1>你需要连接互联网来使用这个功能</h1>
+      <h1>你需要连接互联网来使用这个功能</h1>
 
-        <div class="put_pic" id="put_pic_here">
-            <span>往这里拖拽你想要识别的图片</span>
-        </div>
-        <h3>识别结果：</h3>
-        <p id="text_result"></p>
+      <div class="put_pic" id="put_pic_here">
+        <span>往这里拖拽你想要识别的图片</span>
+      </div>
+      <h3>识别结果：</h3>
+      <p id="text_result"></p>
     </div>
-</body>
-<script src='./js/orc.js'></script>
-<script src='https://lib.baomitu.com/tesseract.js/1.0.19/tesseract.js'></script>
-
+  </body>
+  <script src="./js/orc.js"></script>
+  <script src="https://lib.baomitu.com/tesseract.js/1.0.19/tesseract.js"></script>
 </html>

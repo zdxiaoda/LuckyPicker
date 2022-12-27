@@ -1,13 +1,13 @@
 @font-face {
-    font-family: LXGWWenKaiLite;
-    src: url(../fonts/LXGWWenKaiLite-Regular.ttf);
+  font-family: LXGWWenKaiLite;
+  src: url(../fonts/LXGWWenKaiLite-Regular.ttf);
 }
 
 #start {
-    position: absolute;
-    top: 75%;
+  position: absolute;
+  top: 75%;
 }
 /*隐藏滚动条**/
 body::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
