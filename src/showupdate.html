@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="zh_CN">
   <head>
     <meta charset="utf-8" />
@@ -9,7 +10,6 @@
     <link rel="stylesheet" href="./css/mdui.min.css" />
     <script async src="./js/mdui.min.js"></script>
     <link rel="icon" href="./icons/Class-Circle.svg" />
-    <!--图标来自阿里巴巴矢量图标库-->
     <meta property="og:description" content="更新页面" />
     <link rel="stylesheet" href="./css/all.css" />
   </head>
@@ -32,16 +32,12 @@
         var url = "https://cdn.zhangda.xyz/random-roll-call-system/update.json";
         var request = new XMLHttpRequest();
         request.open("get", url);
-        request.send(null); /*不发送数据到服务器*/
+        request.send(null); 
         request.onload = function () {
-          /*XHR对象获取到返回信息后执行*/
           if (request.status == 200) {
-            /*返回状态为200，即为数据获取成功*/
             var update_detail = JSON.parse(request.responseText);
             for (var i = 0; i < update_detail.length; i++) {
-              console.log(update_detail[i].name);
             }
-            console.log(update_detail);
             //替换文本
             document.getElementById("version-name").innerHTML =
               update_detail.name;
@@ -57,7 +53,6 @@
                   '");')
               );
           } else {
-            console.log("连接服务器失败");
           }
         };
         const { shell } = require("electron");

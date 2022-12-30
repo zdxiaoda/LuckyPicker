@@ -1,35 +1,26 @@
 //判断为Windows还是Linux
 if (navigator.appVersion.indexOf("Win") != -1) {
-  console.log("Windows");
   var listaddress = "/AppData/Roaming/random-roll-call-system";
 }
 if (navigator.appVersion.indexOf("Linux") != -1) {
-  console.log("Linux");
   var listaddress = "/.random-roll-call-system";
 }
 /**Windows 判断文件夹是否存在 */
-console.log("判断文件夹是否存在");
 var folder = require("os").homedir() + listaddress;
 var fs = require("fs");
 fs.access(folder, fs.constants.F_OK, (the_list) => {
-  console.log(`${folder} ${the_list ? "不存在" : "存在"}`);
   if (the_list) {
-    console.log("开始生成");
     //创建文件夹
     var fs = require("fs");
     fs.mkdirSync(require("os").homedir() + listaddress);
   } else {
-    console.log("判断结束");
   }
 });
 /**判断并自动生成list.txt */
-console.log("判断list是否存在");
 var file = require("os").homedir() + listaddress + "/list.txt";
 var fs = require("fs");
 fs.access(file, fs.constants.F_OK, (the_list) => {
-  console.log(`${file} ${the_list ? "不存在" : "存在"}`);
   if (the_list) {
-    console.log("开始生成");
     createList();
     //创建文件
     function createList() {
@@ -50,7 +41,6 @@ fs.access(file, fs.constants.F_OK, (the_list) => {
       );
     }
   } else {
-    console.log("判断结束，准备启动点名！");
     start();
   }
 });
@@ -59,16 +49,12 @@ function start() {
   /**读取TXT */
   // 读取上一级目录文件
   var path = require("os").homedir() + listaddress + "/list.txt";
-
-  // 使用Node.js的API读取文件
   var fs = require("fs");
   fs.readFile(path, "utf8", function (the_list, txt) {
     if (the_list) {
       console.error(the_list);
       return;
     }
-
-    console.log("名单：" + txt);
 
     /**载入点名 */
     requirejs(["vue"], function (a) {

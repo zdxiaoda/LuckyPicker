@@ -1,4 +1,3 @@
-//进入全屏
 function enterFullScreen() {
   var de = document.documentElement;
   if (de.requestFullscreen) {
@@ -9,7 +8,6 @@ function enterFullScreen() {
     de.webkitRequestFullScreen();
   }
 }
-//退出全屏
 function exitFullScreen() {
   var de = document;
   if (de.exitFullscreen) {
