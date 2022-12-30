@@ -13,11 +13,10 @@ requirejs.config({
     jquery: "./js/jquery-3.6.3.min",
     name: "./js/name",
     music: "./js/music",
-    mdui: "./js/mdui.min",
     update: "./js/checkupdate",
   },
 });
 requirejs(
-  ["update", "music", "screenfull", "name", "jquery", "mdui", "vue"],
+  ["update", "music", "screenfull", "name", "jquery", "vue"],
   function (dependency) {}
 );
