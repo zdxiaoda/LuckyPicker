@@ -32,12 +32,11 @@
         var url = "https://cdn.zhangda.xyz/random-roll-call-system/update.json";
         var request = new XMLHttpRequest();
         request.open("get", url);
-        request.send(null); 
+        request.send(null);
         request.onload = function () {
           if (request.status == 200) {
             var update_detail = JSON.parse(request.responseText);
-            for (var i = 0; i < update_detail.length; i++) {
-            }
+            for (var i = 0; i < update_detail.length; i++) {}
             //替换文本
             document.getElementById("version-name").innerHTML =
               update_detail.name;
