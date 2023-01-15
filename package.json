@@ -75,7 +75,8 @@
   "dependencies": {
     "@electron/asar": "^3.2.2",
     "got": "^12.5.3",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "electron-squirrel-startup": "^1.0.0"
   },
   "devDependencies": {
     "@electron-forge/cli": "^6.0.4",
@@ -83,8 +84,6 @@
     "@electron-forge/maker-rpm": "^6.0.4",
     "@electron-forge/maker-squirrel": "^6.0.4",
     "@electron-forge/maker-zip": "^6.0.4",
-    "electron": "^22.0.2",
-    "electron-squirrel-startup": "^1.0.0",
-    "@electron/asar": "^3.2.2"
+    "electron": "^22.0.2"
   }
 }
