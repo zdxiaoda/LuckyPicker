@@ -1,5 +1,4 @@
 //判断为Windows还是Linux
-console.log('This platform is ' + process.platform);
 if (process.platform == "win32") {
   var listaddress = "/AppData/Roaming/random-roll-call-system";
 }
