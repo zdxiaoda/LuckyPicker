@@ -1,8 +1,9 @@
 //判断为Windows还是Linux
-if (navigator.appVersion.indexOf("Win") != -1) {
+console.log('This platform is ' + process.platform);
+if (process.platform == "win32") {
   var listaddress = "/AppData/Roaming/random-roll-call-system";
 }
-if (navigator.appVersion.indexOf("Linux") != -1) {
+if (process.platform == "Linux") {
   var listaddress = "/.random-roll-call-system";
 }
 /**判断文件夹是否存在 */

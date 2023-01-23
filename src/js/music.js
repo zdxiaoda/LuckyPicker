@@ -8,11 +8,11 @@ function music() {
 }
 //打开名单
 //判断为Windows还是Linux
-if (navigator.appVersion.indexOf("Win") != -1) {
+if (process.platform == "win32") {
   var listaddress = "/AppData/Roaming/random-roll-call-system";
   var system = "Windows";
 }
-if (navigator.appVersion.indexOf("Linux") != -1) {
+if (process.platform == "Linux") {
   var listaddress = "/.random-roll-call-system";
   var system = "Linux";
 }
