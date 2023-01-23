@@ -14,9 +14,10 @@ requirejs.config({
     name: "./js/name",
     music: "./js/music",
     update: "./js/checkupdate",
+    mdui: "./js/mdui.min",
   },
 });
 requirejs(
-  ["update", "music", "screenfull", "name", "jquery", "vue"],
+  ["update", "music", "screenfull", "name", "jquery", "vue", "mdui"],
   function (dependency) {}
 );

@@ -5,7 +5,7 @@ if (navigator.appVersion.indexOf("Win") != -1) {
 if (navigator.appVersion.indexOf("Linux") != -1) {
   var listaddress = "/.random-roll-call-system";
 }
-/**Windows 判断文件夹是否存在 */
+/**判断文件夹是否存在 */
 var folder = require("os").homedir() + listaddress;
 var fs = require("fs");
 fs.access(folder, fs.constants.F_OK, (the_list) => {
