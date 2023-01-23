@@ -12,7 +12,7 @@ if (process.platform == "win32") {
   var listaddress = "/AppData/Roaming/random-roll-call-system";
   var system = "Windows";
 }
-if (process.platform == "Linux") {
+if (process.platform == "linux") {
   var listaddress = "/.random-roll-call-system";
   var system = "Linux";
 }

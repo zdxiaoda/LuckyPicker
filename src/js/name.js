@@ -3,7 +3,7 @@ console.log('This platform is ' + process.platform);
 if (process.platform == "win32") {
   var listaddress = "/AppData/Roaming/random-roll-call-system";
 }
-if (process.platform == "Linux") {
+if (process.platform == "linux") {
   var listaddress = "/.random-roll-call-system";
 }
 /**判断文件夹是否存在 */
