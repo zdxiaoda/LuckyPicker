@@ -23,6 +23,7 @@ function speaker() {
     const utterance = new SpeechSynthesisUtterance(sentence);
     window.speechSynthesis.speak(utterance);
   }
+  //阅读文本
   speak(document.getElementById("name").innerHTML, "utf-8");
 }
 //通过子窗口打开帮助/关于
