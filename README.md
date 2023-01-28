@@ -20,7 +20,7 @@
 
 使用 MDUI 框架，再怎么写也不会丑到哪里去~
 
-![一个界面展示图片](https://raw.githubusercontent.com/zdxiaoda/random-roll-call-system/master/src/help/homepage.png)
+![一个界面展示图片](https://raw.githubusercontent.com/zdxiaoda/random-roll-call-system/master/src/help/homepage.webp)
 
 #### 不随便拉屎 😎
 
@@ -86,4 +86,4 @@ https://github.com/zdxiaoda/random-roll-call-system/releases
 
 [Paypal](https://paypal.me/zdxiaoda)
 
--
+[QQ/微信/支付宝](https://pay.zhangda.xyz)
