@@ -6,7 +6,7 @@
 
 ### 关于此工具：
 
-此工具由 **[zd 小达](https://zhangda.xyz/)** 制作~底层采用 HTML+CSS+JS 编写，采用 electron 打包，支持 Windows 和 Linux 系统（不支持 Mac 是因为我没有。。。）。真诚的感谢所有使用到的开源项目 🧎**🧎**🧎。
+此工具由 **[zd小达](https://zhangda.xyz/)** 制作~底层采用 HTML+CSS+JS 编写，采用 electron 打包，支持 Windows 和 Linux 系统（不支持 Mac 是因为我没有。。。）。真诚的感谢所有使用到的开源项目 🧎**🧎**🧎。
 
 ---
 
