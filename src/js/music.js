@@ -1,11 +1,8 @@
 function music() {
-  var audio = document.getElementById("MUYU");
-  if (audio.paused) {
-    audio.play();
-  } else {
-    audio.pause();
-  }
+  const audio = document.getElementById("MUYU");
+  audio.paused ? audio.play() : audio.pause();
 }
+
 //打开名单
 //判断为Windows还是Linux
 if (process.platform == "win32") {

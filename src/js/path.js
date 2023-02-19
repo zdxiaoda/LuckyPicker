@@ -1,12 +1,11 @@
 requirejs.config({
   config: {
     text: {
-      useXhr: function (c, d, b, a) {
+      useXhr: function (url, protocol, hostname, port) {
         return true;
       },
     },
   },
-
   paths: {
     screenfull: "./js/screenfull",
     vue: "./js/vue.min",
@@ -17,7 +16,8 @@ requirejs.config({
     mdui: "./js/mdui.min",
   },
 });
+
 requirejs(
   ["update", "music", "screenfull", "name", "jquery", "vue", "mdui"],
-  function (dependency) {}
+  function () {}
 );

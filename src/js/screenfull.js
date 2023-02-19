@@ -1,20 +1,21 @@
 function enterFullScreen() {
-  var de = document.documentElement;
-  if (de.requestFullscreen) {
-    de.requestFullscreen();
-  } else if (de.mozRequestFullScreen) {
-    de.mozRequestFullScreen();
-  } else if (de.webkitRequestFullScreen) {
-    de.webkitRequestFullScreen();
+  var elem = document.documentElement;
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.mozRequestFullScreen) {
+    elem.mozRequestFullScreen();
+  } else if (elem.webkitRequestFullScreen) {
+    elem.webkitRequestFullScreen();
   }
 }
+
 function exitFullScreen() {
-  var de = document;
-  if (de.exitFullscreen) {
-    de.exitFullscreen();
-  } else if (de.mozCancelFullScreen) {
-    de.mozCancelFullScreen();
-  } else if (de.webkitCancelFullScreen) {
-    de.webkitCancelFullScreen();
+  var doc = document;
+  if (doc.exitFullscreen) {
+    doc.exitFullscreen();
+  } else if (doc.mozCancelFullScreen) {
+    doc.mozCancelFullScreen();
+  } else if (doc.webkitCancelFullScreen) {
+    doc.webkitCancelFullScreen();
   }
 }

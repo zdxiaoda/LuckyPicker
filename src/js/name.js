@@ -46,22 +46,24 @@ fs.access(file, fs.constants.F_OK, (the_list) => {
 });
 
 function start() {
+  const path = require("path");
+  const fs = require("fs");
+
   /**读取TXT */
-  // 读取上一级目录文件
-  var path = require("os").homedir() + listaddress + "/list.txt";
-  var fs = require("fs");
-  fs.readFile(path, "utf8", function (the_list, txt) {
-    if (the_list) {
-      console.error(the_list);
+  const filePath = path.join(require("os").homedir(), listaddress, "list.txt");
+  fs.readFile(filePath, "utf8", function (err, txt) {
+    if (err) {
+      console.error(err);
       return;
     }
 
     /**载入点名 */
-    requirejs(["vue"], function (a) {
-      begin_name = new a({
+    requirejs(["vue"], function (Vue) {
+      const begin_name = new Vue({
         el: "#begin_name",
-        data: {
-          //布尔值，表示是否允许重复的点名。默认为true
+        data() {
+          return {
+            //布尔值，表示是否允许重复的点名。默认为true
           name_repeat: true,
           //字符串，表示输入的点名字符串。默认为空
           name_text: "",
@@ -79,69 +81,55 @@ function start() {
           is_call_start: true,
           //数字，表示点名速度（毫秒）。
           call_speed: 50,
+          };
         },
         watch: {
-          name_text: function () {
-            var g = $.trim(this.name_text),
-              f = [],
-              b = g.split(this.separator);
-            var e = b.length;
-            for (var d = 0; d < e; d++) {
-              var c = $.trim(b[d]);
-              if ("" !== c) {
-                f.push(c);
-              }
-            }
-            this.all_name = f;
-            this.the_not_called_name = this.all_name;
+          name_text() {
+            const trimmedText = this.name_text.trim();
+            const names = trimmedText.split(this.separator).map(name => name.trim()).filter(name => name !== "");
+            this.all_name = names;
+            this.the_not_called_name = names;
           },
         },
         methods: {
-          //切换点名的状态，如果正在进行点名，则停止；如果停止了，则继续进行点名.
-          switch_call_status: function () {
-            var b = this;
+          switch_call_status() {
             if (this.is_call_start) {
               this.is_call_start = false;
-              setTimeout(function () {
-                b.the_called_name = [b.the_show_name].concat(b.the_called_name);
-                if (!b.name_repeat) {
-                  for (var c = 0; c < b.the_not_called_name.length; c++) {
-                    if (b.the_not_called_name[c] === b.the_show_name) {
-                      b.the_not_called_name.splice(c, 1);
-                      break;
-                    }
+              setTimeout(() => {
+                this.the_called_name = [this.the_show_name].concat(this.the_called_name);
+                if (!this.name_repeat) {
+                  const index = this.the_not_called_name.indexOf(this.the_show_name);
+                  if (index !== -1) {
+                    this.the_not_called_name.splice(index, 1);
                   }
                 }
-              }, b.call_speed);
+              }, this.call_speed);
             } else {
               this.is_call_start = true;
               this.scrollName();
             }
           },
-          scrollName: function () {
-            var b = this;
-            setTimeout(function () {
-              var c = Math.floor(Math.random() * b.the_not_called_name.length);
-              b.the_show_name = b.the_not_called_name[c];
-              if (b.is_call_start) {
-                b.scrollName();
+          scrollName() {
+            setTimeout(() => {
+              const index = Math.floor(Math.random() * this.the_not_called_name.length);
+              this.the_show_name = this.the_not_called_name[index];
+              if (this.is_call_start) {
+                this.scrollName();
               }
-            }, b.call_speed);
+            }, this.call_speed);
           },
-          call_start: function () {
-            var b = this;
-            this.name_text = txt.toString();
+          call_start() {
+            this.name_text = txt;
             this.is_call_start = true;
             this.the_called_name = [];
-            setTimeout(function () {
-              b.scrollName();
+            setTimeout(() => {
+              this.scrollName();
             }, 100);
           },
         },
-        mounted: function () {
-          var b = this;
+        mounted() {
           this.call_start();
-          $(document).keydown(function (d) {});
+          $(document).keydown((event) => {});
         },
       });
     });
