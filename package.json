@@ -1,7 +1,6 @@
 {
   "name": "random-roll-call-system",
   "version": "6.0.2",
-  "icon": "./src/icons/Class-Circle",
   "description": "一个随机点名系统~",
   "main": "src/index.js",
   "scripts": {
@@ -18,7 +17,7 @@
     "forge": {
       "packagerConfig": {
         "name": "random-roll-call-system",
-        "icon": "./src/icons/Class-Circle",
+        "icon": "./src/icons/Class-Circle.png",
         "appCopyright": "zd小达",
         "asar": true,
         "win32metadata": {
@@ -32,13 +31,12 @@
           "name": "@electron-forge/maker-squirrel",
           "config": {
             "name": "随机点名系统",
-            "icon": "./src/icons/Class-Circle",
+            "icon": "./src/icons/Class-Circle.png",
             "asar": true,
             "appCopyright": "zd小达",
             "win32metadata": {
               "ProductName": "random-roll-call-system",
               "CompanyName": "zd小达",
-              "icon": "./src/icons/Class-Circle",
               "FileDescription": "一个随机点名系统~"
             }
           }
@@ -73,10 +71,9 @@
     }
   },
   "dependencies": {
-    "@electron/asar": "^3.2.3",
-    "electron-squirrel-startup": "^1.0.0",
+    "@electron/asar": "^3.1.0",
     "got": "^12.5.3",
-    "path": "^0.12.7"
+    "electron-squirrel-startup": "^1.0.0"
   },
   "devDependencies": {
     "@electron-forge/cli": "^6.0.5",

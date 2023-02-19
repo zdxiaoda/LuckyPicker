@@ -64,29 +64,32 @@ function start() {
         data() {
           return {
             //布尔值，表示是否允许重复的点名。默认为true
-          name_repeat: true,
-          //字符串，表示输入的点名字符串。默认为空
-          name_text: "",
-          //字符串，表示将 name_text 分割成单独的名字的分隔符。
-          separator: "\n",
-          //数组，表示 name_text 中所有单独的名字。默认为空数组
-          all_name: [],
-          //数组，表示已经被点过的名字。
-          the_called_name: [],
-          //数组，表示还没有被点过的名字。
-          the_not_called_name: [],
-          //字符串，表示当前正在展示的名字。
-          the_show_name: "快好了。。。",
-          //布尔值，表示是否正在进行点名。
-          is_call_start: true,
-          //数字，表示点名速度（毫秒）。
-          call_speed: 50,
+            name_repeat: true,
+            //字符串，表示输入的点名字符串。默认为空
+            name_text: "",
+            //字符串，表示将 name_text 分割成单独的名字的分隔符。
+            separator: "\n",
+            //数组，表示 name_text 中所有单独的名字。默认为空数组
+            all_name: [],
+            //数组，表示已经被点过的名字。
+            the_called_name: [],
+            //数组，表示还没有被点过的名字。
+            the_not_called_name: [],
+            //字符串，表示当前正在展示的名字。
+            the_show_name: "快好了。。。",
+            //布尔值，表示是否正在进行点名。
+            is_call_start: true,
+            //数字，表示点名速度（毫秒）。
+            call_speed: 50,
           };
         },
         watch: {
           name_text() {
             const trimmedText = this.name_text.trim();
-            const names = trimmedText.split(this.separator).map(name => name.trim()).filter(name => name !== "");
+            const names = trimmedText
+              .split(this.separator)
+              .map((name) => name.trim())
+              .filter((name) => name !== "");
             this.all_name = names;
             this.the_not_called_name = names;
           },
@@ -96,9 +99,13 @@ function start() {
             if (this.is_call_start) {
               this.is_call_start = false;
               setTimeout(() => {
-                this.the_called_name = [this.the_show_name].concat(this.the_called_name);
+                this.the_called_name = [this.the_show_name].concat(
+                  this.the_called_name
+                );
                 if (!this.name_repeat) {
-                  const index = this.the_not_called_name.indexOf(this.the_show_name);
+                  const index = this.the_not_called_name.indexOf(
+                    this.the_show_name
+                  );
                   if (index !== -1) {
                     this.the_not_called_name.splice(index, 1);
                   }
@@ -111,7 +118,9 @@ function start() {
           },
           scrollName() {
             setTimeout(() => {
-              const index = Math.floor(Math.random() * this.the_not_called_name.length);
+              const index = Math.floor(
+                Math.random() * this.the_not_called_name.length
+              );
               this.the_show_name = this.the_not_called_name[index];
               if (this.is_call_start) {
                 this.scrollName();
