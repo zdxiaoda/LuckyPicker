@@ -43,5 +43,5 @@ function zdxiaoda() {
   shell.openExternal("https://zhangda.xyz/");
 }
 function random() {
-  shell.openExternal("https://github.com/zdxd/random-roll-call-system");
+  shell.openExternal("https://github.com/zdxiaoda/random-roll-call-system");
 }
