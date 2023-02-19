@@ -25,7 +25,7 @@ fs.access(file, fs.constants.F_OK, (the_list) => {
     //创建文件
     function createList() {
       const content = decodeURIComponent(
-        "%E8%AF%B7%E4%BF%AE%E6%94%B9%E9%BB%98%E8%AE%A4%E5%90%8D%E5%8D%95%0A%E5%88%98%E4%B8%80%0A%E9%99%88%E4%BA%8C%0A%E5%BC%A0%E4%B8%89%0A%E6%9D%8E%E5%9B%9B%0A%E7%8E%8B%E4%BA%94%0A%E8%B5%B5%E5%85%AD%0A%E5%AD%99%E4%B8%83%0A%E5%91%A8%E5%85%AB%0A%E5%90%B4%E4%B9%9D%0A%E9%83%91%E5%8D%81"
+        "%E4%BD%A0%E5%A5%BD%0A%E4%B8%96%E7%95%8C%0AHello%20World!"
       );
       fs.writeFile(
         require("os").homedir() + listaddress + "/list.txt",
