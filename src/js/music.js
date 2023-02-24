@@ -36,7 +36,7 @@ function speaker() {
           //弹出错误信息
           console.error(err);
           var error_dialog = confirm(
-            "语音合成失败，请安装espeak\n点击“确定”将会打开终端，你可以使用当前系统拥有包管理器安装espeak"
+            "语音合成失败，请安装espeak\n点击“确定”将会打开终端，你可以使用当前系统拥有包管理器安装espeak。"
           );
           if (error_dialog == true) {
             //打开终端
