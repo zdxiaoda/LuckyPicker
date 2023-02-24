@@ -63,3 +63,7 @@ function zdxiaoda() {
 function random() {
   openExternalLink("https://github.com/zdxiaoda/random-roll-call-system");
 }
+
+function vwo50() {
+  openExternalLink("https://vwo50.zhangda.xyz");
+}
