@@ -1,3 +1,4 @@
+//控制音乐播放
 function music() {
   const audio = document.getElementById("MUYU");
   audio.paused ? audio.play() : audio.pause();
@@ -66,4 +67,26 @@ function start_orc() {
     "_blank",
     "top=500,frame=false,nodeIntegration=true,contextIsolation=false,enableRemoteModule=true"
   );
+}
+//切换全屏状态
+function enterFullScreen() {
+  var elem = document.documentElement;
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.mozRequestFullScreen) {
+    elem.mozRequestFullScreen();
+  } else if (elem.webkitRequestFullScreen) {
+    elem.webkitRequestFullScreen();
+  }
+}
+
+function exitFullScreen() {
+  var doc = document;
+  if (doc.exitFullscreen) {
+    doc.exitFullscreen();
+  } else if (doc.mozCancelFullScreen) {
+    doc.mozCancelFullScreen();
+  } else if (doc.webkitCancelFullScreen) {
+    doc.webkitCancelFullScreen();
+  }
 }
