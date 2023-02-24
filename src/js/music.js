@@ -51,19 +51,19 @@ function speaker() {
 }
 //通过子窗口打开帮助/关于
 function open_help() {
-  window.open("./help.html", "_blank", "top=500,left=200,frame=false");
+  window.open("./help.html", "_blank", "top=500,frame=false");
 }
 function open_about() {
   window.open(
     "./about.html",
     "_blank",
-    "top=500,left=200,frame=false,nodeIntegration=true,contextIsolation=false,enableRemoteModule=true"
+    "top=500,frame=false,nodeIntegration=true,contextIsolation=false,enableRemoteModule=true"
   );
 }
 function start_orc() {
   window.open(
     "./orc.html",
     "_blank",
-    "top=500,left=200,frame=false,nodeIntegration=true,contextIsolation=false,enableRemoteModule=true"
+    "top=500,frame=false,nodeIntegration=true,contextIsolation=false,enableRemoteModule=true"
   );
 }
