@@ -138,7 +138,6 @@ function start() {
         },
         mounted() {
           this.call_start();
-          $(document).keydown((event) => {});
         },
       });
     });
