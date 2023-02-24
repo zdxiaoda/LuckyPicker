@@ -15,7 +15,4 @@ requirejs.config({
   },
 });
 
-requirejs(
-  ["update", "homepage", "call_name", "vue", "mdui"],
-  function () {}
-);
+requirejs(["update", "homepage", "call_name", "vue", "mdui"], function () {});
