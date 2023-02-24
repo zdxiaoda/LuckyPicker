@@ -8,7 +8,6 @@ requirejs.config({
   },
   paths: {
     vue_core: "./js/vue_core",
-    jquery: "./js/jquery_v3.6.3",
     call_name: "./js/call_name",
     homepage: "./js/homepage",
     update: "./js/check_update",
@@ -17,6 +16,6 @@ requirejs.config({
 });
 
 requirejs(
-  ["update", "homepage", "call_name", "jquery", "vue_core", "mdui"],
+  ["update", "homepage", "call_name", "vue_core", "mdui"],
   function () {}
 );
