@@ -2,7 +2,13 @@
   font-family: LXGWWenKaiLite;
   src: url(../fonts/LXGWWenKaiLite-Regular.ttf);
 }
-
+@font-face {
+  font-family: SourceHanSansCN;
+  src: url(../fonts/SourceHanSansCN-Regular.otf);
+}
+body {
+  font-family: "SourceHanSansCN";
+}
 /*隐藏滚动条**/
 body::-webkit-scrollbar {
   display: none;
