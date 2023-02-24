@@ -8,12 +8,12 @@ requirejs.config({
   },
   paths: {
     screenfull: "./js/screenfull",
-    vue: "./js/vue.min",
-    jquery: "./js/jquery-3.6.3.min",
+    vue: "./js/vue",
+    jquery: "./js/jquery-3.6.3",
     name: "./js/name",
     music: "./js/music",
     update: "./js/checkupdate",
-    mdui: "./js/mdui.min",
+    mdui: "./js/mdui",
   },
 });
 
