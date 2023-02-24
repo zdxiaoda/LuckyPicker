@@ -7,7 +7,7 @@ fetch(versionUrl)
   .then((cloudVersion) => {
     if (localVersion < cloudVersion.latest_version) {
       window.open(
-        "./showupdate.html",
+        "./show_update.html",
         "_blank",
         "width=521,height=325,frame=false,nodeIntegration=true,contextIsolation=false,enableRemoteModule=true"
       );
