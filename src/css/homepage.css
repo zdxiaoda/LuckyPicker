@@ -65,3 +65,8 @@
 #speaker-icon {
   font-size: 35px;
 }
+
+#start {
+  position: absolute;
+  top: 75%;
+}
