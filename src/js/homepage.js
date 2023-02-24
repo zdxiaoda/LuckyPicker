@@ -1,6 +1,6 @@
 //控制音乐播放
 function music() {
-  const audio = document.getElementById("MUYU");
+  const audio = document.getElementById("mokugyo");
   audio.paused ? audio.play() : audio.pause();
 }
 
