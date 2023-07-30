@@ -72,7 +72,6 @@
   },
   "dependencies": {
     "@electron/asar": "^3.2.4",
-    "got": "^13.0.0",
     "electron-squirrel-startup": "^1.0.0"
   },
   "devDependencies": {
