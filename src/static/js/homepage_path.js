@@ -7,12 +7,10 @@ requirejs.config({
     },
   },
   paths: {
-    vue: "./js/vue_core",
-    call_name: "./js/call_name",
-    homepage: "./js/homepage",
-    update: "./js/check_update",
-    mdui: "./js/mdui",
+    vue: "./static/js/vue_core",
+    homepage: "./static/js/homepage",
+    mdui: "./static/js/mdui",
   },
 });
 
-requirejs(["update", "homepage", "call_name", "vue", "mdui"], function () {});
+requirejs(["homepage", "vue", "mdui"], function () {});

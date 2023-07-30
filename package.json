@@ -17,7 +17,7 @@
     "forge": {
       "packagerConfig": {
         "name": "random-roll-call-system",
-        "icon": "./src/icons/Class-Circle.png",
+        "icon": "./static/src/icons/Class-Circle.png",
         "appCopyright": "zd小达",
         "asar": true,
         "win32metadata": {
@@ -31,7 +31,7 @@
           "name": "@electron-forge/maker-squirrel",
           "config": {
             "name": "随机点名系统",
-            "icon": "./src/icons/Class-Circle.png",
+            "icon": "./static/src/icons/Class-Circle.png",
             "asar": true,
             "appCopyright": "zd小达",
             "win32metadata": {
@@ -51,7 +51,7 @@
           "name": "@electron-forge/maker-deb",
           "config": {
             "name": "random-roll-call-system",
-            "icon": "./src/icons/Class-Circle.png",
+            "icon": "./static/src/icons/Class-Circle.png",
             "asar": true,
             "maintainer": "zd小达",
             "homepage": "https://zhangda.xyz"
@@ -61,7 +61,7 @@
           "name": "@electron-forge/maker-rpm",
           "config": {
             "name": "random-roll-call-system",
-            "icon": "./src/icons/Class-Circle.png",
+            "icon": "./static/src/icons/Class-Circle.png",
             "asar": true,
             "maintainer": "zd小达",
             "homepage": "https://zhangda.xyz"
