@@ -22,9 +22,9 @@ Using the MDUI framework, it won't look ugly no matter how you use it~
 
 ![A screenshot of the interface](https://raw.githubusercontent.com/zdxiaoda/random-roll-call-system/master/src/static/help/homepage.webp)
 
-#### No Random Crashes 😎
+#### No Haphazard File Generation in Other Directories 😎
 
-The tool will automatically create a name list file in the user directory when opened for the first time, following Microsoft standards.
+The tool will not randomly generate files in other directories when used for the first time, ensuring compliance with Microsoft standards.
 
 #### Easy to Use 👍
 
@@ -34,9 +34,9 @@ There are fewer than ten buttons, even the oldest teachers in the school can use
 
 Whether you are on Windows or any other Linux distribution, you can use it easily~
 
-# Awesome!
+#### Large Font for Easy Viewing on Big Screen Devices 😃
 
-Convenient for school all-in-one machines~
+The use of a large font ensures comfortable readability on larger screens.
 
 ---
 
