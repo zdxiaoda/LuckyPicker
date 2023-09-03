@@ -2,7 +2,10 @@
 
 The Random Roll Call System, as the name suggests, is a tool designed for randomly selecting names~
 
+[**中文说明文档**](README_CN.md)
+
 ---
+
 
 ### About this tool:
 
