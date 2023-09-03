@@ -1,56 +1,56 @@
-# 随机点名系统
+# Random Roll Call System
 
-随机点名系统，顾名思义，它就是一款能够用来随机点名的系统~
-
----
-
-### 关于此工具：
-
-此工具由 **[zd小达](https://zhangda.xyz/)** 制作~底层采用 HTML+CSS+JS 编写，采用 electron 打包，支持 Windows 和 Linux 系统（不支持 Mac 是因为我没有。。。）。真诚的感谢所有使用到的开源项目 🧎**🧎**🧎。
+The Random Roll Call System, as the name suggests, is a tool designed for randomly selecting names~
 
 ---
 
-### 工具特性：
+### About this tool:
 
-#### 功能简洁 😊
-
-我说它只有点名，它真的只有点名，别的啥都没有。。。
-
-#### 界面美观 😁
-
-使用 MDUI 框架，再怎么写也不会丑到哪里去~
-
-![一个界面展示图片](https://raw.githubusercontent.com/zdxiaoda/random-roll-call-system/master/src/static/help/homepage.webp)
-
-#### 不随便拉屎 😎
-
-第一次打开工具会自动在用户目录创建名单文件，符合 Microsoft 规范。
-
-#### 用法简单 👍
-
-按钮数不超过十个，就连学校最老的老师都可以使用。
-
-#### 兼容性强 😏
-
-不论你是 Windows 还是其它的 Linux 发行版都可轻松使用~
-
-# 字！大！
-
-方便学校一体机使用~
+This tool is created by **[zd小达](https://zhangda.xyz/)**~ It is built using HTML+CSS+JS and packaged with electron, supporting both Windows and Linux systems (unfortunately, not compatible with Mac because I don't have one...). Sincere thanks to all the open-source projects used 🧎**🧎**🧎.
 
 ---
 
-### 使用方法：
+### Tool Features:
 
-直接下载已经打包好的发行版~
+#### Simple Functionality 😊
+
+I say it's only for roll call, and it really is just for roll call, nothing else...
+
+#### Beautiful Interface 😁
+
+Using the MDUI framework, it won't look ugly no matter how you use it~
+
+![A screenshot of the interface](https://raw.githubusercontent.com/zdxiaoda/random-roll-call-system/master/src/static/help/homepage.webp)
+
+#### No Random Crashes 😎
+
+The tool will automatically create a name list file in the user directory when opened for the first time, following Microsoft standards.
+
+#### Easy to Use 👍
+
+There are fewer than ten buttons, even the oldest teachers in the school can use it.
+
+#### Strong Compatibility 😏
+
+Whether you are on Windows or any other Linux distribution, you can use it easily~
+
+# Awesome!
+
+Convenient for school all-in-one machines~
+
+---
+
+### Usage:
+
+Download the pre-packaged release directly~
 
 https://github.com/zdxiaoda/random-roll-call-system/releases
 
-或者自己打包~
+Or build it yourself~
 
 `git clone https://github.com/zdxiaoda/random-roll-call-system.git`
 
-`cd random-roll-call-system `
+`cd random-roll-call-system`
 
 `npm install`
 
@@ -58,13 +58,13 @@ https://github.com/zdxiaoda/random-roll-call-system/releases
 
 ---
 
-### 使用场景：
+### Use Cases:
 
-公司年会抽奖，老师上课点名，派对活跃气氛。。。之类的？
+Company annual meetings, teacher roll calls during classes, boosting party vibes... and more?
 
 ---
 
-### 使用到的项目：
+### Projects Used:
 
 [MDUI](https://github.com/zdhxiong/mdui)
 
@@ -82,8 +82,8 @@ https://github.com/zdxiaoda/random-roll-call-system/releases
 
 ---
 
-### 赞助我：
+### Support Me:
 
 [Paypal](https://paypal.me/zdxiaoda)
 
-[QQ/微信/支付宝](https://pay.zhangda.xyz)
+[QQ/WeChat/Alipay](https://pay.zhangda.xyz)
