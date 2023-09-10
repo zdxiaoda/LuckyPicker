@@ -1,3 +1,12 @@
+/**定义当前系统参数 */
+if (process.platform == "win32") {
+  var listaddress = "/AppData/Roaming/random-roll-call-system";
+  var system = "Windows";
+}
+if (process.platform == "linux") {
+  var listaddress = "/.random-roll-call-system";
+  var system = "Linux";
+}
 /** 控制音乐播放 */
 function music() {
   const audio = document.getElementById("mokugyo");
@@ -18,15 +27,6 @@ function edittxt() {
 }
 /** 语音合成 */
 function speaker() {
-  //判断为Windows还是Linux
-  if (process.platform == "win32") {
-    var listaddress = "/AppData/Roaming/random-roll-call-system";
-    var system = "Windows";
-  }
-  if (process.platform == "linux") {
-    var listaddress = "/.random-roll-call-system";
-    var system = "Linux";
-  }
   function speak(sentence) {
     const utterance = new SpeechSynthesisUtterance(sentence);
     window.speechSynthesis.speak(utterance);
@@ -99,15 +99,9 @@ function exitFullScreen() {
     doc.webkitCancelFullScreen();
   }
 }
+
 /** 检查list.txt是否存在 */
 function checkList() {
-  //判断为Windows还是Linux
-  if (process.platform == "win32") {
-    var listaddress = "/AppData/Roaming/random-roll-call-system";
-  }
-  if (process.platform == "linux") {
-    var listaddress = "/.random-roll-call-system";
-  }
   /**判断文件夹是否存在 */
   var folder = require("os").homedir() + listaddress;
   var fs = require("fs");
