@@ -1,5 +1,5 @@
 {
-  "name": "random-roll-call-system",
+  "name": "lucky-picker",
   "version": "23.9.3",
   "description": "一个随机点名软件~",
   "main": "src/index.js",
@@ -16,12 +16,12 @@
   "config": {
     "forge": {
       "packagerConfig": {
-        "name": "random-roll-call-system",
+        "name": "LuckyPicker",
         "icon": "./static/src/icons/Class-Circle.png",
         "appCopyright": "zd小达",
         "asar": true,
         "win32metadata": {
-          "ProductName": "random-roll-call-system",
+          "ProductName": "LuckyPicker",
           "CompanyName": "zd小达",
           "FileDescription": "一个随机点名软件~"
         }
@@ -35,7 +35,7 @@
             "asar": true,
             "appCopyright": "zd小达",
             "win32metadata": {
-              "ProductName": "random-roll-call-system",
+              "ProductName": "LuckyPicker",
               "CompanyName": "zd小达",
               "FileDescription": "一个随机点名软件~"
             }
@@ -50,7 +50,7 @@
         {
           "name": "@electron-forge/maker-deb",
           "config": {
-            "name": "random-roll-call-system",
+            "name": "LuckyPicker",
             "icon": "./static/src/icons/Class-Circle.png",
             "asar": true,
             "maintainer": "zd小达",
@@ -60,7 +60,7 @@
         {
           "name": "@electron-forge/maker-rpm",
           "config": {
-            "name": "random-roll-call-system",
+            "name": "LuckyPicker",
             "icon": "./static/src/icons/Class-Circle.png",
             "asar": true,
             "maintainer": "zd小达",
