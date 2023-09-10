@@ -66,6 +66,19 @@
             "maintainer": "zd小达",
             "homepage": "https://zhangda.xyz"
           }
+        },
+        {
+          "name": "@electron-forge/maker-flatpak",
+          "config": {
+            "options": {
+              "categories": [
+                "Video"
+              ],
+              "mimeType": [
+                "video/h264"
+              ]
+            }
+          }
         }
       ]
     }
