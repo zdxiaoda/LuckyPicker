@@ -71,3 +71,8 @@
   position: absolute;
   top: 75%;
 }
+#start_button{
+  position: absolute;
+  top: 75%;
+  transform: translate(-50%, -50%);
+}
