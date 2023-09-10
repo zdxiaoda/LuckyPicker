@@ -235,3 +235,18 @@ function start() {
     });
   });
 }
+//请求一言API替换colorful-text文本
+function get_hitokoto() {
+  var xhr = new XMLHttpRequest();
+  xhr.open("get", "https://v1.hitokoto.cn/?c=a&c=b&c=c&c=d&c=e&c=f&c=g");
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4) {
+      var data = JSON.parse(xhr.responseText);
+      document.getElementById("colorful-text").innerHTML = data.hitokoto;
+    } else {
+      document.getElementById("colorful-text").innerHTML = "你所热爱的，就是你的生活。";
+    }
+  };
+  xhr.send();
+}
+get_hitokoto();
