@@ -6,6 +6,10 @@
   font-family: SourceHanSansCN;
   src: url(../fonts/SourceHanSansCN-Regular.otf);
 }
+@font-face {
+  font-family: SourceHanSerifCN-Heavy;
+  src: url(../fonts/SourceHanSerifCN-Heavy.otf);
+}
 body {
   font-family: "SourceHanSansCN";
 }

@@ -34,6 +34,7 @@
   background-size: 200% 100%;
   -webkit-background-size: 200% 100%;
   animation: maskedAnimation 10s infinite linear;
+  font-family: "SourceHanSerifCN-Heavy";
 }
 @keyframes maskedAnimation {
   0% {
