@@ -1,24 +1,32 @@
-//控制音乐播放
+/** 控制音乐播放 */
 function music() {
   const audio = document.getElementById("mokugyo");
   audio.paused ? audio.play() : audio.pause();
 }
-
-//打开名单
-//判断为Windows还是Linux
-if (process.platform == "win32") {
-  var listaddress = "/AppData/Roaming/random-roll-call-system";
-  var system = "Windows";
-}
-if (process.platform == "linux") {
-  var listaddress = "/.random-roll-call-system";
-  var system = "Linux";
-}
+/** 编辑名单 */
 function edittxt() {
   const { shell } = require("electron");
   shell.openPath(require("os").homedir() + listaddress + "/list.txt");
+  //检测文件更改后刷新页面
+  var fs = require("fs");
+  fs.watchFile(
+    require("os").homedir() + listaddress + "/list.txt",
+    (curr, prev) => {
+      location.reload();
+    }
+  );
 }
+/** 语音合成 */
 function speaker() {
+  //判断为Windows还是Linux
+  if (process.platform == "win32") {
+    var listaddress = "/AppData/Roaming/random-roll-call-system";
+    var system = "Windows";
+  }
+  if (process.platform == "linux") {
+    var listaddress = "/.random-roll-call-system";
+    var system = "Linux";
+  }
   function speak(sentence) {
     const utterance = new SpeechSynthesisUtterance(sentence);
     window.speechSynthesis.speak(utterance);
@@ -50,7 +58,7 @@ function speaker() {
     );
   }
 }
-//通过子窗口打开帮助/关于
+/** 打开帮助/关于页面 */
 function open_help() {
   window.open("./subpage/help.html", "_blank", "top=500,frame=false");
 }
@@ -61,6 +69,7 @@ function open_about() {
     "top=500,frame=false,nodeIntegration=true,contextIsolation=false,enableRemoteModule=true"
   );
 }
+/** 打开ORC */
 function start_orc() {
   window.open(
     "./subpage/orc.html",
@@ -68,7 +77,7 @@ function start_orc() {
     "top=500,frame=false,nodeIntegration=true,contextIsolation=false,enableRemoteModule=true"
   );
 }
-//切换全屏状态
+/** 进入全屏 */
 function enterFullScreen() {
   var elem = document.documentElement;
   if (elem.requestFullscreen) {
@@ -79,7 +88,7 @@ function enterFullScreen() {
     elem.webkitRequestFullScreen();
   }
 }
-
+/** 退出全屏 */
 function exitFullScreen() {
   var doc = document;
   if (doc.exitFullscreen) {
@@ -90,53 +99,57 @@ function exitFullScreen() {
     doc.webkitCancelFullScreen();
   }
 }
-//判断为Windows还是Linux
-if (process.platform == "win32") {
-  var listaddress = "/AppData/Roaming/random-roll-call-system";
-}
-if (process.platform == "linux") {
-  var listaddress = "/.random-roll-call-system";
-}
-/**判断文件夹是否存在 */
-var folder = require("os").homedir() + listaddress;
-var fs = require("fs");
-fs.access(folder, fs.constants.F_OK, (the_list) => {
-  if (the_list) {
-    //创建文件夹
-    var fs = require("fs");
-    fs.mkdirSync(require("os").homedir() + listaddress);
-  } else {
+/** 检查list.txt是否存在 */
+function checkList() {
+  //判断为Windows还是Linux
+  if (process.platform == "win32") {
+    var listaddress = "/AppData/Roaming/random-roll-call-system";
   }
-});
-/**判断并自动生成list.txt */
-var file = require("os").homedir() + listaddress + "/list.txt";
-var fs = require("fs");
-fs.access(file, fs.constants.F_OK, (the_list) => {
-  if (the_list) {
-    createList();
-    //创建文件
-    function createList() {
-      const content = decodeURIComponent(
-        "%E4%BD%A0%E5%A5%BD%E4%B8%96%E7%95%8C%EF%BC%81"
-      );
-      fs.writeFile(
-        require("os").homedir() + listaddress + "/list.txt",
-        content,
-        (the_list) => {
-          if (the_list) {
-            console.error(the_list);
-            return;
-          }
-          //文件写入成功。
-          start();
-        }
-      );
+  if (process.platform == "linux") {
+    var listaddress = "/.random-roll-call-system";
+  }
+  /**判断文件夹是否存在 */
+  var folder = require("os").homedir() + listaddress;
+  var fs = require("fs");
+  fs.access(folder, fs.constants.F_OK, (the_list) => {
+    if (the_list) {
+      //创建文件夹
+      var fs = require("fs");
+      fs.mkdirSync(require("os").homedir() + listaddress);
+    } else {
     }
-  } else {
-    start();
-  }
-});
-
+  });
+  /**判断并自动生成list.txt */
+  var file = require("os").homedir() + listaddress + "/list.txt";
+  var fs = require("fs");
+  fs.access(file, fs.constants.F_OK, (the_list) => {
+    if (the_list) {
+      createList();
+      //创建文件
+      function createList() {
+        const content = decodeURIComponent(
+          "%E4%BD%A0%E5%A5%BD%E4%B8%96%E7%95%8C%EF%BC%81"
+        );
+        fs.writeFile(
+          require("os").homedir() + listaddress + "/list.txt",
+          content,
+          (the_list) => {
+            if (the_list) {
+              console.error(the_list);
+              return;
+            }
+            //文件写入成功。
+            start();
+          }
+        );
+      }
+    } else {
+      start();
+    }
+  });
+}
+checkList();
+/** 开始点名 */
 function start() {
   const path = require("path");
   const fs = require("fs");
@@ -235,7 +248,7 @@ function start() {
     });
   });
 }
-//请求一言API替换colorful-text文本
+/** 获取一言 */
 function get_hitokoto() {
   var xhr = new XMLHttpRequest();
   xhr.open("get", "https://v1.hitokoto.cn/?c=a&c=b&c=c&c=d&c=e&c=f&c=g");
@@ -244,7 +257,8 @@ function get_hitokoto() {
       var data = JSON.parse(xhr.responseText);
       document.getElementById("colorful-text").innerHTML = data.hitokoto;
     } else {
-      document.getElementById("colorful-text").innerHTML = "你所热爱的，就是你的生活。";
+      document.getElementById("colorful-text").innerHTML =
+        "你所热爱的，就是你的生活。";
     }
   };
   xhr.send();
