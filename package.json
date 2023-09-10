@@ -11,7 +11,10 @@
     "lint": "echo \"No linting configured\""
   },
   "keywords": [],
-  "author": "zd小达",
+  "author": {
+    "name": "zdxiaoda",
+    "email": "xiaoda@duck.com"
+  },
   "license": "MIT",
   "config": {
     "forge": {
@@ -84,15 +87,15 @@
     }
   },
   "dependencies": {
-    "@electron/asar": "^3.2.4",
     "electron-squirrel-startup": "^1.0.0"
   },
   "devDependencies": {
-    "@electron-forge/cli": "^6.4.1",
-    "@electron-forge/maker-deb": "^6.4.1",
-    "@electron-forge/maker-rpm": "^6.4.1",
-    "@electron-forge/maker-squirrel": "^6.4.1",
-    "@electron-forge/maker-zip": "^6.4.1",
-    "electron": "^26.1.0"
+    "@electron-forge/cli": "^6.4.2",
+    "@electron-forge/maker-deb": "^6.4.2",
+    "@electron-forge/maker-rpm": "^6.4.2",
+    "@electron-forge/maker-squirrel": "^6.4.2",
+    "@electron-forge/maker-zip": "^6.4.2",
+    "@electron-forge/plugin-auto-unpack-natives": "^6.4.2",
+    "electron": "26.2.0"
   }
 }
