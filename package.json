@@ -1,7 +1,7 @@
 {
-  "name": "random-roll-call-system",
+  "name": "lucky-picker",
   "version": "23.9.3",
-  "description": "一个随机点名系统~",
+  "description": "一个随机点名软件~",
   "main": "src/index.js",
   "scripts": {
     "start": "electron-forge start",
@@ -11,33 +11,36 @@
     "lint": "echo \"No linting configured\""
   },
   "keywords": [],
-  "author": "zd小达",
+  "author": {
+    "name": "zdxiaoda",
+    "email": "xiaoda@duck.com"
+  },
   "license": "MIT",
   "config": {
     "forge": {
       "packagerConfig": {
-        "name": "random-roll-call-system",
+        "name": "LuckyPicker",
         "icon": "./static/src/icons/Class-Circle.png",
         "appCopyright": "zd小达",
         "asar": true,
         "win32metadata": {
-          "ProductName": "random-roll-call-system",
+          "ProductName": "LuckyPicker",
           "CompanyName": "zd小达",
-          "FileDescription": "一个随机点名系统~"
+          "FileDescription": "一个随机点名软件~"
         }
       },
       "makers": [
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
-            "name": "随机点名系统",
+            "name": "随机点名",
             "icon": "./static/src/icons/Class-Circle.png",
             "asar": true,
             "appCopyright": "zd小达",
             "win32metadata": {
-              "ProductName": "random-roll-call-system",
+              "ProductName": "LuckyPicker",
               "CompanyName": "zd小达",
-              "FileDescription": "一个随机点名系统~"
+              "FileDescription": "一个随机点名软件~"
             }
           }
         },
@@ -50,7 +53,7 @@
         {
           "name": "@electron-forge/maker-deb",
           "config": {
-            "name": "random-roll-call-system",
+            "name": "LuckyPicker",
             "icon": "./static/src/icons/Class-Circle.png",
             "asar": true,
             "maintainer": "zd小达",
@@ -60,26 +63,39 @@
         {
           "name": "@electron-forge/maker-rpm",
           "config": {
-            "name": "random-roll-call-system",
+            "name": "LuckyPicker",
             "icon": "./static/src/icons/Class-Circle.png",
             "asar": true,
             "maintainer": "zd小达",
             "homepage": "https://zhangda.xyz"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-flatpak",
+          "config": {
+            "options": {
+              "categories": [
+                "Video"
+              ],
+              "mimeType": [
+                "video/h264"
+              ]
+            }
           }
         }
       ]
     }
   },
   "dependencies": {
-    "@electron/asar": "^3.2.4",
     "electron-squirrel-startup": "^1.0.0"
   },
   "devDependencies": {
-    "@electron-forge/cli": "^6.4.1",
-    "@electron-forge/maker-deb": "^6.4.1",
-    "@electron-forge/maker-rpm": "^6.4.1",
-    "@electron-forge/maker-squirrel": "^6.4.1",
-    "@electron-forge/maker-zip": "^6.4.1",
-    "electron": "^26.1.0"
+    "@electron-forge/cli": "^6.4.2",
+    "@electron-forge/maker-deb": "^6.4.2",
+    "@electron-forge/maker-rpm": "^6.4.2",
+    "@electron-forge/maker-squirrel": "^6.4.2",
+    "@electron-forge/maker-zip": "^6.4.2",
+    "@electron-forge/plugin-auto-unpack-natives": "^6.4.2",
+    "electron": "26.2.0"
   }
 }

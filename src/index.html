@@ -5,7 +5,7 @@
     <script src="./static/js/require.js"></script>
     <script src="./static/js/homepage_path.js"></script>
     <meta charset="utf-8" />
-    <title>主页 - 随机点名系统 - BY ZD XIAODA</title>
+    <title>主页 - 随机点名 - BY ZD XIAODA</title>
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no" />
@@ -22,12 +22,12 @@
       <!--应用栏-->
       <div class="mdui-appbar" style="-webkit-app-region: drag">
         <div class="mdui-toolbar mdui-color-light-green-800">
-          <a class="mdui-typo-headline">随机点名系统</a>
+          <a class="mdui-typo-headline">随机点名</a>
           <a class="mdui-typo-title">主页</a>
           <div class="mdui-toolbar-spacer"></div>
 
           <a
-            mdui-tooltip="{content: '刷新'}"
+            mdui-tooltip="{content: '重载'}"
             style="-webkit-app-region: no-drag"
             class="mdui-btn mdui-btn-icon"
             onclick="javascript:location.reload();">
@@ -76,7 +76,11 @@
         </div>
       </div>
       <!--BGM-->
-      <audio id="mokugyo" src="./static/audio/mokugyo.mp3" autoplay loop></audio>
+      <audio
+        id="mokugyo"
+        src="./static/audio/mokugyo.mp3"
+        autoplay
+        loop></audio>
       <!--开始按钮-->
       <button
         id="start_button"
@@ -87,7 +91,7 @@
       </button>
       <!--END 按钮-->
       <!--彩色字 -->
-      <p id="colorful-text">下一个就是你！</p>
+      <p id="colorful-text"></p>
       <!--姓名框-->
       <div class="mdui-container" id="case">
         <p id="name" v-text="the_show_name"></p>

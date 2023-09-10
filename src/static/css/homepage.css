@@ -34,6 +34,7 @@
   background-size: 200% 100%;
   -webkit-background-size: 200% 100%;
   animation: maskedAnimation 10s infinite linear;
+  font-family: "SourceHanSerifCN-Heavy";
 }
 @keyframes maskedAnimation {
   0% {
@@ -69,4 +70,9 @@
 #start {
   position: absolute;
   top: 75%;
+}
+#start_button{
+  position: absolute;
+  top: 75%;
+  transform: translate(-50%, -50%);
 }
