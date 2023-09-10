@@ -9,7 +9,7 @@ The Random Roll Call System, as the name suggests, is a tool designed for random
 
 ### About this tool:
 
-This tool is created by **[zd小达](https://zhangda.xyz/)**~ It is built using HTML+CSS+JS and packaged with electron, supporting both Windows and Linux systems (unfortunately, not compatible with Mac because I don't have one...). Sincere thanks to all the open-source projects used 🧎**🧎**🧎.
+This tool was developed by **[zd小达](https://zhangda.xyz/)** using HTML+CSS+JS and packaged with Electron, supporting Windows and Linux systems. (unfortunately, not compatible with Mac because I don't have one...). Sincere thanks to all the open-source projects used 🧎**🧎**🧎.
 
 ---
 
@@ -21,25 +21,25 @@ I say it's only for roll call, and it really is just for roll call, nothing else
 
 #### Beautiful Interface 😁
 
-Using the MDUI framework, it won't look ugly no matter how you use it~
+Using the MDUI framework ensures an aesthetically pleasing presentation regardless of the usage.
 
 ![A screenshot of the interface](https://raw.githubusercontent.com/zdxiaoda/random-roll-call-system/master/src/static/help/homepage.webp)
 
 #### No Haphazard File Generation in Other Directories 😎
 
-The tool will not randomly generate files in other directories when used for the first time, ensuring compliance with Microsoft standards.
+The tool will ensure compliance with Microsoft standards by avoiding the random generation of files in other directories during its first use.
 
 #### Easy to Use 👍
 
-There are fewer than ten buttons, even the oldest teachers in the school can use it.
+There are less than ten buttons, making it easy for even the most senior teachers at the school to use.
 
 #### Strong Compatibility 😏
 
-Whether you are on Windows or any other Linux distribution, you can use it easily~
+Whether you are using Windows or any other Linux distribution, you can easily utilize it.~
 
 #### Large Font for Easy Viewing on Big Screen Devices 😃
 
-The use of a large font ensures comfortable readability on larger screens.
+The use of a large typeface ensures comfortable legibility on bigger displays.
 
 ---
 
