@@ -77,6 +77,14 @@ function start_orc() {
     "top=500,frame=false,nodeIntegration=true,contextIsolation=false,enableRemoteModule=true"
   );
 }
+/** 判断全屏以实现点击按钮进入退出全屏 */
+function full_screen() {
+  if (document.fullscreenElement) {
+    exitFullScreen();
+  } else {
+    enterFullScreen();
+  }
+}
 /** 进入全屏 */
 function enterFullScreen() {
   var elem = document.documentElement;
