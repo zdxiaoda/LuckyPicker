@@ -250,6 +250,9 @@ function get_hitokoto() {
     if (xhr.readyState == 4) {
       var data = JSON.parse(xhr.responseText);
       document.getElementById("colorful-text").innerHTML = data.hitokoto;
+      //colorful-text-from 为出处
+      document.getElementById("colorful-text-from").innerHTML =
+        "——" + data.from;
     } else {
       document.getElementById("colorful-text").innerHTML =
         "你所热爱的，就是你的生活。";

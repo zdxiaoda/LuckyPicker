@@ -15,9 +15,7 @@
   text-align: center;
 }
 
-#colorful-text {
-  text-align: center;
-  font-size: 30px;
+#colorful {
   background-image: -webkit-linear-gradient(
     left,
     red,
@@ -35,6 +33,15 @@
   -webkit-background-size: 200% 100%;
   animation: maskedAnimation 10s infinite linear;
   font-family: "SourceHanSerifCN-Heavy";
+  width: 89%;
+}
+#colorful-text {
+  font-size: 28px;
+  text-align: center;
+}
+#colorful-text-from {
+  font-size: 17px;
+  text-align: right;
 }
 @keyframes maskedAnimation {
   0% {
@@ -71,7 +78,7 @@
   position: absolute;
   top: 75%;
 }
-#start_button{
+#start_button {
   position: absolute;
   top: 75%;
   transform: translate(-50%, -50%);
