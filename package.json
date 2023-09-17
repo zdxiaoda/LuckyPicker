@@ -1,7 +1,7 @@
 {
   "name": "lucky-picker",
-  "version": "23.9.3",
-  "description": "一个随机点名软件~",
+  "version": "23.9.17",
+  "description": "A Simple and Elegant Name Selection Tool for Various Occasions.",
   "main": "src/index.js",
   "scripts": {
     "start": "electron-forge start",
@@ -21,26 +21,26 @@
       "packagerConfig": {
         "name": "LuckyPicker",
         "icon": "./static/src/icons/Class-Circle.png",
-        "appCopyright": "zd小达",
+        "appCopyright": "zdxiaoda",
         "asar": true,
         "win32metadata": {
           "ProductName": "LuckyPicker",
-          "CompanyName": "zd小达",
-          "FileDescription": "一个随机点名软件~"
+          "CompanyName": "zdxiaoda",
+          "FileDescription": "A Simple and Elegant Name Selection Tool for Various Occasions."
         }
       },
       "makers": [
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
-            "name": "随机点名",
+            "name": "LuckyPicker",
             "icon": "./static/src/icons/Class-Circle.png",
             "asar": true,
-            "appCopyright": "zd小达",
+            "appCopyright": "zdxiaoda",
             "win32metadata": {
               "ProductName": "LuckyPicker",
-              "CompanyName": "zd小达",
-              "FileDescription": "一个随机点名软件~"
+              "CompanyName": "zdxiaoda",
+              "FileDescription": "A Simple and Elegant Name Selection Tool for Various Occasions."
             }
           }
         },
@@ -56,7 +56,7 @@
             "name": "LuckyPicker",
             "icon": "./static/src/icons/Class-Circle.png",
             "asar": true,
-            "maintainer": "zd小达",
+            "maintainer": "zdxiaoda",
             "homepage": "https://zhangda.xyz"
           }
         },
@@ -66,7 +66,7 @@
             "name": "LuckyPicker",
             "icon": "./static/src/icons/Class-Circle.png",
             "asar": true,
-            "maintainer": "zd小达",
+            "maintainer": "zdxiaoda",
             "homepage": "https://zhangda.xyz"
           }
         },
