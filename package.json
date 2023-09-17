@@ -20,7 +20,7 @@
     "forge": {
       "packagerConfig": {
         "name": "LuckyPicker",
-        "icon": "./static/src/icons/Class-Circle.png",
+        "icon": "./src/static/icons/Class-Circle.png",
         "appCopyright": "zdxiaoda",
         "asar": true,
         "win32metadata": {
@@ -33,8 +33,9 @@
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
+            "target": "nsis",
             "name": "LuckyPicker",
-            "icon": "./static/src/icons/Class-Circle.png",
+            "icon": "./src/static/icons/Class-Circle.ico",
             "asar": true,
             "appCopyright": "zdxiaoda",
             "win32metadata": {
@@ -55,7 +56,7 @@
           "name": "@electron-forge/maker-deb",
           "config": {
             "name": "LuckyPicker",
-            "icon": "./static/src/icons/Class-Circle.png",
+            "icon": "./src/static/icons/Class-Circle.png",
             "asar": true,
             "maintainer": "zdxiaoda",
             "homepage": "https://zhangda.xyz"
@@ -65,7 +66,7 @@
           "name": "@electron-forge/maker-rpm",
           "config": {
             "name": "LuckyPicker",
-            "icon": "./static/src/icons/Class-Circle.png",
+            "icon": "./src/static/icons/Class-Circle.png",
             "asar": true,
             "maintainer": "zdxiaoda",
             "homepage": "https://zhangda.xyz"
@@ -93,6 +94,7 @@
   "devDependencies": {
     "@electron-forge/cli": "^6.4.2",
     "@electron-forge/maker-deb": "^6.4.2",
+    "@electron-forge/maker-flatpak": "^6.4.2",
     "@electron-forge/maker-rpm": "^6.4.2",
     "@electron-forge/maker-squirrel": "^6.4.2",
     "@electron-forge/maker-zip": "^6.4.2",
