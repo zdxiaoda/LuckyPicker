@@ -46,6 +46,7 @@ app.on("activate", () => {
   // dock icon is clicked and there are no other windows open.
   if (BrowserWindow.getAllWindows().length === 0) {
     createWindow();
+    
   }
 });
 
