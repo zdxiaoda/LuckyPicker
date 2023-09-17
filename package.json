@@ -1,5 +1,6 @@
 {
   "name": "lucky-picker",
+  "executableName": "LuckyPicker",
   "version": "23.9.17",
   "description": "A Simple and Elegant Name Selection Tool for Various Occasions.",
   "main": "src/index.js",
@@ -59,8 +60,8 @@
             "icon": "./src/static/icons/Class-Circle.png",
             "asar": true,
             "maintainer": "zdxiaoda",
-            "homepage": "https://zhangda.xyz",
-            "executableName": "LuckyPicker"
+            "homepage": "https://zhangda.xyz"
+           
           }
         },
         {
