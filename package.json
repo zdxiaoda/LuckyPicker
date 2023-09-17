@@ -59,7 +59,8 @@
             "icon": "./src/static/icons/Class-Circle.png",
             "asar": true,
             "maintainer": "zdxiaoda",
-            "homepage": "https://zhangda.xyz"
+            "homepage": "https://zhangda.xyz",
+            "executableName": "LuckyPicker"
           }
         },
         {
