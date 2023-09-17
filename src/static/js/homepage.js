@@ -249,6 +249,11 @@ function get_hitokoto() {
   xhr.onreadystatechange = function () {
     if (xhr.readyState == 4) {
       var data = JSON.parse(xhr.responseText);
+      //检测到屏蔽词则重新获取
+      if (data.hitokoto == "你的访问过于频繁，请休息一下吧！") {
+        get_hitokoto();
+        return;
+      }
       document.getElementById("colorful-text").innerHTML = data.hitokoto;
       //colorful-text-from 为出处
       document.getElementById("colorful-text-from").innerHTML =
