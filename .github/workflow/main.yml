@@ -3,10 +3,10 @@ name: Build Electron App For Win/Mac
 
 # Workflow's trigger
 on:
-  push:
-    #分支为master
-    branches:
-      - master
+ push:
+    #提交tags时触发
+    tags:
+      - '*' # Push events to matching 0.1.0, 0.1, 0.1.0-alpha, 0.1.x, and so on (https://help.github.com/en/articles/events-that-trigger-workflows#push-event-push)
 
 # Workflow's jobs
 jobs:
