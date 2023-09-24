@@ -16,16 +16,11 @@
     "name": "zdxiaoda",
     "email": "xiaoda@duck.com"
   },
-  "electronInstaller": {
-    "linux": {
-      "executableName": "lucky-picker"
-    }
-    
-  },
   "license": "MIT",
   "config": {
     "forge": {
       "packagerConfig": {
+        "executableName": "lucky-picker",
         "name": "LuckyPicker",
         "icon": "./src/static/icons/Class-Circle.png",
         "appCopyright": "zdxiaoda",
@@ -67,7 +62,6 @@
             "asar": true,
             "maintainer": "zdxiaoda",
             "homepage": "https://zhangda.xyz"
-           
           }
         },
         {
