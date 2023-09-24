@@ -49,10 +49,9 @@ jobs:
           name: Move exe files to artifacts directory
           command: |
             mkdir C:\tmp\artifacts
-            dir C:\Users\circleci\project\out\make\*.exe /s /b > C:\tmp\files.txt
-            for /f "tokens=*" %%a in (C:\tmp\files.txt) do move "%%a" C:\tmp\artifacts
+            mv C:\Users\circleci\project\out\make\* C:\tmp\artifacts
       - store_artifacts:
-          path: /tmp/artifacts
+          path: C:\tmp\artifacts
 
   build_mac:
     macos:
