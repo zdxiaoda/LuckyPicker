@@ -15,9 +15,12 @@ jobs:
             sudo apt-get update && sudo apt-get install -y dpkg fakeroot lintian build-essential rpm flatpak flatpak-builder
             npm install
       - run:
-          name: Build Ubuntu
-          command: npm run make --linux
-
+          name: Build Ubuntu deb and rpm
+          command: npm run make --platform=linux --arch=x64 --target=deb --target=rpm
+      - run:
+          name: Build Flatpak
+          command: npx electron-forge make --target=flatpak --arch=x64
+          
   build_windows:
     executor: node/default
     steps:
@@ -27,7 +30,7 @@ jobs:
           command: npm install
       - run:
           name: Build Windows
-          command: npm run make --win
+          command: npm run make --platform=windows
 
   build_mac:
     executor: node/default
@@ -38,7 +41,7 @@ jobs:
           command: npm install
       - run:
           name: Build Mac
-          command: npm run make --mac
+          command: npm run make --platform=mac
 
 workflows:
   build:
