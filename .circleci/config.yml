@@ -30,6 +30,9 @@ jobs:
   build_windows:
     executor: win/server-2022
     steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "0c:00:02:6a:04:3b:77:b2:c8:6d:90:4c:59:a4:47:bf"
       - checkout
       - run:
           name: Setting Github Name and Email
