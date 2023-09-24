@@ -12,6 +12,7 @@ jobs:
       - run:
           name: Build Ubuntu
           command: |
+            sudo apt-get update && sudo apt-get install -y dpkg fakeroot lintian build-essential rpm flatpak flatpak-builder
             npm install
             npm run make --linux
 
