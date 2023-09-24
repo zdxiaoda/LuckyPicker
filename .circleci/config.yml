@@ -49,7 +49,7 @@ jobs:
           name: Upload Windows
           command: |
             mkdir /tmp/artifacts;
-            mv @out/make/squirrel.windows/x64/*.exe" /tmp/artifacts
+            find C:\\Users\\circleci\\project\\out\\make\\ -name "*.exe" -exec mv {} /tmp/artifacts \;
       - store_artifacts:
           path: /tmp/artifacts
 
