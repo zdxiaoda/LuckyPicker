@@ -1,0 +1,31 @@
+version: 2.1
+orbs:
+  node: circleci/node@5.1.0
+
+jobs:
+  build:
+    executor: node/default
+    steps:
+      - checkout
+
+      # 编译 Ubuntu 版本
+      - run:
+          name: Build Ubuntu
+          command: |
+            sudo apt-get update && sudo apt-get install -y dpkg fakeroot lintian build-essential rpm flatpak flatpak-builder
+            npm install
+            npm run make --linux
+
+      # 编译 Windows 版本
+      - run:
+          name: Build Windows
+          command: |
+            npm install
+            npm run make --win
+
+      # 编译 Mac OS 版本
+      - run:
+          name: Build Mac
+          command: |
+            npm install
+            npm run make --mac
