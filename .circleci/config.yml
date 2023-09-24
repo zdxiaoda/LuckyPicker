@@ -1,27 +1,32 @@
-version: 2
+version: 2.1
+
 jobs:
-  build_windows:
-    docker:
-      - image: electronuserland/builder:wine
-    steps:
-      - checkout
-      - run: yarn && yarn release --win
-
-  build_macos:
-    macos:
-      xcode: "10.0.0"
-    steps:
-      - checkout
-      - run: security create-keychain -p $KEYCHAIN_PASSWORD build.keychain
-      - run: security default-keychain -s build.keychain
-      - run: security unlock-keychain -p $KEYCHAIN_PASSWORD build.keychain
-      - run: echo $KEYSTORE | base64 --decode - > keystore.p12
-      - run: security import keystore.p12 -k build.keychain -P $KEYCHAIN_PASSWORD -T /usr/bin/codesign
-      - run: yarn && yarn release --mac
-
-workflows:
-  version: 2
   build:
-    jobs:
-      - build_windows
-      - build_macos
+    docker:
+      - image: cimg/node
+
+
+    working_directory: ~/project
+
+    steps:
+      - checkout
+      
+      # 安装依赖
+      - run:
+          name: Install Dependencies
+          command: npm install
+
+      # 构建 Electron
+      - run:
+          name: Build Electron
+          command: npm run build-electron
+
+      # 保存编译结果为工件
+      - save_cache:
+          key: project-cache-{{ .Branch }}-{{ checksum "package-lock.json" }}
+          paths:
+            - out # 编译输出文件夹路径
+
+      - store_artifacts:
+          path: out # 工件存储的路径
+          destination: electron-builds # 工件在 CircleCI 上的目标路径
