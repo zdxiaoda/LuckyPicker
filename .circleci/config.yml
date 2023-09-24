@@ -1,32 +1,30 @@
 version: 2.1
+orbs:
+  node: circleci/node@5.1.0
 
 jobs:
   build:
-    docker:
-      - image: cimg/node
-
-
-    working_directory: ~/project
-
+    executor: node/default
     steps:
       - checkout
-      
-      # 安装依赖
+
+      # 编译 Ubuntu 版本
       - run:
-          name: Install Dependencies
-          command: npm install
+          name: Build Ubuntu
+          command: |
+            npm install
+            npm run make --linux
 
-      # 构建 Electron
+      # 编译 Windows 版本
       - run:
-          name: Build Electron
-          command: npm run build-electron
+          name: Build Windows
+          command: |
+            npm install
+            npm run make --win
 
-      # 保存编译结果为工件
-      - save_cache:
-          key: project-cache-{{ .Branch }}-{{ checksum "package-lock.json" }}
-          paths:
-            - out # 编译输出文件夹路径
-
-      - store_artifacts:
-          path: out # 工件存储的路径
-          destination: electron-builds # 工件在 CircleCI 上的目标路径
+      # 编译 Mac OS 版本
+      - run:
+          name: Build Mac
+          command: |
+            npm install
+            npm run make --mac
