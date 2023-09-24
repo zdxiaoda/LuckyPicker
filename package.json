@@ -88,9 +88,12 @@
     }
   },
   "dependencies": {
+    
     "electron-squirrel-startup": "^1.0.0"
   },
   "devDependencies": {
+    "@electron-forge/maker-base": "^6.4.2",
+    "@electron-forge/maker-flatpak": "^6.4.2",
     "@electron-forge/cli": "^6.4.2",
     "@electron-forge/maker-deb": "^6.4.2",
     "@electron-forge/maker-flatpak": "^6.4.2",

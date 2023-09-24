@@ -35,20 +35,12 @@
           </a>
 
           <a
-            mdui-tooltip="{content: '进入全屏'}"
+            mdui-tooltip="{content: '全屏'}"
             style="-webkit-app-region: no-drag"
-            onclick="enterFullScreen(document.documentElement)"
+            onclick="full_screen(document.documentElement)"
             href="javascript:;"
             class="mdui-btn mdui-btn-icon">
             <i class="mdui-icon material-icons">fullscreen</i>
-          </a>
-          <a
-            mdui-tooltip="{content: '退出全屏'}"
-            style="-webkit-app-region: no-drag"
-            onclick="exitFullScreen(document.documentElement)"
-            href="javascript:;"
-            class="mdui-btn mdui-btn-icon">
-            <i class="mdui-icon material-icons">fullscreen_exit</i>
           </a>
           <button
             style="-webkit-app-region: no-drag"
@@ -91,7 +83,12 @@
       </button>
       <!--END 按钮-->
       <!--彩色字 -->
-      <p id="colorful-text"></p>
+      <div class="mdui-container" id="colorful">
+        <p id="colorful-text"></p>
+        <!--彩色字 出处-->
+        <p id="colorful-text-from"></p>
+      </div>
+
       <!--姓名框-->
       <div class="mdui-container" id="case">
         <p id="name" v-text="the_show_name"></p>

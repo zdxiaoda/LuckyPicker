@@ -100,6 +100,14 @@ function start_orc() {
     "top=500,frame=false,nodeIntegration=true,contextIsolation=false,enableRemoteModule=true"
   );
 }
+/** 判断全屏以实现点击按钮进入退出全屏 */
+function full_screen() {
+  if (document.fullscreenElement) {
+    exitFullScreen();
+  } else {
+    enterFullScreen();
+  }
+}
 /** 进入全屏 */
 function enterFullScreen() {
   var elem = document.documentElement;
@@ -272,7 +280,15 @@ function get_hitokoto() {
   xhr.onreadystatechange = function () {
     if (xhr.readyState == 4) {
       var data = JSON.parse(xhr.responseText);
+      //检测到屏蔽词则重新获取
+      if (data.hitokoto == "你的访问过于频繁，请休息一下吧！") {
+        get_hitokoto();
+        return;
+      }
       document.getElementById("colorful-text").innerHTML = data.hitokoto;
+      //colorful-text-from 为出处
+      document.getElementById("colorful-text-from").innerHTML =
+        "——" + data.from;
     } else {
       document.getElementById("colorful-text").innerHTML =
         "你所热爱的，就是你的生活。";
