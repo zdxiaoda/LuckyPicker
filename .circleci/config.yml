@@ -18,17 +18,37 @@ jobs:
       - run:
           name: Build Ubuntu deb and rpm
           command: npm run make --platform=linux --arch=x64
+      - run:
+          name: Upload deb and rpm
+          command: |
+            mkdir /tmp/artifacts;
+            mv @out/make/deb/x64/*_amd64.deb" /tmp/artifacts
+            mv @out/make/rpm/x64/*.rpm" /tmp/artifacts
+      - store_artifacts:
+          path: /tmp/artifacts
 
   build_windows:
     executor: win/server-2022
     steps:
       - checkout
       - run:
+          name: Setting Github Name and Email
+          command: |
+            git config --global user.email "xiaoda@duck.com"
+            git config --global user.name "zdxiaoda"
+      - run:
           name: Install dependencies
           command: npm install
       - run:
           name: Build Windows
           command: npm run make --platform=windows
+      - run:
+          name: Upload Windows
+          command: |
+            mkdir /tmp/artifacts;
+            mv @out/make/squirrel.windows/x64/*.exe" /tmp/artifacts
+      - store_artifacts:
+          path: /tmp/artifacts
 
   build_mac:
     macos:
@@ -41,6 +61,13 @@ jobs:
       - run:
           name: Build Mac
           command: npm run make --platform=mac
+      - run:
+          name: Upload Mac
+          command: |
+            mkdir /tmp/artifacts;
+            mv @out/make/*.dmg" /tmp/artifacts
+      - store_artifacts:
+          path: /tmp/artifacts
 
 workflows:
   build:
