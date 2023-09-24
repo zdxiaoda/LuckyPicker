@@ -22,8 +22,8 @@ jobs:
           name: Upload deb and rpm
           command: |
             mkdir /tmp/artifacts;
-            mv /home/circleci/project/out/make/deb/x64/*_amd64.deb" /tmp/artifacts
-            mv /home/circleci/project/out/make/make/rpm/x64/*.rpm" /tmp/artifacts
+            mv /home/circleci/project/out/make/deb/x64/*.deb" /tmp/artifacts
+            mv /home/circleci/project/out/make/rpm/x64/*.rpm" /tmp/artifacts
       - store_artifacts:
           path: /tmp/artifacts
 
@@ -65,7 +65,7 @@ jobs:
           name: Upload Mac
           command: |
             mkdir /tmp/artifacts;
-            mv @out/make/*.dmg" /tmp/artifacts
+            mv /Users/distiller/project/out/make/* /tmp/artifacts
       - store_artifacts:
           path: /tmp/artifacts
 
