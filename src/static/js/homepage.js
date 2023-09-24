@@ -7,10 +7,6 @@ if (process.platform == "linux") {
   var listaddress = "/.random-roll-call-system";
   var system = "Linux";
 }
-if (process.platform == "mac") {
-  var listaddress = "/Library/Application Support/random-roll-call-system";
-  var system = "Mac";
-}
 /** 控制音乐播放 */
 function music() {
   const audio = document.getElementById("mokugyo");
@@ -38,25 +34,6 @@ function speaker() {
   //Windows系统 直接调用系统自带的语音合成
   if (system == "Windows") {
     speak(document.getElementById("name").innerHTML, "utf-8");
-  }
-  //Mac系统 调用say
-  if (system == "Mac") {
-    const { exec } = require("child_process");
-    exec("say " + document.getElementById("name").innerHTML, (err, stdout) => {
-      if (err) {
-        //弹出错误信息
-        console.error(err);
-        var error_dialog = confirm(
-          "语音合成失败，请安装say\n点击“确定”将会打开终端，你可以使用brew安装say。"
-        );
-        if (error_dialog == true) {
-          //打开终端
-          const { exec } = require("child_process");
-          exec("open -a Terminal");
-        }
-        return;
-      }
-    });
   }
   //Linux系统 调用espeak
   if (system == "Linux") {
@@ -99,26 +76,6 @@ function start_orc() {
     "_blank",
     "top=500,frame=false,nodeIntegration=true,contextIsolation=false,enableRemoteModule=true"
   );
-}
-/** 判断全屏以实现点击按钮进入退出全屏 */
-function full_screen() {
-  if (document.fullscreenElement) {
-    exitFullScreen();
-  } else {
-    enterFullScreen();
-  }
-}
-/**切换全屏 */
-function toggleFullScreen() {
-  var fullscreenElement =
-    document.fullscreenElement ||
-    document.mozFullScreenElement ||
-    document.webkitFullscreenElement;
-  if (fullscreenElement == null) {
-    enterFullScreen();
-  } else {
-    exitFullScreen();
-  }
 }
 /** 进入全屏 */
 function enterFullScreen() {
@@ -292,11 +249,6 @@ function get_hitokoto() {
   xhr.onreadystatechange = function () {
     if (xhr.readyState == 4) {
       var data = JSON.parse(xhr.responseText);
-      //检测到屏蔽词则重新获取
-      if (data.hitokoto == "你的访问过于频繁，请休息一下吧！") {
-        get_hitokoto();
-        return;
-      }
       document.getElementById("colorful-text").innerHTML = data.hitokoto;
       //colorful-text-from 为出处
       document.getElementById("colorful-text-from").innerHTML =
