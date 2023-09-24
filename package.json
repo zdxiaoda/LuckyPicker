@@ -1,7 +1,7 @@
 {
   "name": "lucky-picker",
   "executableName": "LuckyPicker",
-  "version": "23.9.17",
+  "version": "23.9.24",
   "description": "A Simple and Elegant Name Selection Tool for Various Occasions.",
   "main": "src/index.js",
   "scripts": {

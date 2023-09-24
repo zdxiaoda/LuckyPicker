@@ -100,6 +100,18 @@ function start_orc() {
     "top=500,frame=false,nodeIntegration=true,contextIsolation=false,enableRemoteModule=true"
   );
 }
+/**切换全屏 */
+function toggleFullScreen() {
+  var fullscreenElement =
+    document.fullscreenElement ||
+    document.mozFullScreenElement ||
+    document.webkitFullscreenElement;
+  if (fullscreenElement == null) {
+    enterFullScreen();
+  } else {
+    exitFullScreen();
+  }
+}
 /** 进入全屏 */
 function enterFullScreen() {
   var elem = document.documentElement;
