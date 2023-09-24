@@ -1,31 +1,48 @@
+# This YAML file contains the CircleCI configuration for the LuckyPicker project.
+# It specifies the version of the configuration file and includes the 'node' orb.
 version: 2.1
 orbs:
   node: circleci/node@5.1.0
 
 jobs:
-  build:
+  build_ubuntu:
     executor: node/default
     steps:
       - checkout
-
-      # 编译 Ubuntu 版本
       - run:
-          name: Build Ubuntu
+          name: Install dependencies
           command: |
             sudo apt-get update && sudo apt-get install -y dpkg fakeroot lintian build-essential rpm flatpak flatpak-builder
             npm install
-            npm run make --linux
+      - run:
+          name: Build Ubuntu
+          command: npm run make --linux
 
-      # 编译 Windows 版本
+  build_windows:
+    executor: node/default
+    steps:
+      - checkout
+      - run:
+          name: Install dependencies
+          command: npm install
       - run:
           name: Build Windows
-          command: |
-            npm install
-            npm run make --win
+          command: npm run make --win
 
-      # 编译 Mac OS 版本
+  build_mac:
+    executor: node/default
+    steps:
+      - checkout
+      - run:
+          name: Install dependencies
+          command: npm install
       - run:
           name: Build Mac
-          command: |
-            npm install
-            npm run make --mac
+          command: npm run make --mac
+
+workflows:
+  build:
+    jobs:
+      - build_ubuntu
+      - build_windows
+      - build_mac
