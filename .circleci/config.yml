@@ -65,7 +65,7 @@ jobs:
           name: Upload Mac
           command: |
             mkdir /tmp/artifacts;
-            mv '/Users/distiller/project/out/make/*' /tmp/artifacts
+            mv /Users/distiller/project/out/make/* /tmp/artifacts
       - store_artifacts:
           path: /tmp/artifacts
 
