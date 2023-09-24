@@ -46,10 +46,11 @@ jobs:
           name: Build Windows
           command: npm run make --platform=windows
       - run:
-          name: Upload Windows
+          name: Move exe files to artifacts directory
           command: |
-            mkdir /tmp/artifacts;
-            find C:\\Users\\circleci\\project\\out\\make\\ -name "*.exe" -exec mv {} /tmp/artifacts \;
+            mkdir C:\tmp\artifacts
+            dir C:\Users\circleci\project\out\make\*.exe /s /b > C:\tmp\files.txt
+            for /f "tokens=*" %%a in (C:\tmp\files.txt) do move "%%a" C:\tmp\artifacts
       - store_artifacts:
           path: /tmp/artifacts
 
