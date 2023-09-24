@@ -3,7 +3,7 @@
 version: 2.1
 orbs:
   node: circleci/node@5.1.0
-  win: circleci/windows@4.1
+  win: circleci/windows@5.0
 
 jobs:
   build_ubuntu:
@@ -23,7 +23,7 @@ jobs:
           command: npx electron-forge make --target=flatpak --arch=x64
 
   build_windows:
-    executor: win/server-2019
+    executor: win/server-2022
     steps:
       - checkout
       - run:
