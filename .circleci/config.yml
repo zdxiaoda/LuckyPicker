@@ -2,40 +2,33 @@ version: 2.1
 orbs:
   node: circleci/node@5.0.2
   heroku: circleci/heroku@1.2.6
-
+  
 jobs:
-  build_and_test:
-    executor: node/default
+  build:
+    working_directory: ~/repo
     steps:
       - checkout
-      - node/install-packages:
-          pkg-manager: yarn
       - run:
-          command: yarn test
-          name: Run tests
+          name: Update NPM
+          command: "sudo npm install -g npm"
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
       - run:
-          command: yarn build
-          name: Build app
-      - persist_to_workspace:
-          root: ~/project
+          name: Install Dependencies
+          command: npm install
+      - run:
+          name: Install dpkg and fakeroot
+          command: |
+            sudo apt-get update -y
+            sudo apt-get install -y dpkg fakeroot
+
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
           paths:
-            - .
+            - ./node_modules
+      - run:
+          name: Generate Builds
+          command: npm run make
 
-  deploy: # this can be any name you choose
-    executor: heroku/default
-    steps:
-      - attach_workspace:
-          at: ~/project
-      - heroku/deploy-via-git:
-          force: true # force push when pushing to the heroku remote, see: https://devcenter.heroku.com/articles/git
-
-workflows:
-  test_my_app:
-    jobs:
-      - build_and_test
-      - deploy:
-          requires:
-            - build_and_test # only deploy if the build_and_test job has completed
-          filters:
-            branches:
-              only: main # only deploy when on main
+      - store_artifacts:
+          path: ~/repo/out/make
