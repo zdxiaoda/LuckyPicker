@@ -7,7 +7,7 @@ orbs:
 
 jobs:
   build_ubuntu:
-    executor: node/lts
+    executor: node/default
     steps:
       - checkout
       - run:
