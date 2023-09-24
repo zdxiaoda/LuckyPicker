@@ -17,10 +17,7 @@ jobs:
             npm install
       - run:
           name: Build Ubuntu deb and rpm
-          command: npm run make --platform=linux --arch=x64 --target=deb --target=rpm
-      - run:
-          name: Build Flatpak
-          command: npx electron-forge make --target=flatpak --arch=x64
+          command: npm run make --platform=linux --arch=x64
 
   build_windows:
     executor: win/server-2022
