@@ -3,10 +3,11 @@
 version: 2.1
 orbs:
   node: circleci/node@5.1.0
+  win: circleci/windows@4.1
 
 jobs:
   build_ubuntu:
-    executor: node/default
+    executor: node/lts
     steps:
       - checkout
       - run:
@@ -20,9 +21,9 @@ jobs:
       - run:
           name: Build Flatpak
           command: npx electron-forge make --target=flatpak --arch=x64
-          
+
   build_windows:
-    executor: node/default
+    executor: win/server-2019
     steps:
       - checkout
       - run:
@@ -33,7 +34,8 @@ jobs:
           command: npm run make --platform=windows
 
   build_mac:
-    executor: node/default
+    macos:
+      xcode: 14.0.0
     steps:
       - checkout
       - run:
