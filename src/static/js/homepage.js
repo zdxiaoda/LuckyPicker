@@ -7,6 +7,10 @@ if (process.platform == "linux") {
   var listaddress = "/.random-roll-call-system";
   var system = "Linux";
 }
+if (process.platform == "mac") {
+  var listaddress = "/Library/Application Support/random-roll-call-system";
+  var system = "Mac";
+}
 /** 控制音乐播放 */
 function music() {
   const audio = document.getElementById("mokugyo");
@@ -34,6 +38,25 @@ function speaker() {
   //Windows系统 直接调用系统自带的语音合成
   if (system == "Windows") {
     speak(document.getElementById("name").innerHTML, "utf-8");
+  }
+  //Mac系统 调用say
+  if (system == "Mac") {
+    const { exec } = require("child_process");
+    exec("say " + document.getElementById("name").innerHTML, (err, stdout) => {
+      if (err) {
+        //弹出错误信息
+        console.error(err);
+        var error_dialog = confirm(
+          "语音合成失败，请安装say\n点击“确定”将会打开终端，你可以使用brew安装say。"
+        );
+        if (error_dialog == true) {
+          //打开终端
+          const { exec } = require("child_process");
+          exec("open -a Terminal");
+        }
+        return;
+      }
+    });
   }
   //Linux系统 调用espeak
   if (system == "Linux") {
