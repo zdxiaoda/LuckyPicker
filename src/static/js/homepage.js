@@ -1,10 +1,10 @@
 /**定义当前系统参数 */
 if (process.platform == "win32") {
-  var listaddress = "/AppData/Roaming/random-roll-call-system";
+  var listaddress = "/AppData/Roaming/LuckyPicker";
   var system = "Windows";
 }
 if (process.platform == "linux") {
-  var listaddress = "/.random-roll-call-system";
+  var listaddress = "/.LuckyPicker";
   var system = "Linux";
 }
 /** 控制音乐播放 */
@@ -15,11 +15,11 @@ function music() {
 /** 编辑名单 */
 function edittxt() {
   const { shell } = require("electron");
-  shell.openPath(require("os").homedir() + listaddress + "/list.txt");
+  shell.openPath(require("os").homedir() + listaddress + "/NameList.txt");
   //检测文件更改后刷新页面
   var fs = require("fs");
   fs.watchFile(
-    require("os").homedir() + listaddress + "/list.txt",
+    require("os").homedir() + listaddress + "/NameList.txt",
     (curr, prev) => {
       location.reload();
     }
@@ -100,7 +100,7 @@ function exitFullScreen() {
   }
 }
 
-/** 检查list.txt是否存在 */
+/** 检查NameList.txt是否存在 */
 function checkList() {
   /**判断文件夹是否存在 */
   var folder = require("os").homedir() + listaddress;
@@ -113,8 +113,8 @@ function checkList() {
     } else {
     }
   });
-  /**判断并自动生成list.txt */
-  var file = require("os").homedir() + listaddress + "/list.txt";
+  /**判断并自动生成NameList.txt */
+  var file = require("os").homedir() + listaddress + "/NameList.txt";
   var fs = require("fs");
   fs.access(file, fs.constants.F_OK, (the_list) => {
     if (the_list) {
@@ -125,7 +125,7 @@ function checkList() {
           "%E4%BD%A0%E5%A5%BD%E4%B8%96%E7%95%8C%EF%BC%81"
         );
         fs.writeFile(
-          require("os").homedir() + listaddress + "/list.txt",
+          require("os").homedir() + listaddress + "/NameList.txt",
           content,
           (the_list) => {
             if (the_list) {
@@ -149,7 +149,7 @@ function start() {
   const fs = require("fs");
 
   /**读取TXT */
-  const filePath = path.join(require("os").homedir(), listaddress, "list.txt");
+  const filePath = path.join(require("os").homedir(), listaddress, "NameList.txt");
   fs.readFile(filePath, "utf8", function (err, txt) {
     if (err) {
       console.error(err);
