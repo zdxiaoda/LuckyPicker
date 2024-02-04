@@ -175,7 +175,7 @@ function start() {
             //数组，表示还没有被点过的名字。
             the_not_called_name: [],
             //字符串，表示当前正在展示的名字。
-            the_show_name: "",
+            the_show_name: "😀",
             //布尔值，表示是否正在进行点名。
             is_call_start: true,
             //数字，表示点名速度（毫秒）。
@@ -256,6 +256,8 @@ function get_hitokoto() {
     } else {
       document.getElementById("colorful-text").innerHTML =
         "你所热爱的，就是你的生活。";
+        document.getElementById("colorful-text-from").innerHTML =
+        "陈睿";
     }
   };
   xhr.send();
