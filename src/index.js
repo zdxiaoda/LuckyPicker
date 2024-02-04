@@ -12,7 +12,7 @@ const createWindow = () => {
     frame: false,
     width: 1120,
     height: 630,
-    icon: path.join(__dirname, "./static/icons/Class-Circle.png"),
+    icon: path.join(__dirname, "./static/icons/LuckyPicker.png"),
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),
       nodeIntegration: true,

@@ -1,7 +1,7 @@
 {
   "name": "lucky-picker",
   "executableName": "LuckyPicker",
-  "version": "23.9.24",
+  "version": "24.02.04",
   "description": "A Simple and Elegant Name Selection Tool for Various Occasions.",
   "main": "src/index.js",
   "scripts": {
@@ -22,7 +22,7 @@
       "packagerConfig": {
         "executableName": "lucky-picker",
         "name": "LuckyPicker",
-        "icon": "./src/static/icons/Class-Circle.png",
+        "icon": "./src/static/icons/LuckyPicker.png",
         "appCopyright": "zdxiaoda",
         "asar": true,
         "win32metadata": {
@@ -36,7 +36,7 @@
           "name": "@electron-forge/maker-squirrel",
           "config": {
             "name": "LuckyPicker",
-            "icon": "./src/static/icons/Class-Circle.ico",
+            "icon": "./src/static/icons/LuckyPicker.ico",
             "asar": true,
             "appCopyright": "zdxiaoda",
             "win32metadata": {
@@ -57,7 +57,7 @@
           "name": "@electron-forge/maker-deb",
           "config": {
             "name": "LuckyPicker",
-            "icon": "./src/static/icons/Class-Circle.png",
+            "icon": "./src/static/icons/LuckyPicker.png",
             "asar": true,
             "maintainer": "zdxiaoda",
             "homepage": "https://zhangda.xyz"
@@ -67,7 +67,7 @@
           "name": "@electron-forge/maker-rpm",
           "config": {
             "name": "LuckyPicker",
-            "icon": "./src/static/icons/Class-Circle.png",
+            "icon": "./src/static/icons/LuckyPicker.png",
             "asar": true,
             "maintainer": "zdxiaoda",
             "homepage": "https://zhangda.xyz"
@@ -77,7 +77,7 @@
           "name": "@electron-forge/maker-dmg",
           "config": {
             "name": "LuckyPicker",
-            "icon": "./src/static/icons/Class-Circle.png",
+            "icon": "./src/static/icons/LuckyPicker.png",
             "asar": true,
             "maintainer": "zdxiaoda",
             "homepage": "https://zhangda.xyz"
@@ -92,12 +92,12 @@
   "devDependencies": {
     "@electron-forge/cli": "^7.2.0",
     "@electron-forge/maker-deb": "^7.2.0",
+    "@electron-forge/maker-dmg": "7.2.0",
     "@electron-forge/maker-flatpak": "^7.2.0",
     "@electron-forge/maker-rpm": "^7.2.0",
     "@electron-forge/maker-squirrel": "^7.2.0",
     "@electron-forge/maker-zip": "^7.2.0",
     "@electron-forge/plugin-auto-unpack-natives": "^7.2.0",
-    "@electron-forge/maker-dmg": "7.2.0",
     "electron": "28.2.1"
   }
 }
