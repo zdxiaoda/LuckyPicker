@@ -77,26 +77,38 @@ function start_orc() {
     "top=500,frame=false,nodeIntegration=true,contextIsolation=false,enableRemoteModule=true"
   );
 }
-/** 进入全屏 */
-function enterFullScreen() {
-  var elem = document.documentElement;
-  if (elem.requestFullscreen) {
-    elem.requestFullscreen();
-  } else if (elem.mozRequestFullScreen) {
-    elem.mozRequestFullScreen();
-  } else if (elem.webkitRequestFullScreen) {
-    elem.webkitRequestFullScreen();
-  }
-}
-/** 退出全屏 */
-function exitFullScreen() {
-  var doc = document;
-  if (doc.exitFullscreen) {
-    doc.exitFullscreen();
-  } else if (doc.mozCancelFullScreen) {
-    doc.mozCancelFullScreen();
-  } else if (doc.webkitCancelFullScreen) {
-    doc.webkitCancelFullScreen();
+/** 定义toggleFullScreen函数，用于切换全屏状态*/
+function toggleFullScreen() {
+  // 获取当前文档显示的元素（兼容各种浏览器）
+  let elem = document.documentElement;
+  if (
+    !document.fullscreenElement && // 标准模式
+    !document.mozFullScreenElement &&
+    !document.webkitFullscreenElement &&
+    !document.msFullscreenElement
+  ) {
+    // 兼容Firefox、Chrome、Safari和IE11
+    // 当前非全屏状态时，尝试进入全屏
+    if (elem.requestFullscreen) {
+      elem.requestFullscreen();
+    } else if (elem.msRequestFullscreen) {
+      elem.msRequestFullscreen();
+    } else if (elem.mozRequestFullScreen) {
+      elem.mozRequestFullScreen();
+    } else if (elem.webkitRequestFullscreen) {
+      elem.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+    }
+  } else {
+    // 当前全屏状态时，退出全屏
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if (document.msExitFullscreen) {
+      document.msExitFullscreen();
+    } else if (document.mozCancelFullScreen) {
+      document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) {
+      document.webkitExitFullscreen();
+    }
   }
 }
 
