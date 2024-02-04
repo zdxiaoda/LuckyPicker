@@ -212,12 +212,25 @@ function start() {
         methods: {
           // 定义switch_call_status函数，用于切换点名状态并执行相应操作
           switch_call_status() {
+            // 获取按钮元素
+            const callButton = document.getElementById(
+              "Large_Callout_Button_container"
+            );
+            //获取Fab_Button元素
+            const fabButton = document.getElementById("Fab_Button");
             // 如果点名已经开始（isCallingInProgress为true）
             if (this.isCallingInProgress) {
               // 将点名状态设置为false，表示点名结束
               this.isCallingInProgress = false;
               //将按钮恢复为开始点名按钮
-              document.getElementById("Large_Callout_Button_container").innerHTML = "开始点名";
+              callButton.innerHTML = "开始点名";
+              fabButton.innerHTML =
+                '<i class="mdui-icon material-icons">play_arrow</i>';
+              //修改颜色为蓝色
+              callButton.classList.remove("mdui-color-red-800");
+              callButton.classList.add("mdui-color-blue-800");
+              fabButton.classList.remove("mdui-color-red-800");
+              fabButton.classList.add("mdui-color-blue-800");
               // 设置定时器，在callIntervalSpeed毫秒后执行异步操作
               setTimeout(() => {
                 // 将当前显示的姓名（currentDisplayedName）添加到已点名的姓名列表（calledNamesList）中
@@ -242,7 +255,14 @@ function start() {
               // 如果点名尚未开始，则将点名状态设置为true，表示点名开始
               this.isCallingInProgress = true;
               //将按钮恢复为结束点名按钮
-              document.getElementById("Large_Callout_Button_container").innerHTML = "结束点名";
+              callButton.innerHTML = "结束点名";
+              fabButton.innerHTML =
+                '<i class="mdui-icon material-icons">pause</i>';
+              //修改颜色为红色
+              callButton.classList.remove("mdui-color-blue-800");
+              callButton.classList.add("mdui-color-red-800");
+              fabButton.classList.remove("mdui-color-blue-800");
+              fabButton.classList.add("mdui-color-red-800");
               // 调用scrollName函数，可能与滚动显示姓名相关
               this.scrollName();
             }
@@ -283,8 +303,7 @@ function get_hitokoto() {
       var data = JSON.parse(xhr.responseText);
       document.getElementById("OneText").innerHTML = data.hitokoto;
       //OneText_From 为出处
-      document.getElementById("OneText_From").innerHTML =
-        "——" + data.from;
+      document.getElementById("OneText_From").innerHTML = "——" + data.from;
     } else {
       document.getElementById("OneText").innerHTML =
         "你所热爱的，就是你的生活。";
