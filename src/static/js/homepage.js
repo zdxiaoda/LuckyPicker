@@ -179,67 +179,67 @@ function start() {
         data() {
           return {
             //布尔值，表示是否允许重复的点名。默认为true
-            name_repeat: true,
+            allowNameRepetition: true,
             //字符串，表示输入的点名字符串。默认为空
-            name_text: "",
-            //字符串，表示将 name_text 分割成单独的名字的分隔符。
-            separator: "\n",
-            //数组，表示 name_text 中所有单独的名字。默认为空数组
-            all_name: [],
+            inputNamesString: "",
+            //字符串，表示将 inputNamesString 分割成单独的名字的分隔符。
+            nameSeparator: "\n",
+            //数组，表示 inputNamesString 中所有单独的名字。默认为空数组
+            allIndividualNames: [],
             //数组，表示已经被点过的名字。
-            the_called_name: [],
+            calledNamesList: [],
             //数组，表示还没有被点过的名字。
-            the_not_called_name: [],
+            notCalledNamesList: [],
             //字符串，表示当前正在展示的名字。
-            the_show_name: "😀",
+            currentDisplayedName: "😀",
             //布尔值，表示是否正在进行点名。
-            is_call_start: true,
+            isCallingInProgress: true,
             //数字，表示点名速度（毫秒）。
-            call_speed: 50,
+            callIntervalSpeed: 50,
           };
         },
         watch: {
-          name_text() {
-            const trimmedText = this.name_text.trim();
+          inputNamesString() {
+            const trimmedText = this.inputNamesString.trim();
             const names = trimmedText
-              .split(this.separator)
+              .split(this.nameSeparator)
               .map((name) => name.trim())
               .filter((name) => name !== "");
-            this.all_name = names;
-            this.the_not_called_name = names;
+            this.allIndividualNames = names;
+            this.notCalledNamesList = names;
           },
         },
         methods: {
           // 定义switch_call_status函数，用于切换呼叫状态并执行相应操作
           switch_call_status() {
-            // 如果呼叫已经开始（is_call_start为true）
-            if (this.is_call_start) {
+            // 如果呼叫已经开始（isCallingInProgress为true）
+            if (this.isCallingInProgress) {
               // 将呼叫状态设置为false，表示呼叫结束
-              this.is_call_start = false;
+              this.isCallingInProgress = false;
 
-              // 设置定时器，在call_speed毫秒后执行异步操作
+              // 设置定时器，在callIntervalSpeed毫秒后执行异步操作
               setTimeout(() => {
-                // 将当前显示的姓名（the_show_name）添加到已呼叫的姓名列表（the_called_name）中
-                this.the_called_name = [this.the_show_name].concat(
-                  this.the_called_name
+                // 将当前显示的姓名（currentDisplayedName）添加到已呼叫的姓名列表（calledNamesList）中
+                this.calledNamesList = [this.currentDisplayedName].concat(
+                  this.calledNamesList
                 );
 
-                // 如果不允许姓名重复（name_repeat为false）
-                if (!this.name_repeat) {
-                  // 获取当前显示姓名在未呼叫姓名列表（the_not_called_name）中的索引
-                  const index = this.the_not_called_name.indexOf(
-                    this.the_show_name
+                // 如果不允许姓名重复（allowNameRepetition为false）
+                if (!this.allowNameRepetition) {
+                  // 获取当前显示姓名在未呼叫姓名列表（notCalledNamesList）中的索引
+                  const index = this.notCalledNamesList.indexOf(
+                    this.currentDisplayedName
                   );
 
                   // 如果当前显示姓名存在于未呼叫姓名列表中，则从该列表中删除
                   if (index !== -1) {
-                    this.the_not_called_name.splice(index, 1);
+                    this.notCalledNamesList.splice(index, 1);
                   }
                 }
-              }, this.call_speed);
+              }, this.callIntervalSpeed);
             } else {
               // 如果呼叫尚未开始，则将呼叫状态设置为true，表示呼叫开始
-              this.is_call_start = true;
+              this.isCallingInProgress = true;
 
               // 调用scrollName函数，可能与滚动显示姓名相关
               this.scrollName();
@@ -248,18 +248,18 @@ function start() {
           scrollName() {
             setTimeout(() => {
               const index = Math.floor(
-                Math.random() * this.the_not_called_name.length
+                Math.random() * this.notCalledNamesList.length
               );
-              this.the_show_name = this.the_not_called_name[index];
-              if (this.is_call_start) {
+              this.currentDisplayedName = this.notCalledNamesList[index];
+              if (this.isCallingInProgress) {
                 this.scrollName();
               }
-            }, this.call_speed);
+            }, this.callIntervalSpeed);
           },
           call_start() {
-            this.name_text = txt;
-            this.is_call_start = true;
-            this.the_called_name = [];
+            this.inputNamesString = txt;
+            this.isCallingInProgress = true;
+            this.calledNamesList = [];
             setTimeout(() => {
               this.scrollName();
             }, 100);
