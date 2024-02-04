@@ -1,4 +1,4 @@
-#case {
+#Displayed_Name_Case {
   border: 5px solid #8d8d8d;
   padding: 5px;
   background: #f0eded;
@@ -8,14 +8,14 @@
   top: 10%;
 }
 
-#name {
+#DisplayedName {
   font-family: "LXGWWenKaiLite";
   font-size: 150px;
   margin: auto;
   text-align: center;
 }
 
-#colorful {
+#Colorful_Case {
   background-image: -webkit-linear-gradient(
     left,
     red,
@@ -35,11 +35,11 @@
   font-family: "SourceHanSerifCN-Heavy";
   width: 89%;
 }
-#colorful-text {
+#OneText {
   font-size: 28px;
   text-align: center;
 }
-#colorful-text-from {
+#OneText_From {
   font-size: 17px;
   text-align: right;
 }
@@ -54,31 +54,21 @@
     background-position: 1% 0;
   }
 }
-#set-fonts {
+#Speaker_case {
   text-align: center;
   position: relative;
   left: 50%;
   top: 5%;
   transform: translate(-50%, -50%);
 }
-
-#BIG-BUTTON {
+#Speaker_icon {
+  font-size: 35px;
+}
+#Large_Callout_Button {
   text-align: center;
 }
 
-#text_fields {
-  font-size: 35px;
-}
-
-#speaker-icon {
-  font-size: 35px;
-}
-
-#start {
-  position: absolute;
-  top: 75%;
-}
-#start_button {
+#Fab_Button {
   position: absolute;
   top: 75%;
   transform: translate(-50%, -50%);

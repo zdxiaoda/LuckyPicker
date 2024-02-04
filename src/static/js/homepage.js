@@ -13,7 +13,7 @@ function music() {
   audio.paused ? audio.play() : audio.pause();
 }
 /** 编辑名单 */
-function edittxt() {
+function Edit_Text() {
   const { shell } = require("electron");
   shell.openPath(require("os").homedir() + listaddress + "/NameList.txt");
   //检测文件更改后刷新页面
@@ -33,13 +33,13 @@ function speaker() {
   }
   //Windows系统 直接调用系统自带的语音合成
   if (system == "Windows") {
-    speak(document.getElementById("name").innerHTML, "utf-8");
+    speak(document.getElementById("DisplayedName").innerHTML, "utf-8");
   }
   //Linux系统 调用espeak
   if (system == "Linux") {
     const { exec } = require("child_process");
     exec(
-      "espeak -v zh " + document.getElementById("name").innerHTML,
+      "espeak -v zh " + document.getElementById("DisplayedName").innerHTML,
       (err, stdout) => {
         if (err) {
           //弹出错误信息
@@ -174,8 +174,8 @@ function start() {
 
     /**载入点名 */
     requirejs(["vue"], function (Vue) {
-      const begin_name = new Vue({
-        el: "#begin_name",
+      const NameAPP = new Vue({
+        el: "#NameAPP",
         data() {
           return {
             //布尔值，表示是否允许重复的点名。默认为true
@@ -210,37 +210,39 @@ function start() {
           },
         },
         methods: {
-          // 定义switch_call_status函数，用于切换呼叫状态并执行相应操作
+          // 定义switch_call_status函数，用于切换点名状态并执行相应操作
           switch_call_status() {
-            // 如果呼叫已经开始（isCallingInProgress为true）
+            // 如果点名已经开始（isCallingInProgress为true）
             if (this.isCallingInProgress) {
-              // 将呼叫状态设置为false，表示呼叫结束
+              // 将点名状态设置为false，表示点名结束
               this.isCallingInProgress = false;
-
+              //将按钮恢复为开始点名按钮
+              document.getElementById("Large_Callout_Button_container").innerHTML = "开始点名";
               // 设置定时器，在callIntervalSpeed毫秒后执行异步操作
               setTimeout(() => {
-                // 将当前显示的姓名（currentDisplayedName）添加到已呼叫的姓名列表（calledNamesList）中
+                // 将当前显示的姓名（currentDisplayedName）添加到已点名的姓名列表（calledNamesList）中
                 this.calledNamesList = [this.currentDisplayedName].concat(
                   this.calledNamesList
                 );
 
                 // 如果不允许姓名重复（allowNameRepetition为false）
                 if (!this.allowNameRepetition) {
-                  // 获取当前显示姓名在未呼叫姓名列表（notCalledNamesList）中的索引
+                  // 获取当前显示姓名在未点名姓名列表（notCalledNamesList）中的索引
                   const index = this.notCalledNamesList.indexOf(
                     this.currentDisplayedName
                   );
 
-                  // 如果当前显示姓名存在于未呼叫姓名列表中，则从该列表中删除
+                  // 如果当前显示姓名存在于未点名姓名列表中，则从该列表中删除
                   if (index !== -1) {
                     this.notCalledNamesList.splice(index, 1);
                   }
                 }
               }, this.callIntervalSpeed);
             } else {
-              // 如果呼叫尚未开始，则将呼叫状态设置为true，表示呼叫开始
+              // 如果点名尚未开始，则将点名状态设置为true，表示点名开始
               this.isCallingInProgress = true;
-
+              //将按钮恢复为结束点名按钮
+              document.getElementById("Large_Callout_Button_container").innerHTML = "结束点名";
               // 调用scrollName函数，可能与滚动显示姓名相关
               this.scrollName();
             }
@@ -279,14 +281,14 @@ function get_hitokoto() {
   xhr.onreadystatechange = function () {
     if (xhr.readyState == 4) {
       var data = JSON.parse(xhr.responseText);
-      document.getElementById("colorful-text").innerHTML = data.hitokoto;
-      //colorful-text-from 为出处
-      document.getElementById("colorful-text-from").innerHTML =
+      document.getElementById("OneText").innerHTML = data.hitokoto;
+      //OneText_From 为出处
+      document.getElementById("OneText_From").innerHTML =
         "——" + data.from;
     } else {
-      document.getElementById("colorful-text").innerHTML =
+      document.getElementById("OneText").innerHTML =
         "你所热爱的，就是你的生活。";
-      document.getElementById("colorful-text-from").innerHTML = "陈睿";
+      document.getElementById("OneText_From").innerHTML = "陈睿";
     }
   };
   xhr.send();

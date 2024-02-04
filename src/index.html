@@ -18,7 +18,7 @@
   <body class="mdui-bottom-nav-fixed">
     <!--点名控件-->
     <!--名字-->
-    <main id="begin_name">
+    <main id="NameAPP">
       <!--应用栏-->
       <div class="mdui-appbar" style="-webkit-app-region: drag">
         <div class="mdui-toolbar mdui-color-light-green-800">
@@ -44,7 +44,7 @@
           </a>
           <button
             style="-webkit-app-region: no-drag"
-            id="start-orc"
+            id="Start_ORC"
             mdui-tooltip="{content: 'ORC识别名单'}"
             @click="start_orc()"
             class="mdui-btn mdui-btn-icon">
@@ -52,9 +52,9 @@
           </button>
           <button
             style="-webkit-app-region: no-drag"
-            id="edittxt"
+            id="Edit_Text"
             mdui-tooltip="{content: '编辑名单'}"
-            @click="edittxt()"
+            @click="Edit_Text()"
             class="mdui-btn mdui-btn-icon">
             <i id="edit-icon" class="mdui-icon material-icons">edit</i>
           </button>
@@ -75,7 +75,7 @@
         loop></audio>
       <!--开始按钮-->
       <button
-        id="start_button"
+        id="Fab_Button"
         @click="switch_call_status();music()"
         class="mdui-color-blue-800 mdui-fab mdui-fab-fixed mdui-ripple"
         mdui-tooltip="{content: '开始/停止点名'}">
@@ -83,21 +83,21 @@
       </button>
       <!--END 按钮-->
       <!--彩色字 -->
-      <div id="colorful">
-        <p id="colorful-text"><br></p>
+      <div id="Colorful_Case">
+        <p id="OneText"><br /></p>
         <!--彩色字 出处-->
-        <p id="colorful-text-from"><br></p>
+        <p id="OneText_From"><br /></p>
       </div>
       <!--姓名框-->
-      <div class="mdui-container" id="case">
-        <p id="name" v-text="currentDisplayedName"><br></p>
+      <div class="mdui-container" id="Displayed_Name_Case">
+        <p id="DisplayedName" v-text="currentDisplayedName"><br /></p>
       </div>
       <br />
       <br />
-      <!--字体大小选择-->
-      <div id="set-fonts">
+      <!--朗读按钮-->
+      <div id="Speaker_case">
         <button
-          id="speaker"
+          id="Speaker_icon"
           mdui-tooltip="{content: '朗读姓名'}"
           @click="speaker()"
           class="mdui-btn mdui-btn-icon">
@@ -105,11 +105,12 @@
         </button>
       </div>
       <!--大·点名按钮-->
-      <div id="BIG-BUTTON">
+      <div id="Large_Callout_Button">
         <button
+          id="Large_Callout_Button_container"
           @click="switch_call_status();music()"
           class="mdui-color-blue-800 mdui-btn">
-          开始/停止点名
+          停止点名
         </button>
       </div>
     </main>
