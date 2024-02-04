@@ -149,7 +149,11 @@ function start() {
   const fs = require("fs");
 
   /**读取TXT */
-  const filePath = path.join(require("os").homedir(), listaddress, "NameList.txt");
+  const filePath = path.join(
+    require("os").homedir(),
+    listaddress,
+    "NameList.txt"
+  );
   fs.readFile(filePath, "utf8", function (err, txt) {
     if (err) {
       console.error(err);
@@ -194,24 +198,38 @@ function start() {
           },
         },
         methods: {
+          // 定义switch_call_status函数，用于切换呼叫状态并执行相应操作
           switch_call_status() {
+            // 如果呼叫已经开始（is_call_start为true）
             if (this.is_call_start) {
+              // 将呼叫状态设置为false，表示呼叫结束
               this.is_call_start = false;
+
+              // 设置定时器，在call_speed毫秒后执行异步操作
               setTimeout(() => {
+                // 将当前显示的姓名（the_show_name）添加到已呼叫的姓名列表（the_called_name）中
                 this.the_called_name = [this.the_show_name].concat(
                   this.the_called_name
                 );
+
+                // 如果不允许姓名重复（name_repeat为false）
                 if (!this.name_repeat) {
+                  // 获取当前显示姓名在未呼叫姓名列表（the_not_called_name）中的索引
                   const index = this.the_not_called_name.indexOf(
                     this.the_show_name
                   );
+
+                  // 如果当前显示姓名存在于未呼叫姓名列表中，则从该列表中删除
                   if (index !== -1) {
                     this.the_not_called_name.splice(index, 1);
                   }
                 }
               }, this.call_speed);
             } else {
+              // 如果呼叫尚未开始，则将呼叫状态设置为true，表示呼叫开始
               this.is_call_start = true;
+
+              // 调用scrollName函数，可能与滚动显示姓名相关
               this.scrollName();
             }
           },
@@ -256,8 +274,7 @@ function get_hitokoto() {
     } else {
       document.getElementById("colorful-text").innerHTML =
         "你所热爱的，就是你的生活。";
-        document.getElementById("colorful-text-from").innerHTML =
-        "陈睿";
+      document.getElementById("colorful-text-from").innerHTML = "陈睿";
     }
   };
   xhr.send();
