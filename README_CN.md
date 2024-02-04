@@ -20,7 +20,7 @@ LuckyPicker，顾名思义，它就是一款能够用来随机点名的软件~
 
 使用 MDUI 框架，再怎么写也不会丑到哪里去~
 
-![一个界面展示图片](https://raw.githubusercontent.com/zdxiaoda/random-roll-call-system/master/src/static/help/homepage.webp)
+![一个界面展示图片](https://raw.githubusercontent.com/zdxiaoda/LuckyPicker/master/src/static/help/homepage.webp)
 
 #### 不随便拉屎 😎
 
@@ -44,13 +44,13 @@ LuckyPicker，顾名思义，它就是一款能够用来随机点名的软件~
 
 直接下载已经打包好的发行版~
 
-https://github.com/zdxiaoda/random-roll-call-system/releases
+https://github.com/zdxiaoda/LuckyPicker/releases
 
 或者自己打包~
 
-`git clone https://github.com/zdxiaoda/random-roll-call-system.git`
+`git clone https://github.com/zdxiaoda/LuckyPicker.git`
 
-`cd random-roll-call-system `
+`cd LuckyPicker `
 
 `npm install`
 

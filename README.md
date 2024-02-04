@@ -23,7 +23,7 @@ I say it's only for roll call, and it really is just for roll call, nothing else
 
 Using the MDUI framework ensures an aesthetically pleasing presentation regardless of the usage.
 
-![A screenshot of the interface](https://raw.githubusercontent.com/zdxiaoda/random-roll-call-system/master/src/static/help/homepage.webp)
+![A screenshot of the interface](https://raw.githubusercontent.com/zdxiaoda/LuckyPicker/master/src/static/help/homepage.webp)
 
 #### No Haphazard File Generation in Other Directories 😎
 
@@ -47,13 +47,13 @@ The use of a large typeface ensures comfortable legibility on bigger displays.
 
 Download the pre-packaged release directly~
 
-https://github.com/zdxiaoda/random-roll-call-system/releases
+https://github.com/zdxiaoda/LuckyPicker/releases
 
 Or build it yourself~
 
-`git clone https://github.com/zdxiaoda/random-roll-call-system.git`
+`git clone https://github.com/zdxiaoda/LuckyPicker.git`
 
-`cd random-roll-call-system`
+`cd LuckyPicker`
 
 `npm install`
 
