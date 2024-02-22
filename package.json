@@ -49,7 +49,7 @@
         {
           "name": "@electron-forge/maker-zip",
           "config": {
-            "executableName": "LuckyPicker",
+            "bin": "LuckyPicker",
             "name": "LuckyPicker",
             "asar": true
           },
@@ -61,7 +61,7 @@
         {
           "name": "@electron-forge/maker-deb",
           "config": {
-            "executableName": "LuckyPicker",
+            "bin": "LuckyPicker",
             "name": "LuckyPicker",
             "icon": "./src/static/icons/LuckyPicker.png",
             "asar": true,
@@ -72,7 +72,7 @@
         {
           "name": "@electron-forge/maker-rpm",
           "config": {
-            "executableName": "LuckyPicker",
+            "bin": "LuckyPicker",
             "name": "LuckyPicker",
             "icon": "./src/static/icons/LuckyPicker.png",
             "asar": true,
