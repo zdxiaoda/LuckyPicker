@@ -22,7 +22,7 @@
       "packagerConfig": {
         "executableName": "LuckyPicker",
         "name": "LuckyPicker",
-        "icon": "./src/static/icons/LuckyPicker.png",
+        "icon": "./src/static/icons/LuckyPicker",
         "appCopyright": "zdxiaoda",
         "asar": true,
         "win32metadata": {
@@ -35,8 +35,8 @@
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
+            "setupIcon": "./src/static/icons/LuckyPicker.ico",
             "name": "LuckyPicker",
-            "icon": "./src/static/icons/LuckyPicker.ico",
             "asar": true,
             "appCopyright": "zdxiaoda",
             "win32metadata": {
