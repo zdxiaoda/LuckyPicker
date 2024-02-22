@@ -20,7 +20,7 @@
   "config": {
     "forge": {
       "packagerConfig": {
-        "executableName": "lucky-picker",
+        "executableName": "LuckyPicker",
         "name": "LuckyPicker",
         "icon": "./src/static/icons/LuckyPicker.png",
         "appCopyright": "zdxiaoda",
