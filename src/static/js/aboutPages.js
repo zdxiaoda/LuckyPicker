@@ -57,11 +57,11 @@ function electron_forge_License() {
 }
 
 function zdxiaoda() {
-  openExternalLink("https://zhangda.xyz/");
+  openExternalLink("https://www.zhangda.xyz/");
 }
 
 function random() {
-  openExternalLink("https://github.com/zdxiaoda/random-roll-call-system");
+  openExternalLink("https://github.com/zdxiaoda/LuckyPicker");
 }
 
 function vwo50() {
