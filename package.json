@@ -35,7 +35,7 @@
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
-            "setupIcon": "./src/static/icons/LuckyPicker.ico",
+            "setupIcon": "./src/static/icons/LuckyPicker_install.ico",
             "name": "LuckyPicker",
             "asar": true,
             "appCopyright": "zdxiaoda",
