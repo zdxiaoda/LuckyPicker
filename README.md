@@ -9,7 +9,7 @@ The LuckyPicker, as the name suggests, is a tool designed for randomly selecting
 
 ### About this tool:
 
-This tool was developed by **[zd小达](https://zhangda.xyz/)** using HTML+CSS+JS and packaged with Electron, supporting Windows and Linux systems. (unfortunately, not compatible with Mac because I don't have one...). Sincere thanks to all the open-source projects used 🧎**🧎**🧎.
+This tool was developed by **[zd小达](https://xiaoda.fun/)** using HTML+CSS+JS and packaged with Electron, supporting Windows and Linux systems. (unfortunately, not compatible with Mac because I don't have one...). Sincere thanks to all the open-source projects used 🧎**🧎**🧎.
 
 ---
 
@@ -89,4 +89,4 @@ Company annual meetings, teacher roll calls during classes, boosting party vibes
 
 [Paypal](https://paypal.me/zdxiaoda)
 
-[QQ/WeChat/Alipay](https://pay.zhangda.xyz)
+[QQ/WeChat/Alipay](https://pay.xiaoda.fun)

@@ -57,7 +57,7 @@ function electron_forge_License() {
 }
 
 function zdxiaoda() {
-  openExternalLink("https://www.zhangda.xyz/");
+  openExternalLink("https://www.xiaoda.fun/");
 }
 
 function random() {
@@ -65,5 +65,5 @@ function random() {
 }
 
 function vwo50() {
-  openExternalLink("https://vwo50.zhangda.xyz");
+  openExternalLink("https://vwo50.xiaoda.fun");
 }

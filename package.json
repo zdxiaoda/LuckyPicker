@@ -66,7 +66,7 @@
             "icon": "./src/static/icons/LuckyPicker.png",
             "asar": true,
             "maintainer": "zdxiaoda",
-            "homepage": "https://zhangda.xyz"
+            "homepage": "https://xiaoda.fun"
           }
         },
         {
@@ -77,7 +77,7 @@
             "icon": "./src/static/icons/LuckyPicker.png",
             "asar": true,
             "maintainer": "zdxiaoda",
-            "homepage": "https://zhangda.xyz"
+            "homepage": "https://xiaoda.fun"
           }
         },
         {
@@ -88,7 +88,7 @@
             "icon": "./src/static/icons/LuckyPicker.png",
             "asar": true,
             "maintainer": "zdxiaoda",
-            "homepage": "https://zhangda.xyz"
+            "homepage": "https://xiaoda.fun"
           }
         }
       ]

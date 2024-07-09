@@ -6,7 +6,7 @@ LuckyPicker，顾名思义，它就是一款能够用来随机点名的软件~
 
 ### 关于此工具：
 
-此工具由 **[zd小达](https://zhangda.xyz/)** 制作~底层采用 HTML+CSS+JS 编写，采用 electron 打包，支持 Windows 和 Linux 系统（不支持 Mac 是因为我没有。。。）。真诚的感谢所有使用到的开源项目 🧎**🧎**🧎。
+此工具由 **[zd小达](https://xiaoda.fun/)** 制作~底层采用 HTML+CSS+JS 编写，采用 electron 打包，支持 Windows 和 Linux 系统（不支持 Mac 是因为我没有。。。）。真诚的感谢所有使用到的开源项目 🧎**🧎**🧎。
 
 ---
 
@@ -86,4 +86,4 @@ https://github.com/zdxiaoda/LuckyPicker/releases
 
 [Paypal](https://paypal.me/zdxiaoda)
 
-[QQ/微信/支付宝](https://pay.zhangda.xyz)
+[QQ/微信/支付宝](https://pay.xiaoda.fun)
