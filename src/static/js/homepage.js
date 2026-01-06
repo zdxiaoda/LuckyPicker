@@ -224,7 +224,6 @@ function start() {
               this.isCallingInProgress = false;
               //将按钮恢复为开始点名按钮
               callButton.innerHTML = "开始点名";
-              const fabButton = document.getElementById("Fab_Button");
               fabButton.icon = "play_arrow";
               //修改颜色
               callButton.variant = "filled";
@@ -254,7 +253,6 @@ function start() {
               this.isCallingInProgress = true;
               //将按钮恢复为结束点名按钮
               callButton.innerHTML = "结束点名";
-              const fabButton = document.getElementById("Fab_Button");
               fabButton.icon = "pause";
               //修改颜色
               callButton.variant = "filled";
