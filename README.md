@@ -21,7 +21,7 @@ I say it's only for roll call, and it really is just for roll call, nothing else
 
 #### Beautiful Interface 😁
 
-Using the MDUI framework ensures an aesthetically pleasing presentation regardless of the usage.
+Using the MDUI 2.0 framework with Material Design 3 guidelines, ensuring a modern and aesthetically pleasing interface.
 
 ![A screenshot of the interface](https://raw.githubusercontent.com/zdxiaoda/LuckyPicker/master/src/static/help/homepage.webp)
 
@@ -69,7 +69,7 @@ Company annual meetings, teacher roll calls during classes, boosting party vibes
 
 ### Projects Used:
 
-[MDUI](https://github.com/zdhxiong/mdui)
+[MDUI 2.0](https://github.com/zdhxiong/mdui)
 
 [requirejs](https://github.com/requirejs/requirejs/)
 
