@@ -55,7 +55,7 @@ jobs:
 
   build_mac:
     macos:
-      xcode: 14.2.0
+      xcode: 26.2.0
     steps:
       - checkout
       - run:
