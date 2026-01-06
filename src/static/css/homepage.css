@@ -70,5 +70,5 @@
 #Fab_Button {
   position: fixed;
   right: 24px;
-  bottom: 80px;
+  bottom: var(--bottom-nav-height, 80px);
 }

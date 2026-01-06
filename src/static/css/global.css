@@ -22,3 +22,15 @@ main {
   padding-top: 64px;
   padding-bottom: 80px;
 }
+/* Standard content padding for subpages */
+.mdui-container {
+  padding-top: 80px;
+  padding-bottom: 40px;
+}
+/* CSS custom properties for consistent spacing */
+:root {
+  --top-app-bar-height: 64px;
+  --bottom-nav-height: 80px;
+  --content-top-padding: 80px;
+  --content-bottom-padding: 40px;
+}
