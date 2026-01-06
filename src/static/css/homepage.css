@@ -68,7 +68,7 @@
   text-align: center;
 }
 #Fab_Button {
-  position: absolute;
-  top: 75%;
-  transform: translate(-50%, -50%);
+  position: fixed;
+  right: 24px;
+  bottom: 80px;
 }

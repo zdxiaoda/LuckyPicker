@@ -224,13 +224,11 @@ function start() {
               this.isCallingInProgress = false;
               //将按钮恢复为开始点名按钮
               callButton.innerHTML = "开始点名";
-              fabButton.innerHTML =
-                '<i class="mdui-icon material-icons">play_arrow</i>';
-              //修改颜色为蓝色
-              callButton.classList.remove("mdui-color-red-800");
-              callButton.classList.add("mdui-color-blue-800");
-              fabButton.classList.remove("mdui-color-red-800");
-              fabButton.classList.add("mdui-color-blue-800");
+              const fabButton = document.getElementById("Fab_Button");
+              fabButton.icon = "play_arrow";
+              //修改颜色
+              callButton.variant = "filled";
+              fabButton.variant = "primary";
               // 设置定时器，在callIntervalSpeed毫秒后执行异步操作
               setTimeout(() => {
                 // 将当前显示的姓名（currentDisplayedName）添加到已点名的姓名列表（calledNamesList）中
@@ -256,13 +254,11 @@ function start() {
               this.isCallingInProgress = true;
               //将按钮恢复为结束点名按钮
               callButton.innerHTML = "结束点名";
-              fabButton.innerHTML =
-                '<i class="mdui-icon material-icons">pause</i>';
-              //修改颜色为红色
-              callButton.classList.remove("mdui-color-blue-800");
-              callButton.classList.add("mdui-color-red-800");
-              fabButton.classList.remove("mdui-color-blue-800");
-              fabButton.classList.add("mdui-color-red-800");
+              const fabButton = document.getElementById("Fab_Button");
+              fabButton.icon = "pause";
+              //修改颜色
+              callButton.variant = "filled";
+              fabButton.variant = "primary";
               // 调用scrollName函数，可能与滚动显示姓名相关
               this.scrollName();
             }

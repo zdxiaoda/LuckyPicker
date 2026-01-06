@@ -17,3 +17,8 @@ body {
 body::-webkit-scrollbar {
   display: none;
 }
+/* Add padding for top app bar */
+main {
+  padding-top: 64px;
+  padding-bottom: 80px;
+}
