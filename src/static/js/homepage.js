@@ -14,16 +14,16 @@ function music() {
 }
 /** 编辑名单 */
 function Edit_Text() {
-  const { shell } = require("electron");
-  shell.openPath(require("os").homedir() + listaddress + "/NameList.txt");
+  window.open(
+    "./subpage/edit.html",
+    "_blank",
+    "top=500,frame=false,nodeIntegration=true,contextIsolation=false,enableRemoteModule=true"
+  );
   //检测文件更改后刷新页面
   var fs = require("fs");
-  fs.watchFile(
-    require("os").homedir() + listaddress + "/NameList.txt",
-    (curr, prev) => {
-      location.reload();
-    }
-  );
+  fs.watchFile(require("os").homedir() + listaddress + "/NameList.txt", () => {
+    location.reload();
+  });
 }
 /** 语音合成 */
 function speaker() {
