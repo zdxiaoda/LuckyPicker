@@ -10,27 +10,19 @@
   font-family: SourceHanSerifCN-Heavy;
   src: url(../fonts/SourceHanSerifCN-Heavy.otf);
 }
+@font-face {
+  font-family: "Material Icons";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/materialicons-v145.woff2)
+    format("woff2");
+}
+
 body {
   font-family: "SourceHanSansCN";
 }
 /*隐藏滚动条**/
 body::-webkit-scrollbar {
   display: none;
-}
-/* Add padding for top app bar */
-main {
-  padding-top: 64px;
-  padding-bottom: 80px;
-}
-/* Standard content padding for subpages */
-.mdui-container {
-  padding-top: 80px;
-  padding-bottom: 40px;
-}
-/* CSS custom properties for consistent spacing */
-:root {
-  --top-app-bar-height: 64px;
-  --bottom-nav-height: 80px;
-  --content-top-padding: 80px;
-  --content-bottom-padding: 40px;
 }
