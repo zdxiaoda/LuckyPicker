@@ -7,11 +7,13 @@ if (process.platform == "linux") {
   var listaddress = "/.LuckyPicker";
   var system = "Linux";
 }
+
 /** 控制音乐播放 */
 function music() {
   const audio = document.getElementById("mokugyo");
   audio.paused ? audio.play() : audio.pause();
 }
+
 /** 编辑名单 */
 function Edit_Text() {
   window.open(
@@ -25,6 +27,7 @@ function Edit_Text() {
     location.reload();
   });
 }
+
 /** 语音合成 */
 function speaker() {
   function speak(sentence) {
@@ -58,6 +61,7 @@ function speaker() {
     );
   }
 }
+
 /** 打开帮助/关于页面 */
 function open_help() {
   window.open("./subpage/help.html", "_blank", "top=500,frame=false");
@@ -69,6 +73,7 @@ function open_about() {
     "top=500,frame=false,nodeIntegration=true,contextIsolation=false,enableRemoteModule=true"
   );
 }
+
 /** 打开ORC */
 function start_orc() {
   window.open(
@@ -77,6 +82,7 @@ function start_orc() {
     "top=500,frame=false,nodeIntegration=true,contextIsolation=false,enableRemoteModule=true"
   );
 }
+
 /** 定义toggleFullScreen函数，用于切换全屏状态*/
 function toggleFullScreen() {
   // 获取当前文档显示的元素（兼容各种浏览器）
@@ -121,8 +127,11 @@ function checkList() {
     if (the_list) {
       //创建文件夹
       var fs = require("fs");
-      fs.mkdirSync(require("os").homedir() + listaddress);
-    } else {
+      try {
+        fs.mkdirSync(require("os").homedir() + listaddress);
+      } catch (e) {
+        // ignore if exists
+      }
     }
   });
   /**判断并自动生成NameList.txt */
@@ -154,8 +163,105 @@ function checkList() {
     }
   });
 }
-checkList();
-/** 开始点名 */
+
+// ----------------------------------------------------------------
+// 点名核心逻辑 (Vanilla JS Implementation)
+// ----------------------------------------------------------------
+
+// 核心状态变量
+//布尔值，表示是否允许重复的点名。默认为true
+let allowNameRepetition = true;
+//字符串，表示输入的点名字符串。默认为空
+let inputNamesString = "";
+//字符串，表示将 inputNamesString 分割成单独的名字的分隔符。
+const nameSeparator = "\n";
+//数组，表示 inputNamesString 中所有单独的名字。默认为空数组
+let allIndividualNames = [];
+//数组，表示已经被点过的名字。
+let calledNamesList = [];
+//数组，表示还没有被点过的名字。
+let notCalledNamesList = [];
+//字符串，表示当前正在展示的名字。
+let currentDisplayedName = "😀";
+//布尔值，表示是否正在进行点名。默认为正在点名
+let isCallingInProgress = true;
+//数字，表示点名速度（毫秒）。
+const callIntervalSpeed = 50;
+
+/** 更新DOM显示的函数 */
+function updateDisplayedName() {
+  const el = document.getElementById("DisplayedName");
+  if (el) el.textContent = currentDisplayedName;
+}
+
+/** 切换点名状态 */
+function switch_call_status() {
+  // 获取按钮元素
+  const callButton = document.getElementById("Large_Callout_Button_container");
+  //获取Fab_Button元素
+  const fabButton = document.getElementById("Fab_Button");
+
+  // 如果点名已经开始（isCallingInProgress为true）
+  if (isCallingInProgress) {
+    // 将点名状态设置为false，表示点名结束
+    isCallingInProgress = false;
+    //将按钮恢复为开始点名按钮
+    callButton.innerHTML = "开始点名";
+    fabButton.icon = "play_arrow";
+    //修改颜色
+    callButton.variant = "filled";
+    fabButton.variant = "primary";
+    // 设置定时器，在callIntervalSpeed毫秒后执行异步操作
+    setTimeout(() => {
+      // 将当前显示的姓名（currentDisplayedName）添加到已点名的姓名列表（calledNamesList）中
+      calledNamesList = [currentDisplayedName].concat(calledNamesList);
+
+      // 如果不允许姓名重复（allowNameRepetition为false）
+      if (!allowNameRepetition) {
+        // 获取当前显示姓名在未点名姓名列表（notCalledNamesList）中的索引
+        const index = notCalledNamesList.indexOf(currentDisplayedName);
+
+        // 如果当前显示姓名存在于未点名姓名列表中，则从该列表中删除
+        if (index !== -1) {
+          notCalledNamesList.splice(index, 1);
+        }
+      }
+    }, callIntervalSpeed);
+  } else {
+    // 如果点名尚未开始，则将点名状态设置为true，表示点名开始
+    isCallingInProgress = true;
+    //将按钮恢复为结束点名按钮
+    callButton.innerHTML = "结束点名";
+    fabButton.icon = "pause";
+    //修改颜色
+    callButton.variant = "filled";
+    fabButton.variant = "primary";
+    // 调用scrollName函数，开始滚动显示姓名
+    scrollName();
+  }
+}
+
+/** 滚动名字递归函数 */
+function scrollName() {
+  setTimeout(() => {
+    // 如果没有名字了，停止滚动
+    if (notCalledNamesList.length === 0) {
+      return;
+    }
+    // 随机获取一个名字索引
+    const index = Math.floor(Math.random() * notCalledNamesList.length);
+    // 更新当前显示的名字
+    currentDisplayedName = notCalledNamesList[index];
+    updateDisplayedName();
+
+    // 如果仍在点名过程中，继续下一次滚动
+    if (isCallingInProgress) {
+      scrollName();
+    }
+  }, callIntervalSpeed);
+}
+
+/** 开始初始化点名数据 */
 function start() {
   const path = require("path");
   const fs = require("fs");
@@ -166,128 +272,58 @@ function start() {
     listaddress,
     "NameList.txt"
   );
+
   fs.readFile(filePath, "utf8", function (err, txt) {
     if (err) {
       console.error(err);
       return;
     }
 
-    /**载入点名 */
-    requirejs(["vue"], function (Vue) {
-      const NameAPP = new Vue({
-        el: "#NameAPP",
-        data() {
-          return {
-            //布尔值，表示是否允许重复的点名。默认为true
-            allowNameRepetition: true,
-            //字符串，表示输入的点名字符串。默认为空
-            inputNamesString: "",
-            //字符串，表示将 inputNamesString 分割成单独的名字的分隔符。
-            nameSeparator: "\n",
-            //数组，表示 inputNamesString 中所有单独的名字。默认为空数组
-            allIndividualNames: [],
-            //数组，表示已经被点过的名字。
-            calledNamesList: [],
-            //数组，表示还没有被点过的名字。
-            notCalledNamesList: [],
-            //字符串，表示当前正在展示的名字。
-            currentDisplayedName: "😀",
-            //布尔值，表示是否正在进行点名。
-            isCallingInProgress: true,
-            //数字，表示点名速度（毫秒）。
-            callIntervalSpeed: 50,
-          };
-        },
-        watch: {
-          inputNamesString() {
-            const trimmedText = this.inputNamesString.trim();
-            const names = trimmedText
-              .split(this.nameSeparator)
-              .map((name) => name.trim())
-              .filter((name) => name !== "");
-            this.allIndividualNames = names;
-            this.notCalledNamesList = names;
-          },
-        },
-        methods: {
-          // 定义switch_call_status函数，用于切换点名状态并执行相应操作
-          switch_call_status() {
-            // 获取按钮元素
-            const callButton = document.getElementById(
-              "Large_Callout_Button_container"
-            );
-            //获取Fab_Button元素
-            const fabButton = document.getElementById("Fab_Button");
-            // 如果点名已经开始（isCallingInProgress为true）
-            if (this.isCallingInProgress) {
-              // 将点名状态设置为false，表示点名结束
-              this.isCallingInProgress = false;
-              //将按钮恢复为开始点名按钮
-              callButton.innerHTML = "开始点名";
-              fabButton.icon = "play_arrow";
-              //修改颜色
-              callButton.variant = "filled";
-              fabButton.variant = "primary";
-              // 设置定时器，在callIntervalSpeed毫秒后执行异步操作
-              setTimeout(() => {
-                // 将当前显示的姓名（currentDisplayedName）添加到已点名的姓名列表（calledNamesList）中
-                this.calledNamesList = [this.currentDisplayedName].concat(
-                  this.calledNamesList
-                );
+    /**载入点名逻辑 */
+    inputNamesString = txt;
+    // 处理文本，分割名字
+    const trimmedText = inputNamesString.trim();
+    const names = trimmedText
+      .split(nameSeparator)
+      .map((name) => name.trim())
+      .filter((name) => name !== "");
 
-                // 如果不允许姓名重复（allowNameRepetition为false）
-                if (!this.allowNameRepetition) {
-                  // 获取当前显示姓名在未点名姓名列表（notCalledNamesList）中的索引
-                  const index = this.notCalledNamesList.indexOf(
-                    this.currentDisplayedName
-                  );
+    // 初始化名单列表
+    allIndividualNames = names;
+    notCalledNamesList = names;
+    isCallingInProgress = true; // 初始状态为正在滚动
+    calledNamesList = [];
 
-                  // 如果当前显示姓名存在于未点名姓名列表中，则从该列表中删除
-                  if (index !== -1) {
-                    this.notCalledNamesList.splice(index, 1);
-                  }
-                }
-              }, this.callIntervalSpeed);
-            } else {
-              // 如果点名尚未开始，则将点名状态设置为true，表示点名开始
-              this.isCallingInProgress = true;
-              //将按钮恢复为结束点名按钮
-              callButton.innerHTML = "结束点名";
-              fabButton.icon = "pause";
-              //修改颜色
-              callButton.variant = "filled";
-              fabButton.variant = "primary";
-              // 调用scrollName函数，可能与滚动显示姓名相关
-              this.scrollName();
-            }
-          },
-          scrollName() {
-            setTimeout(() => {
-              const index = Math.floor(
-                Math.random() * this.notCalledNamesList.length
-              );
-              this.currentDisplayedName = this.notCalledNamesList[index];
-              if (this.isCallingInProgress) {
-                this.scrollName();
-              }
-            }, this.callIntervalSpeed);
-          },
-          call_start() {
-            this.inputNamesString = txt;
-            this.isCallingInProgress = true;
-            this.calledNamesList = [];
-            setTimeout(() => {
-              this.scrollName();
-            }, 100);
-          },
-        },
-        mounted() {
-          this.call_start();
-        },
-      });
-    });
+    // 绑定UI事件
+    bindEvents();
+
+    // 开始滚动
+    setTimeout(() => {
+      scrollName();
+    }, 100);
   });
 }
+
+/** 绑定按钮事件 */
+function bindEvents() {
+  // 绑定大按钮
+  const largeBtn = document.getElementById("Large_Callout_Button_container");
+  if (largeBtn) {
+    largeBtn.onclick = () => {
+      switch_call_status();
+      music();
+    };
+  }
+  // 绑定Fab按钮
+  const fabBtn = document.getElementById("Fab_Button");
+  if (fabBtn) {
+    fabBtn.onclick = () => {
+      switch_call_status();
+      music();
+    };
+  }
+}
+
 /** 获取一言 */
 function get_hitokoto() {
   var xhr = new XMLHttpRequest();
@@ -306,4 +342,7 @@ function get_hitokoto() {
   };
   xhr.send();
 }
+
+// 启动检查和初始化流程
+checkList();
 get_hitokoto();

@@ -1,9 +1,8 @@
 <!doctype html>
 <html lang="zh_CN" class="mdui-theme-auto">
   <head>
-    <script src="./static/js/jquery-3.7.1.min.js"></script>
-    <script src="./static/js/require.js"></script>
-    <script src="./static/js/homepage_path.js"></script>
+    <script src="./static/js/mdui.js"></script>
+    <script src="./static/js/homepage.js"></script>
     <meta charset="utf-8" />
     <title>主页 - LuckyPicker</title>
     <meta
@@ -45,7 +44,7 @@
             class="no-drag-region"
             id="Start_ORC"
             icon="photo_camera"
-            @click="start_orc()"></mdui-button-icon>
+            onclick="start_orc()"></mdui-button-icon>
         </mdui-tooltip>
 
         <mdui-tooltip content="编辑名单">
@@ -53,7 +52,7 @@
             class="no-drag-region"
             id="Edit_Text"
             icon="edit"
-            @click="Edit_Text()"></mdui-button-icon>
+            onclick="Edit_Text()"></mdui-button-icon>
         </mdui-tooltip>
         <mdui-tooltip content="关闭">
           <mdui-button-icon
@@ -69,11 +68,7 @@
         autoplay
         loop></audio>
       <!--开始按钮-->
-      <mdui-fab
-        id="Fab_Button"
-        icon="pause"
-        @click="switch_call_status();music()">
-      </mdui-fab>
+      <mdui-fab id="Fab_Button" icon="pause"> </mdui-fab>
 
       <div class="content-container">
         <!--END 按钮-->
@@ -85,22 +80,19 @@
         </div>
         <!--姓名框-->
         <div class="mdui-prose" id="Displayed_Name_Case">
-          <p id="DisplayedName" v-text="currentDisplayedName"><br /></p>
+          <p id="DisplayedName"><br /></p>
         </div>
         <!--朗读按钮-->
         <div id="Speaker_case">
           <mdui-button-icon
             id="Speaker_icon"
             icon="record_voice_over"
-            @click="speaker()">
+            onclick="speaker()">
           </mdui-button-icon>
         </div>
         <!--大·点名按钮-->
         <div id="Large_Callout_Button">
-          <mdui-button
-            id="Large_Callout_Button_container"
-            variant="filled"
-            @click="switch_call_status();music()">
+          <mdui-button id="Large_Callout_Button_container" variant="filled">
             停止点名
           </mdui-button>
         </div>
