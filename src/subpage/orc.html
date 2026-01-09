@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="zh_CN">
+<!doctype html>
+<html lang="zh_CN" class="mdui-theme-auto">
   <head>
     <meta charset="utf-8" />
     <title>ORC - LuckyPicker</title>
@@ -7,6 +7,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no" />
     <link rel="stylesheet" href="../static/css/mdui.css" />
+    <script src="../static/js/mdui.js"></script>
     <link rel="icon" href="./icons/LuckyPicker.png" />
     <link rel="stylesheet" href="../static/css/global.css" />
     <style>
@@ -23,27 +24,28 @@
     </style>
   </head>
 
-  <body class="mdui-bottom-nav-fixed">
+  <body>
     <!--应用栏-->
-    <div class="mdui-appbar" style="-webkit-app-region: drag">
-      <div class="mdui-toolbar mdui-color-light-green-800">
-        <a class="mdui-typo-headline">LuckyPicker</a>
-        <a class="mdui-typo-title">ORC</a>
-        <div class="mdui-toolbar-spacer"></div>
-        <a
-          mdui-tooltip="{content: '关闭'}"
+    <mdui-top-app-bar style="-webkit-app-region: drag">
+      <div class="app-title">LuckyPicker - ORC</div>
+      <div style="flex-grow: 1"></div>
+      <mdui-tooltip content="关闭">
+        <mdui-button-icon
           style="-webkit-app-region: no-drag"
-          onclick="window.close();"
-          class="mdui-btn mdui-btn-icon">
-          <i class="mdui-icon material-icons">close</i>
-        </a>
-      </div>
-    </div>
-    <div class="mdui-container mdui-typo">
+          icon="close"
+          onclick="window.close()"></mdui-button-icon>
+      </mdui-tooltip>
+    </mdui-top-app-bar>
+    <div class="mdui-prose">
       <h1>你需要连接互联网来使用这个功能</h1>
 
       <div class="put_pic" id="put_pic_here">
-        <span>往这里拖拽你想要识别的图片</span>
+        <span>往这里拖拽你想要识别的图片，或者点击上传</span>
+        <input
+          type="file"
+          id="file_input"
+          style="display: none"
+          accept="image/*" />
       </div>
       <h3>识别结果：</h3>
       <p id="text_result"></p>

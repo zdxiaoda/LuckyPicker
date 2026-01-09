@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh_CN" class="mdui-theme-auto">
+  <head>
+    <meta charset="utf-8" />
+    <title>编辑名单 - LuckyPicker</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="../static/css/mdui.css" />
+    <link rel="stylesheet" href="../static/css/global.css" />
+    <link rel="stylesheet" href="../static/css/edit.css" />
+    <script src="../static/js/mdui.js"></script>
+  </head>
+  <body class="app-container">
+    <mdui-top-app-bar class="drag-region">
+      <div class="app-title">编辑名单</div>
+      <div style="flex-grow: 1"></div>
+
+      <mdui-tooltip content="导入外部TXT">
+        <mdui-button-icon
+          icon="file_upload"
+          class="no-drag-region"
+          onclick="importFile()"></mdui-button-icon>
+      </mdui-tooltip>
+
+      <mdui-tooltip content="保存">
+        <mdui-button-icon
+          icon="save"
+          class="no-drag-region"
+          onclick="saveFile()"></mdui-button-icon>
+      </mdui-tooltip>
+
+      <mdui-tooltip content="刷新">
+        <mdui-button-icon
+          icon="refresh"
+          class="no-drag-region"
+          onclick="loadFile()"></mdui-button-icon>
+      </mdui-tooltip>
+
+      <mdui-tooltip content="关闭">
+        <mdui-button-icon
+          icon="close"
+          class="no-drag-region"
+          onclick="window.close()"></mdui-button-icon>
+      </mdui-tooltip>
+    </mdui-top-app-bar>
+
+    <div class="editor-container">
+      <textarea
+        id="nameContent"
+        placeholder="在此处输入名单，一行一个名字..."></textarea>
+    </div>
+
+    <!-- Hidden file input for import -->
+    <input
+      type="file"
+      id="fileInput"
+      style="display: none"
+      accept=".txt"
+      onchange="handleFileImport(event)" />
+
+    <!-- Snackbar for notifications -->
+    <mdui-snackbar id="snackbar"></mdui-snackbar>
+
+    <script src="../static/js/edit.js"></script>
+  </body>
+</html>

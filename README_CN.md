@@ -18,7 +18,7 @@ LuckyPicker，顾名思义，它就是一款能够用来随机点名的软件~
 
 #### 界面美观 😁
 
-使用 MDUI 框架，再怎么写也不会丑到哪里去~
+使用 MDUI 2.0 框架，基于 Material Design 3 设计规范，界面现代美观~
 
 ![一个界面展示图片](https://raw.githubusercontent.com/zdxiaoda/LuckyPicker/master/src/static/help/homepage.webp)
 
@@ -66,7 +66,7 @@ https://github.com/zdxiaoda/LuckyPicker/releases
 
 ### 使用到的项目：
 
-[MDUI](https://github.com/zdhxiong/mdui)
+[MDUI 2.0](https://github.com/zdhxiong/mdui)
 
 [requirejs](https://github.com/requirejs/requirejs/)
 
