@@ -40,7 +40,12 @@
       <h1>你需要连接互联网来使用这个功能</h1>
 
       <div class="put_pic" id="put_pic_here">
-        <span>往这里拖拽你想要识别的图片</span>
+        <span>往这里拖拽你想要识别的图片，或者点击上传</span>
+        <input
+          type="file"
+          id="file_input"
+          style="display: none"
+          accept="image/*" />
       </div>
       <h3>识别结果：</h3>
       <p id="text_result"></p>
