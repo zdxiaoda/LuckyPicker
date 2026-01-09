@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh_CN" class="mdui-theme-auto">
   <head>
     <meta charset="utf-8" />
@@ -12,19 +12,19 @@
     <link rel="stylesheet" href="../static/css/global.css" />
   </head>
 
-  <body>
+  <body class="app-container">
     <!--应用栏-->
-    <mdui-top-app-bar style="-webkit-app-region: drag">
+    <mdui-top-app-bar class="drag-region">
       <mdui-top-app-bar-title>LuckyPicker - 帮助</mdui-top-app-bar-title>
       <div style="flex-grow: 1"></div>
       <mdui-tooltip content="关闭">
         <mdui-button-icon
-          style="-webkit-app-region: no-drag"
+          class="no-drag-region"
           icon="close"
-          onclick="window.close();"></mdui-button-icon>
+          onclick="window.close()"></mdui-button-icon>
       </mdui-tooltip>
     </mdui-top-app-bar>
-    <div class="mdui-prose">
+    <div class="mdui-prose scrollable-content">
       <h2>功能介绍：</h2>
       <hr />
       <img src="../static/help/homepage.webp" />
@@ -36,20 +36,15 @@
         右上角为顶栏<br />点击<mdui-icon name="autorenew"></mdui-icon>会重载页面
       </p>
       <p>点击<mdui-icon name="fullscreen"></mdui-icon>会全屏页面</p>
-      <p>
-        点击<mdui-icon name="fullscreen_exit"></mdui-icon>会退出全屏
-      </p>
-      <p>
-        点击<mdui-icon name="photo_camera"></mdui-icon>会打开ORC识别面板
-      </p>
-      <p>
-        点击<mdui-icon name="edit"></mdui-icon>会打开名单（可以编辑
-      </p>
+      <p>点击<mdui-icon name="fullscreen_exit"></mdui-icon>会退出全屏</p>
+      <p>点击<mdui-icon name="photo_camera"></mdui-icon>会打开ORC识别面板</p>
+      <p>点击<mdui-icon name="edit"></mdui-icon>会打开名单（可以编辑</p>
       <p>点击<mdui-icon name="close"></mdui-icon>会关闭网页</p>
       <hr />
       <img src="../static/help/start.webp" />
       <p>
-        右下角的按钮为开始/停止按钮，当点击<mdui-icon name="repeat"></mdui-icon>后，姓名一栏会开始快速滚动，再次点击后停止。
+        右下角的按钮为开始/停止按钮，当点击<mdui-icon name="repeat"></mdui-icon
+        >后，姓名一栏会开始快速滚动，再次点击后停止。
       </p>
       <hr />
       <img src="../static/help/name.webp" />

@@ -15,8 +15,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(../fonts/materialicons-v145.woff2)
-    format("woff2");
+  src: url(../fonts/materialicons-v145.woff2) format("woff2");
 }
 
 body {
@@ -25,4 +24,28 @@ body {
 /*隐藏滚动条**/
 body::-webkit-scrollbar {
   display: none;
+}
+
+.drag-region {
+  -webkit-app-region: drag;
+}
+
+.no-drag-region {
+  -webkit-app-region: no-drag;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-color: rgb(var(--mdui-color-surface));
+  color: rgb(var(--mdui-color-on-surface));
+}
+
+.scrollable-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 24px;
 }
