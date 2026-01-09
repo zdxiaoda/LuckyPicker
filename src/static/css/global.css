@@ -49,3 +49,13 @@ body::-webkit-scrollbar {
   overflow-y: auto;
   padding: 16px 24px;
 }
+
+.app-title {
+  font-size: 22px;
+  font-weight: 400;
+  margin-left: 16px;
+  color: inherit;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
